@@ -1,25 +1,56 @@
 {
-  "name": "create-react-app",
-  "version": "3.2.2",
-  "private": true,
-  "dependencies": {
-    "@material-ui/core": "latest",
-    "moment": "^2.24.0",
-    "prop-types": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "react-scripts": "latest"
-  },
+  "name": "angular-webpack-workflow",
+  "version": "0.0.1",
+  "description": "Orange County Meeting Search and Editor application",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "build": "rimraf dist && webpack --bail --progress --profile",
+    "server": "webpack-dev-server --history-api-fallback --inline --progress",
+    "test": "karma start",
+    "test-watch": "karma start --auto-watch --no-single-run",
+    "start": "npm run server"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JamesRosenthal/ocaa-meeting-search.git"
+  },
+  "author": "James Rosenthal",
+  "license": "MIT",
+  "homepage": "https://orangenyaa.org/",
+  "dependencies": {
+    "angular": "^1.7.0",
+    "angular-material": "^1.1.13",
+    "angular-material-data-table": "^0.10.10",
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "ajv": "^6.4.0",
+    "angular-mocks": "^1.7.0",
+    "autoprefixer": "^8.4.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-es2015": "^6.1.18",
+    "copy-webpack-plugin": "^4.5.1",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "2.0.0-beta.5",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "istanbul-instrumenter-loader": "^3.0.1",
+    "jasmine-core": "^3.1.0",
+    "karma": "^2.0.2",
+    "karma-coverage": "^1.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-spec-reporter": "^0.0.32",
+    "karma-webpack": "^3.0.0",
+    "node-libs-browser": "^2.1.0",
+    "null-loader": "^0.1.1",
+    "phantomjs-prebuilt": "^2.1.4",
+    "postcss-loader": "^2.1.5",
+    "raw-loader": "^0.5.1",
+    "rimraf": "^2.5.1",
+    "style-loader": "^0.21.0",
+    "webpack": "^2.7.0",
+    "webpack-dev-server": "^2.11.2"
+  }
 }
