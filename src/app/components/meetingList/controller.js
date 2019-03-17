@@ -147,6 +147,7 @@ export class MeetingListController {
           name: group.name,
           day: meeting.day,
           time: moment(meeting.start).format('h:mm A'),
+          fullTime: moment(meeting.start).format('HHmm'),
           town: group.address && group.address.locality,
           format,
           location,
