@@ -1,35 +1,30 @@
 <md-toolbar class="md-table-toolbar md-default">
-    <div class="md-toolbar-tools">
-        <span>Meetings</span>
+    <div class="md-toolbar-tools" role="banner">
+        Meetings
     </div>
 </md-toolbar>
 
-<!-- exact table from live demo -->
 <md-table-container>
-    <table md-table md-progress="promise">
-        <thead md-head md-order="$ctrl.query.order" md-on-reorder="$ctrl.getMeetings">
+    <table md-table>
+        <thead md-head md-order="$ctrl.query.order">
             <tr md-row>
-                <th md-column md-order-by="nameToLower">Name</th>
-                <th md-column md-order-by="meeting.day">Day</th>
-                <th md-column md-order-by="meeting.time">Time</th>
-                <th md-column md-order-by="meeting.location">Location</th>
-                <th md-column md-order-by="meeting.format">Format</th>
+                <th md-column md-order-by="name">Name</th>
+                <th md-column md-order-by="day">Day</th>
+                <th md-column md-order-by="time">Time</th>
+                <th md-column md-order-by="location">Location</th>
+                <th md-column md-order-by="format">Format</th>
             </tr>
         </thead>
         <tbody md-body>
-            <tr md-row ng-repeat="meeting in $ctrl.meetings">
+            <tr md-row ng-repeat="meeting in $ctrl.sortedFilteredMeetings() | limitTo: $ctrl.myLimit: ($ctrl.myPage - 1) * $ctrl.myLimit">
                 <td md-cell>{{meeting.name}}</td>
                 <td md-cell>{{meeting.day}}</td>
                 <td md-cell>{{meeting.time}}</td>
-                <td md-cell>{{meeting.location}}
-                    <br ng-if="group.address.notes">
-                    <span ng-if="group.address.notes">{{group.address.notes}}</span>
-                </td>
+                <td md-cell>{{meeting.location}}</td>
                 <td md-cell>{{meeting.format}}</td>
             </tr>
         </tbody>
     </table>
 </md-table-container>
-
-<md-table-pagination md-limit="query.limit" md-limit-options="[5, 10, 15]" md-page="query.page" md-total="{{desserts.count}}"
-    md-on-paginate="getDesserts" md-page-select></md-table-pagination>
+<md-table-pagination md-limit="$ctrl.myLimit" md-limit-options="$ctrl.limitOptions" md-page="$ctrl.myPage" md-total="{{$ctrl.sortedFilteredMeetings().length}}"
+    md-on-paginate="$ctrl.getMeetings()" md-page-select></md-table-pagination>

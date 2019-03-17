@@ -1,43 +1,62 @@
+import angular from 'angular';
 import moment from 'moment';
 import groups from './groups';
 
 export class MeetingListController {
-  constructor() {
+  constructor($filter) {
+    'ngInject';
+
+    this.$filter = $filter;
+  }
+
+  $onInit() {
     this.selected = [];
 
     this.query = {
       order: 'name',
-      limit: 5,
+      limit: this.sortedFilteredMeetings().length,
       page: 1
     };
 
+    this.myPage = 1;
+    this.myLimit = 10;
+
+    const _this = this;
+
+    this.limitOptions = [10, 20, {
+      label: 'All',
+      value: function () {
+        return _this.meetings.length;
+      }
+    }];
+
     this.formats = [{
         code: 'b',
-        display: 'Beginners Meeting'
+        display: 'Beginners'
       },
       {
         code: 'bb',
-        display: 'Big Book Meeting'
+        display: 'Big Book'
       },
       {
         code: 'anniv',
-        display: 'Anniversary Meeting'
+        display: 'Anniversary'
       },
       {
         code: 'st',
-        display: 'Step Meeting'
+        display: 'Step'
       },
       {
         code: 'ls',
-        display: 'Living Sober Meeting'
+        display: 'Living Sober'
       },
       {
         code: 't',
-        display: 'Traditions Meeting'
+        display: 'Traditions'
       },
       {
         code: 'ctb',
-        display: 'Came To Believe Meeting'
+        display: 'Came To Believe'
       },
       {
         code: 'gra',
@@ -45,55 +64,55 @@ export class MeetingListController {
       },
       {
         code: 'dr',
-        display: 'Daily Reflections Meeting'
+        display: 'Daily Reflections'
       },
       {
         code: 'absi',
-        display: 'As Bill Sees It Meeting'
+        display: 'As Bill Sees It'
       },
       {
         code: 'c',
-        display: 'Closed Meeting'
+        display: 'Closed'
       },
       {
         code: 'o',
-        display: 'Open Meeting'
+        display: 'Open'
       },
       {
         code: 'w',
-        display: 'Women Only Meeting'
+        display: 'Women Only'
       },
       {
         code: 'm',
-        display: 'Men Only Meeting'
+        display: 'Men Only'
       },
       {
         code: 'sp',
-        display: 'Speaker Meeting'
+        display: 'Speaker'
       },
       {
         code: 'span',
-        display: 'Spanish Speaking Meeting'
+        display: 'Spanish Speaking'
       },
       {
         code: 'od',
-        display: 'Open Discussion Meeting'
+        display: 'Open Discussion'
       },
       {
         code: 'cd',
-        display: 'Closed Discussion Meeting'
+        display: 'Closed Discussion'
       },
       {
         code: 'os',
-        display: 'Open Speaker Meeting'
+        display: 'Open Speaker'
       },
       {
         code: 'yp',
-        display: 'Young People Meeting'
+        display: 'Young People'
       },
       {
         code: 'gay',
-        display: 'Gay Meeting'
+        display: 'Gay'
       },
       {
         code: 'rep',
@@ -101,7 +120,7 @@ export class MeetingListController {
       },
       {
         code: '3711',
-        display: 'Big Book Steps 3, 7 & 11 Meeting'
+        display: 'Big Book Steps 3, 7 & 11'
       }
     ];
 
@@ -111,7 +130,7 @@ export class MeetingListController {
         const format = meeting.format.map(formatCode => {
           const foundFormat = this.formats.find(format => format.code === formatCode);
           return foundFormat && foundFormat.display || '';
-        }).join(', ');
+        }).join(',');
 
         const streetAddr = group.address && [
           group.address.street_number,
@@ -122,7 +141,7 @@ export class MeetingListController {
           streetAddr,
           group.address.locality,
           group.address.administrative_area_level_1,
-        ].filter(e => e).join(', ');
+        ].filter(e => e).join(',');
 
         const groupMeeting = Object.assign({}, {
           name: group.name,
@@ -136,8 +155,19 @@ export class MeetingListController {
         return groupMeeting;
       }
     )).reduce((a, b) => a.concat(b));
+  }
 
-    console.log('this.meetings', this.meetings);
+  sortedFilteredMeetings() {
+
+    console.log('this.query', this.query);
+
+    if (!this.meetings){
+      return [];
+    }
+
+    let ordered = this.$filter('orderBy')(this.meetings, this.query.order);
+
+    return ordered;
 
   }
 
