@@ -1,17 +1,16 @@
+
 import '../style/app.css';
 
 let app = () => {
   return {
     template: require('./app.html'),
     controller: 'AppCtrl',
-    controllerAs: 'vm'
+    controllerAs: '$ctrl'
   }
 };
 
 class AppCtrl {
-  constructor() {
-    this.url = 'https://github.com/preboot/angular-webpack';
-  }
+  constructor() {}
 }
 
 export {
