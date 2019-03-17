@@ -23,10 +23,10 @@ export class MeetingListController {
 
     const _this = this;
 
-    this.limitOptions = [10, 20, {
+    this.limitOptions = [15, 25, 50, {
       label: 'All',
       value: function () {
-        return _this.meetings.length;
+        return _this.meetings ? _this.meetings.length : 0;
       }
     }];
 
@@ -130,7 +130,7 @@ export class MeetingListController {
         const format = meeting.format.map(formatCode => {
           const foundFormat = this.formats.find(format => format.code === formatCode);
           return foundFormat && foundFormat.display || '';
-        }).join(',');
+        }).sort().join(', ');
 
         const streetAddr = group.address && [
           group.address.street_number,
@@ -141,12 +141,13 @@ export class MeetingListController {
           streetAddr,
           group.address.locality,
           group.address.administrative_area_level_1,
-        ].filter(e => e).join(',');
+        ].filter(e => e).join(', ');
 
         const groupMeeting = Object.assign({}, {
           name: group.name,
           day: meeting.day,
           time: moment(meeting.start).format('h:mm A'),
+          town: group.address && group.address.locality,
           format,
           location,
           isWheelchairAccessible: group.isWheelchairAccessible ? 1 : 0
