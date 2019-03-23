@@ -1,3 +1,3 @@
-import MeetingListComponent from './component';
+import GroupEditorComponent from './component';
 
-export default MeetingListComponent;
+export default GroupEditorComponent;

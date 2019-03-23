@@ -1,5 +1,5 @@
 import {
-  MeetingListController as controller
+  GroupDetailsController as controller
 } from './controller';
 
 export default {

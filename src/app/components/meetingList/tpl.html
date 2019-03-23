@@ -77,7 +77,7 @@
                 <tbody md-body>
                     <tr md-row
                         ng-repeat="meeting in $ctrl.sortedFilteredMeetings() | limitTo: $ctrl.myLimit: ($ctrl.myPage - 1) * $ctrl.myLimit | filter: $ctrl.filterBy.searchText">
-                        <td md-cell>{{meeting.name}}</td>
+                        <td md-cell><a ui-sref="groupDetails({id: meeting.groupId})">{{meeting.name}}</a></td>
                         <td md-cell>{{meeting.day}}</td>
                         <td md-cell width="80">{{meeting.time}}</td>
                         <td md-cell>{{meeting.location}}</td>

@@ -1,6 +1,9 @@
-import angular from 'angular';
 import moment from 'moment';
-import groups from './groups';
+import {
+  groups,
+  days,
+  formats
+} from '../../resources';
 
 export class MeetingListController {
   constructor($filter) {
@@ -10,18 +13,25 @@ export class MeetingListController {
   }
 
   $onInit() {
-    this.selected = [];
 
-    this.query = {
-      order: 'name',
-      limit: this.sortedFilteredMeetings().length,
-      page: 1
-    };
-
-    this.myPage = 1;
-    this.myLimit = 10;
+    // console.log(groups, days, formats);
 
     const _this = this;
+
+    Object.assign(this, {
+      days,
+      formats,
+      myPage: 1,
+      myLimit: 10,
+      query: {
+        order: 'name',
+        limit: this.sortedFilteredMeetings().length,
+        page: 1
+      },
+      selected: [],
+      filterBy: {},
+      meetings: []
+    });
 
     this.limitOptions = [15, 25, 50, {
       label: 'All',
@@ -30,137 +40,11 @@ export class MeetingListController {
       }
     }];
 
-    this.filterBy = {};
-
-    this.days = [{
-        code: 'sun',
-        display: 'Sunday'
-      },
-      {
-        code: 'mon',
-        display: 'Monday'
-      },
-      {
-        code: 'tue',
-        display: 'Tuesday'
-      },
-      {
-        code: 'wed',
-        display: 'Wednesday'
-      },
-      {
-        code: 'thur',
-        display: 'Thursday'
-      },
-      {
-        code: 'fri',
-        display: 'Friday'
-      },
-      {
-        code: 'sat',
-        display: 'Saturday'
-      }
-    ];
-
-    this.formats = [{
-        code: 'b',
-        display: 'Beginners'
-      },
-      {
-        code: 'bb',
-        display: 'Big Book'
-      },
-      {
-        code: 'anniv',
-        display: 'Anniversary'
-      },
-      {
-        code: 'st',
-        display: 'Step'
-      },
-      {
-        code: 'ls',
-        display: 'Living Sober'
-      },
-      {
-        code: 't',
-        display: 'Traditions'
-      },
-      {
-        code: 'ctb',
-        display: 'Came To Believe'
-      },
-      {
-        code: 'gra',
-        display: 'Grapevine'
-      },
-      {
-        code: 'dr',
-        display: 'Daily Reflections'
-      },
-      {
-        code: 'absi',
-        display: 'As Bill Sees It'
-      },
-      {
-        code: 'c',
-        display: 'Closed'
-      },
-      {
-        code: 'o',
-        display: 'Open'
-      },
-      {
-        code: 'w',
-        display: 'Women Only'
-      },
-      {
-        code: 'm',
-        display: 'Men Only'
-      },
-      {
-        code: 'sp',
-        display: 'Speaker'
-      },
-      {
-        code: 'span',
-        display: 'Spanish Speaking'
-      },
-      {
-        code: 'od',
-        display: 'Open Discussion'
-      },
-      {
-        code: 'cd',
-        display: 'Closed Discussion'
-      },
-      {
-        code: 'os',
-        display: 'Open Speaker'
-      },
-      {
-        code: 'yp',
-        display: 'Young People'
-      },
-      {
-        code: 'gay',
-        display: 'Gay'
-      },
-      {
-        code: 'rep',
-        display: 'Relapse Prevention'
-      },
-      {
-        code: '3711',
-        display: 'Big Book Steps 3, 7 & 11'
-      }
-    ];
-
     this.setMeetings();
   }
 
   setMeetings() {
-    this.meetings = groups.map((group, i) => group.meetings.map(
+    this.meetings = groups.map((group) => group.meetings.map(
       meeting => {
 
         const formatDisplay = meeting.format.map(formatCode => {
@@ -189,8 +73,11 @@ export class MeetingListController {
           formatDisplay,
           format: meeting.format,
           location,
+          groupId: group.id,
           isWheelchairAccessible: group.isWheelchairAccessible ? 1 : 0
         });
+
+        console.log(group.id);
 
         return groupMeeting;
       }
@@ -277,16 +164,16 @@ export class MeetingListController {
     const allMeetings = this.meetings;
 
     let filteredByFormat = this.filterByFormat(allMeetings, filterBy);
-    console.log('filteredByFormat', filteredByFormat);
+    // console.log('filteredByFormat', filteredByFormat);
 
     let filteredByTime = this.filterByTime(filteredByFormat, filterBy);
-    console.log('filteredByTime', filteredByTime);
+    // console.log('filteredByTime', filteredByTime);
 
     let filteredByDay = this.filterByDay(filteredByTime, filterBy);
-    console.log('filteredByDay', filteredByDay);
+    // console.log('filteredByDay', filteredByDay);
 
     let filteredByOpenClosed = this.filterByOpenClosed(filteredByDay, filterBy);
-    console.log('filteredByOpenClosed', filteredByOpenClosed);
+    // console.log('filteredByOpenClosed', filteredByOpenClosed);
 
     this.meetings = filteredByOpenClosed;
   }
