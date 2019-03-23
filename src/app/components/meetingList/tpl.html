@@ -4,27 +4,90 @@
     </div>
 </md-toolbar>
 
-<md-table-container>
-    <table md-table>
-        <thead md-head md-order="$ctrl.query.order">
-            <tr md-row>
-                <th md-column md-order-by="name">Name</th>
-                <th md-column md-order-by="day">Day</th>
-                <th md-column md-order-by="fullTime">Time</th>
-                <th md-column md-order-by="town">Location</th>
-                <th md-column md-order-by="format">Format</th>
-            </tr>
-        </thead>
-        <tbody md-body>
-            <tr md-row ng-repeat="meeting in $ctrl.sortedFilteredMeetings() | limitTo: $ctrl.myLimit: ($ctrl.myPage - 1) * $ctrl.myLimit">
-                <td md-cell>{{meeting.name}}</td>
-                <td md-cell>{{meeting.day}}</td>
-                <td md-cell>{{meeting.time}}</td>
-                <td md-cell>{{meeting.location}}</td>
-                <td md-cell>{{meeting.format}}</td>
-            </tr>
-        </tbody>
-    </table>
-</md-table-container>
-<md-table-pagination md-limit="$ctrl.myLimit" md-limit-options="$ctrl.limitOptions" md-page="$ctrl.myPage" md-total="{{$ctrl.sortedFilteredMeetings().length}}"
-    md-on-paginate="$ctrl.getMeetings()" md-page-select></md-table-pagination>
+<md-card>
+    <md-card-content layout="row" layout-align="space-between">
+        <div flex="35" role="presentation" layout="row">
+            <md-input-container flex="100">
+                <label for="searchText">Search</label>
+                <input name="searchText" type="search" ng-model="$ctrl.filterBy.searchText" aria-label="search">
+            </md-input-container>
+        </div>
+        <div flex="65" role="presentation">
+            <div>
+                <div layout="row" role="presentation">
+                    <md-input-container flex="50">
+                        <label for="">Day</label>
+                        <md-select multiple ng-model="$ctrl.filterBy.days" placeholder="All Days">
+                            <md-option ng-repeat="day in $ctrl.days" ng-value="day.code">{{day.display}}</md-option>
+                        </md-select>
+                    </md-input-container>
+
+                    <md-input-container flex="50">
+                        <label for="">Time</label>
+                        <md-select ng-model="$ctrl.filterBy.timeRange" placeholder="Any Time">
+                            <md-option value="any">Any Time</md-option>
+                            <md-option value="morning">Morning (12:30 AM - 11:30 AM)</md-option>
+                            <md-option value="afternoon">Afternoon (Noon - 5:30 PM)</md-option>
+                            <md-option value="evening">Evening (6:00 PM - Midnight)</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+
+                <div layout="row" role="presentation">
+                    <md-input-container flex="50">
+                        <label for="">Open/Closed</label>
+                        <md-select ng-model="$ctrl.filterBy.openClosed" placeholder="Open or Closed">
+                            <md-option value="openClosed">Open/Closed</md-option>
+                            <md-option value="open">Open</md-option>
+                            <md-option value="closed">Closed</md-option>
+                        </md-select>
+                    </md-input-container>
+
+                    <md-input-container flex="50">
+                        <label for="">Type</label>
+                        <md-select multiple ng-model="$ctrl.filterBy.formats" placeholder="Meeting Type">
+                            <md-option ng-repeat="format in $ctrl.formats" ng-value="format.code">{{format.display}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+            </div>
+
+            <md-button class="md-raised md-primary" aria-label="Apply filters"
+                ng-click="$ctrl.filterResults($ctrl.filterBy)">Apply Filters</md-button>
+            <md-button class="md-secondary" aria-label="Clear filters" ng-click="$ctrl.resetResults()">Clear Filters
+            </md-button>
+        </div>
+    </md-card-content>
+</md-card>
+
+<md-card>
+    <md-card-content>
+        <md-table-container>
+            <table md-table>
+                <thead md-head md-order="$ctrl.query.order">
+                    <tr md-row>
+                        <th md-column md-order-by="name">Name</th>
+                        <th md-column md-order-by="day">Day</th>
+                        <th md-column md-order-by="fullTime">Time</th>
+                        <th md-column md-order-by="town">Location</th>
+                        <th md-column md-order-by="formatDisplay">Format</th>
+                    </tr>
+                </thead>
+                <tbody md-body>
+                    <tr md-row
+                        ng-repeat="meeting in $ctrl.sortedFilteredMeetings() | limitTo: $ctrl.myLimit: ($ctrl.myPage - 1) * $ctrl.myLimit | filter: $ctrl.filterBy.searchText">
+                        <td md-cell>{{meeting.name}}</td>
+                        <td md-cell>{{meeting.day}}</td>
+                        <td md-cell width="80">{{meeting.time}}</td>
+                        <td md-cell>{{meeting.location}}</td>
+                        <td md-cell>{{meeting.formatDisplay}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </md-table-container>
+        <md-table-pagination md-limit="$ctrl.myLimit" md-limit-options="$ctrl.limitOptions" md-page="$ctrl.myPage"
+            md-total="{{$ctrl.sortedFilteredMeetings().length}}" md-on-paginate="$ctrl.getMeetings()" md-page-select>
+        </md-table-pagination>
+    </md-card-content>
+</md-card>

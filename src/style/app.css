@@ -209,12 +209,6 @@ md-toolbar.md-table-toolbar {
   box-shadow: none
 }
 
-md-toolbar.md-table-toolbar.md-default-theme:not(.md-menu-toolbar).md-default,
-md-toolbar.md-table-toolbar:not(.md-menu-toolbar).md-default {
-  background-color: #fff;
-  color: rgba(0, 0, 0, .87)
-}
-
 md-toolbar.md-table-toolbar.md-default-theme:not(.md-menu-toolbar).md-default .md-button,
 md-toolbar.md-table-toolbar:not(.md-menu-toolbar).md-default .md-button {
   color: rgba(0, 0, 0, .87)
