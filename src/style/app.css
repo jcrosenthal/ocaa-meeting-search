@@ -1,3 +1,8 @@
+#map {
+  height: 250px;
+}
+
+/* Table */
 md-backdrop.md-edit-dialog-backdrop {
   z-index: 80
 }

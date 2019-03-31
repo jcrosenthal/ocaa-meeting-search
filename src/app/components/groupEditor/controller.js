@@ -1,4 +1,4 @@
-export class Controller {
+export class GroupEditorController {
 
   constructor() {
     'ngInject';

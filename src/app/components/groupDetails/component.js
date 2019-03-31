@@ -4,8 +4,6 @@ import {
 
 export default {
   template: require('./tpl.html'),
-  bindings: {
-    meetings: '=',
-  },
+  bindings: {},
   controller
 };

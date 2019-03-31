@@ -1,10 +1,13 @@
 import angular from 'angular';
 import 'angular-messages';
 import 'angular-material';
+import 'angular-sanitize';
 import 'angular-material-data-table';
 import '@uirouter/angularjs';
 
-import { Config } from './app.config';
+import {
+  Config
+} from './app.config';
 
 import {
   app,
@@ -31,6 +34,12 @@ ocaaApp.component('meetingList', MeetingListComponent);
 ocaaApp.component('groupDetails', GroupDetailsComponent);
 ocaaApp.component('groupEditor', GroupEditorComponent);
 ocaaApp.component('error', ErrorComponent);
+
+ocaaApp.filter('trusted', ['$sce', function ($sce) {
+  return function (url) {
+    return $sce.trustAsResourceUrl(url);
+  };
+}]);
 
 ocaaApp.config(Config);
 
