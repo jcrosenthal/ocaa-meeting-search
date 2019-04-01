@@ -140,12 +140,12 @@ amqplib@^0.5.2:
     safe-buffer "~5.1.2"
     url-parse "~1.4.3"
 
-angular-animate@^1.7.8:
+angular-animate@^1.7.5, angular-animate@^1.7.8:
   version "1.7.8"
   resolved "https://registry.yarnpkg.com/angular-animate/-/angular-animate-1.7.8.tgz#c95f237efe7ecfe0e6003adb5e2c7ef0e5a2b9d4"
   integrity sha512-bINtzizq7TbJzfVrDpwLfTxVl0Qd7fRNWFb5jKYI1vaFZobQNX/QONXlLow6ySsDbZ6eLECycB7mvWtfh1YYaw==
 
-angular-aria@^1.7.8:
+angular-aria@^1.7.5, angular-aria@^1.7.8:
   version "1.7.8"
   resolved "https://registry.yarnpkg.com/angular-aria/-/angular-aria-1.7.8.tgz#3954250ef516b57cdd3cdf41ff4ee6fcfdc84ceb"
   integrity sha512-facq/111sZKL2wUUqRA1GnGt+lZ8KAcX9Aw04cNA+OyEkoaoRC77NY4VSOTQxghlSd0OPAdLeFnmETnuiWrpLg==
@@ -155,12 +155,17 @@ angular-material-data-table@^0.10.10:
   resolved "https://registry.yarnpkg.com/angular-material-data-table/-/angular-material-data-table-0.10.10.tgz#229b402745ec1a146f07da8d1e526be6540849ee"
   integrity sha1-IptAJ0XsGhRvB9qNHlJr5lQISe4=
 
+angular-material@^1.1.10:
+  version "1.1.17"
+  resolved "https://registry.yarnpkg.com/angular-material/-/angular-material-1.1.17.tgz#0a82a6630e9cb3518e2f1e6303fd74740953a640"
+  integrity sha512-PenTkOngqjoAN0Tahpo0fr7qNqrF0PRNRhJn+fnmAW3GdJyP+IV2UTl6ksoebyeEiV8mq65LfwCcsMjTS+MucA==
+
 angular-material@^1.1.13:
   version "1.1.13"
   resolved "https://registry.yarnpkg.com/angular-material/-/angular-material-1.1.13.tgz#36c9cee590156f7e9d2be3bf6b2bf277f1293b4d"
   integrity sha512-qWc5WOhRa/sbQmiRwenOla2Pky3w+wgW0l5Wp3J6jmB/WWxMWW7+JMdCXo1diGEETTKTF2vLdeWTceDTNehmSw==
 
-angular-messages@^1.7.8:
+angular-messages@^1.7.5, angular-messages@^1.7.8:
   version "1.7.8"
   resolved "https://registry.yarnpkg.com/angular-messages/-/angular-messages-1.7.8.tgz#746da9c955f855ef6ceac34b2a5eb8b1b12e6a78"
   integrity sha512-e7Oq4ugdTcAp4kLP9TNOh6mfSsYO2Uwf7NavLuNWqahDGRHYXilo2gcI/vxmFjPBOwAmreXrhYlpGLlJdzxfQg==
@@ -175,7 +180,7 @@ angular-sanitize@^1.7.8:
   resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.7.8.tgz#87d59f754bb18d286dfd9d6ce867299c094c6719"
   integrity sha512-sVq51is1cVNiPytH4JIEd7iRW0OBIRQGNETWkz1c/jnLv2sBf9oDxEd8enwDz/W2ULBIpqJPK/3AsIxmZyh9pA==
 
-angular@^1.7.0:
+angular@^1.7.0, angular@^1.7.5:
   version "1.7.8"
   resolved "https://registry.yarnpkg.com/angular/-/angular-1.7.8.tgz#b77ede272ce1b261e3be30c1451a0b346905a3c9"
   integrity sha512-wtef/y4COxM7ZVhddd7JtAAhyYObq9YXKar9tsW7558BImeVYteJiTxCKeJOL45lJ/+7B4wrAC49j8gTFYEthg==
@@ -4606,7 +4611,7 @@ mkdirp@0.5.1, mkdirp@0.5.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@
   dependencies:
     minimist "0.0.8"
 
-moment@^2.24.0:
+moment@^2.22.2, moment@^2.24.0:
   version "2.24.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
   integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
@@ -4696,6 +4701,18 @@ next-tick@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
+
+ng-material-datetimepicker@^1.18.3:
+  version "1.18.3"
+  resolved "https://registry.yarnpkg.com/ng-material-datetimepicker/-/ng-material-datetimepicker-1.18.3.tgz#95461a672d3b68ad8f537e671edb88e970832454"
+  integrity sha512-IH6YXRqegU/fmIWAsR8C58S2qy8CM/YvMOxbKeH9mBaixiitf/ySakIPPsouRkbVfap9knhAbSmOHxe6C/KW9w==
+  dependencies:
+    angular "^1.7.5"
+    angular-animate "^1.7.5"
+    angular-aria "^1.7.5"
+    angular-material "^1.1.10"
+    angular-messages "^1.7.5"
+    moment "^2.22.2"
 
 no-case@^2.2.0:
   version "2.3.2"

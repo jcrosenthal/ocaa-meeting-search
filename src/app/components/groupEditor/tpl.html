@@ -1,1 +1,122 @@
-group editor
+<md-card>
+    <md-toolbar layout="row" class="md-hue-2">
+        <div role="heading" class="md-toolbar-tools">
+            <span role="heading">Group Editor</span>
+        </div>
+    </md-toolbar>
+    <md-card-content>
+        <form novalidate aria-label="" name="$ctrl.groupEditor"
+            on-submit="$ctrl.groupEditor.$valid && $ctrl.saveGroup()">
+            <fieldset>
+                <legend>Group</legend>
+                <md-input-container>
+                    <label for="name">Name</label>
+                    <input aria-label="name" name="name" ng-model="$ctrl.group.name" type="text">
+                </md-input-container>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Address Search</legend>
+                <md-input-container md-no-float>
+                    <label for="pac-input">Address Search</label>
+                    <input id="pac-input" type="search">
+                </md-input-container>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Address</legend>
+                <div layout="row" layout-align="space-between">
+                    <div role="row" layout="row">
+                        <md-input-container>
+                            <label for="street_number">Street Number</label>
+                            <input aria-label="street_number" name="street_number" type="text"
+                                ng-model="$ctrl.group.address.street_number" type="text">
+                        </md-input-container>
+                        <md-input-container>
+                            <label for="route">Route</label>
+                            <input type="text" ng-model="$ctrl.group.address.route" aria-label="route" name="route"
+                                type="text">
+                        </md-input-container>
+                        <md-input-container>
+                            <label for="locality">Locality</label>
+                            <input type="text" ng-model="$ctrl.group.address.locality" aria-label="locality"
+                                name="locality" type="text">
+                        </md-input-container>
+                    </div>
+                    <div role="row" layout="row">
+                        <md-input-container>
+                            <label for="administrative_area_level_3">Admin area 3</label>
+                            <input type="text" ng-model="$ctrl.group.address.administrative_area_level_3"
+                                aria-label="administrative_area_level_3" name="administrative_area_level_3" type="text">
+                        </md-input-container>
+                        <md-input-container>
+                            <label for="administrative_area_level_2">Admin area 2</label>
+                            <input type="text" ng-model="$ctrl.group.address.administrative_area_level_2"
+                                aria-label="administrative_area_level_2" name="administrative_area_level_2" type="text">
+                        </md-input-container>
+                        <md-input-container>
+                            <label for="administrative_area_level_1">Admin area 1</label>
+                            <input type="text" ng-model="$ctrl.group.address.administrative_area_level_1"
+                                aria-label="administrative_area_level_1" name="administrative_area_level_1" type="text">
+                        </md-input-container>
+                    </div>
+                    <div role="row" layout="row">
+                        <md-input-container>
+                            <label for="postal_code">Postal/Zip Code</label>
+                            <input type="text" ng-model="$ctrl.group.address.postal_code" aria-label="postal_code"
+                                name="postal_code" type="text">
+                        </md-input-container>
+                        <md-input-container>
+                            <label for="lat">Lat</label>
+                            <input type="number" ng-model="$ctrl.group.address.lat" aria-label="lat" name="lat"
+                                type="text">
+                        </md-input-container>
+                        <md-input-container>
+                            <label for="lng">Longitude</label>
+                            <input type="number" ng-model="$ctrl.group.address.lng" aria-label="lng" name="lng"
+                                type="text">
+                        </md-input-container>
+                    </div>
+                </div>
+                <md-input-container>
+                    <label for="notes">Address Notes (Building name, etc.)</label>
+                    <input aria-label="notes" name="notes" type="text" ng-model="$ctrl.group.address.notes" type="text">
+                </md-input-container>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Meetings</legend>
+                <fieldset ng-repeat="meeting in $ctrl.group.meetings">
+                    <legend>{{meeting.day}}</legend>
+                    <div layout="column" layout-align="space-between">
+                        <md-input-container>
+                            <label for="day">Day</label>
+                            <md-select aria-label="day" name="notes" type="text" ng-model="meeting.day">
+                                <md-option ng-value="day.code" ng-repeat="day in $ctrl.days">{{day.display}}</md-option>
+                            </md-select>
+                        </md-input-container>
+                        <md-input-container>
+                            <label for="meetingNotes">Notes</label>
+                            <input aria-label="meetingNotes" name="meetingNotes" type="text" ng-model="meeting.notes"
+                                type="text">
+                        </md-input-container>
+                        <md-input-container>
+                            <label for="start">Time</label>
+                            <input mdc-datetime-picker date="false" click-outside-to-close="true" short-time="true"
+                                time="true" placeholder="Time" minutes="true" ng-model-options="{timezone: 'utc'}"
+                                min-date="minDate" type="text" id="timez" format="hh:mm a" edit-input="true"
+                                minute-steps="15" show-icon="true" ng-model="meeting.start"
+                                class="dtp-no-msclear dtp-input md-input">
+                        </md-input-container>
+                        <md-chips ng-model="meeting.format" name="format" md-removable="true" placeholder="formats"
+                            input-aria-label="Add a format (by code)">
+                            <md-chip-template>
+                                <strong>{{$chip}}</strong>
+                            </md-chip-template>
+                        </md-chips>
+                    </div>
+                </fieldset>
+            </fieldset>
+        </form>
+    </md-card-content>
+</md-card>

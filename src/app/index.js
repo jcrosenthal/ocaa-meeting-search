@@ -4,6 +4,7 @@ import 'angular-material';
 import 'angular-sanitize';
 import 'angular-material-data-table';
 import '@uirouter/angularjs';
+import 'ng-material-datetimepicker';
 
 import {
   Config
@@ -23,7 +24,8 @@ const ocaaApp = angular.module(MODULE_NAME, [
   'ngMaterial',
   'md.data.table',
   'ngMessages',
-  'ui.router'
+  'ui.router',
+  'ngMaterialDatePicker'
 ]);
 
 window.app = ocaaApp;

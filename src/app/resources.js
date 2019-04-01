@@ -1,30 +1,30 @@
 const days = [{
         code: 'sun',
-        display: 'Sunday'
+        display: 'sunday'
     },
     {
         code: 'mon',
-        display: 'Monday'
+        display: 'monday'
     },
     {
         code: 'tue',
-        display: 'Tuesday'
+        display: 'tuesday'
     },
     {
         code: 'wed',
-        display: 'Wednesday'
+        display: 'wednesday'
     },
     {
         code: 'thur',
-        display: 'Thursday'
+        display: 'thursday'
     },
     {
         code: 'fri',
-        display: 'Friday'
+        display: 'friday'
     },
     {
         code: 'sat',
-        display: 'Saturday'
+        display: 'saturday'
     }
 ];
 
@@ -142,7 +142,7 @@ const groups = [{
     "meetings": [{
         "format": ["st"],
         "start": "1970-01-01T20:00:00.000Z",
-        "day": "Sun"
+        "day": "sun"
     }],
     "id": 1
 }, {
@@ -162,7 +162,7 @@ const groups = [{
     },
     "name": "Sharing & Caring",
     "meetings": [{
-        "day": "Thur",
+        "day": "thur",
         "start": "1970-01-02T00:00:00.000Z",
         "format": ["absi", "od", "st", "b"]
     }],
@@ -186,7 +186,7 @@ const groups = [{
         "format": ["st"],
         "notes": "[Wk 2=T; Last Wk=Anniv]",
         "start": "1970-01-02T00:30:00.000Z",
-        "day": "Mon"
+        "day": "mon"
     }],
     "id": 3
 }, {
@@ -208,7 +208,7 @@ const groups = [{
         "format": ["w"],
         "notes": "[Wk 1,2 = Lit; Wk 3,4=CD; Wk 4=Anniv]",
         "start": "1970-01-02T00:30:00.000Z",
-        "day": "Wed"
+        "day": "wed"
     }],
     "id": 4
 }, {
@@ -229,7 +229,7 @@ const groups = [{
     "meetings": [{
         "format": ["cd"],
         "start": "1970-01-02T00:30:00.000Z",
-        "day": "Tue"
+        "day": "tue"
     }],
     "id": 5
 }, {
@@ -250,7 +250,7 @@ const groups = [{
     "meetings": [{
         "format": ["cd"],
         "start": "1970-01-02T01:30:00.000Z",
-        "day": "Fri"
+        "day": "fri"
     }],
     "id": 6
 }, {
@@ -272,26 +272,26 @@ const groups = [{
     "isWheelchairAccessible": 1,
     "meetings": [{
         "format": ["c", "absi"],
-        "day": "Sun",
+        "day": "sun",
         "start": "1970-01-01T13:00:00.000Z"
     }, {
-        "day": "Sun",
+        "day": "sun",
         "start": "1970-01-01T15:00:00.000Z",
         "format": ["b", "cd", "st"]
     }, {
         "format": ["c", "st"],
-        "day": "Thur",
+        "day": "thur",
         "start": "1970-01-01T23:30:00.000Z",
         "notes": "[Last Wk = T]"
     }, {
         "format": ["c", "od"],
         "start": "1970-01-01T23:30:00.000Z",
-        "day": "Sat",
+        "day": "sat",
         "notes": "[Last Week = Anniv]"
     }],
     "id": 7
 }, {
-    "name": "Serenity Sunday",
+    "name": "Serenity sunday",
     "isWheelchairAccessible": 1,
     "address": {
         "street_number": "336",
@@ -308,7 +308,7 @@ const groups = [{
         "notes": "St. Thomas Church"
     },
     "meetings": [{
-        "day": "Sun",
+        "day": "sun",
         "start": "1970-01-02T00:00:00.000Z",
         "format": ["cd"]
     }],
@@ -331,7 +331,7 @@ const groups = [{
     "meetings": [{
         "start": "1970-01-01T23:30:00.000Z",
         "format": ["cd", "w"],
-        "day": "Tue",
+        "day": "tue",
         "notes": "[Wk1 = ST]"
     }],
     "id": 9
@@ -353,7 +353,7 @@ const groups = [{
     "isWheelchairAccessible": 1,
     "meetings": [{
         "start": "1970-01-02T00:00:00.000Z",
-        "day": "Tue",
+        "day": "tue",
         "format": ["cd"]
     }],
     "id": 10
@@ -374,7 +374,7 @@ const groups = [{
     },
     "meetings": [{
         "start": "1970-01-02T01:00:00.000Z",
-        "day": "Tue",
+        "day": "tue",
         "format": ["cd"],
         "notes": "[Wk 1=ST; Last Week=Anniv]"
     }],
@@ -397,7 +397,7 @@ const groups = [{
     "meetings": [{
         "format": ["dr"],
         "start": "1970-01-02T00:45:00.000Z",
-        "day": "Wed"
+        "day": "wed"
     }],
     "id": 12
 }, {
@@ -416,7 +416,7 @@ const groups = [{
     },
     "meetings": [{
         "start": "1970-01-01T17:00:00.000Z",
-        "day": "Sat",
+        "day": "sat",
         "format": ["cd"]
     }],
     "id": 13
@@ -438,11 +438,11 @@ const groups = [{
     "meetings": [{
         "format": ["cd"],
         "start": "1970-01-02T01:00:00.000Z",
-        "day": "Mon"
+        "day": "mon"
     }, {
         "format": ["cd"],
         "start": "1970-01-02T01:00:00.000Z",
-        "day": "Thur"
+        "day": "thur"
     }],
     "id": 14
 }, {
@@ -464,11 +464,11 @@ const groups = [{
     "meetings": [{
         "format": ["od"],
         "start": "1970-01-02T01:00:00.000Z",
-        "day": "Thur"
+        "day": "thur"
     }, {
         "format": ["od"],
         "start": "1970-01-02T01:30:00.000Z",
-        "day": "Fri",
+        "day": "fri",
         "notes": "[Wk 2 = T]"
     }],
     "id": 15
@@ -491,7 +491,7 @@ const groups = [{
     "meetings": [{
         "notes": "[Wk 2=T]",
         "start": "1970-01-02T01:30:00.000Z",
-        "day": "Fri",
+        "day": "fri",
         "format": ["od"]
     }],
     "id": 16
@@ -509,9 +509,9 @@ const groups = [{
         "lng": -74.32602689999999,
         "notes": "St. Johns Church"
     },
-    "name": "Sober Sundays",
+    "name": "Sober sundays",
     "meetings": [{
-        "day": "Sun",
+        "day": "sun",
         "start": "1970-01-01T19:00:00.000Z",
         "format": ["c", "bb"]
     }],
@@ -533,7 +533,7 @@ const groups = [{
     },
     "name": "Cup and Saucer",
     "meetings": [{
-        "day": "Wed",
+        "day": "wed",
         "start": "1970-01-02T01:00:00.000Z",
         "format": ["od"],
         "notes": "[Last Wk = Anniv]"
@@ -557,28 +557,28 @@ const groups = [{
     "name": "Good Morn Sobriety",
     "meetings": [{
         "start": "1970-01-01T14:30:00.000Z",
-        "day": "Mon",
+        "day": "mon",
         "format": ["st", "t", "o"]
     }, {
         "format": ["o", "bb"],
-        "day": "Tue",
+        "day": "tue",
         "start": "1970-01-01T14:30:00.000Z"
     }, {
         "format": ["o", "ctb"],
-        "day": "Wed",
+        "day": "wed",
         "start": "1970-01-01T14:30:00.000Z"
     }, {
         "format": ["o", "ls"],
-        "day": "Thur",
+        "day": "thur",
         "start": "1970-01-01T14:30:00.000Z"
     }, {
         "format": ["o", "b"],
-        "day": "Fri",
+        "day": "fri",
         "start": "1970-01-01T14:30:00.000Z"
     }, {
         "format": ["od"],
         "start": "1970-01-01T14:30:00.000Z",
-        "day": "Sat"
+        "day": "sat"
     }],
     "id": 19
 }, {
@@ -599,7 +599,7 @@ const groups = [{
     "name": "Sober, Gay & Free",
     "meetings": [{
         "start": "1970-01-02T00:30:00.000Z",
-        "day": "Mon",
+        "day": "mon",
         "format": ["bb", "sp", "gay"]
     }],
     "id": 20
@@ -620,7 +620,7 @@ const groups = [{
         "notes": "1st Presbyterian Church"
     },
     "meetings": [{
-        "day": "Sat",
+        "day": "sat",
         "start": "1970-01-01T18:00:00.000Z",
         "format": ["b", "cd"]
     }],
@@ -643,7 +643,7 @@ const groups = [{
     "name": "Victory Through Surrender",
     "meetings": [{
         "start": "1970-01-02T01:30:00.000Z",
-        "day": "Sat",
+        "day": "sat",
         "format": ["od"]
     }],
     "id": 22
@@ -664,7 +664,7 @@ const groups = [{
     },
     "name": "Our Primary Purpose",
     "meetings": [{
-        "day": "Fri",
+        "day": "fri",
         "start": "1970-01-02T00:00:00.000Z",
         "format": ["yp", "bb", "od"],
         "notes": "[Wk4=Anniv]"
@@ -687,7 +687,7 @@ const groups = [{
     "name": "Beacon Group",
     "isWheelchairAccessible": 1,
     "meetings": [{
-        "day": "Sun",
+        "day": "sun",
         "start": "1970-01-01T14:30:00.000Z",
         "format": ["cd"]
     }],
@@ -710,7 +710,7 @@ const groups = [{
     "meetings": [{
         "format": ["cd", "w"],
         "start": "1970-01-01T23:00:00.000Z",
-        "day": "Sun"
+        "day": "sun"
     }],
     "id": 25
 }, {
@@ -731,10 +731,10 @@ const groups = [{
     "meetings": [{
         "format": ["bb"],
         "start": "1970-01-02T00:30:00.000Z",
-        "day": "Mon"
+        "day": "mon"
     }, {
         "format": ["dr"],
-        "day": "Sat",
+        "day": "sat",
         "start": "1970-01-01T15:00:00.000Z",
         "notes": "[Wk1=St]"
     }],
@@ -756,7 +756,7 @@ const groups = [{
     },
     "meetings": [{
         "start": "1970-01-02T01:00:00.000Z",
-        "day": "Thur",
+        "day": "thur",
         "format": ["od"]
     }],
     "id": 27
@@ -777,18 +777,18 @@ const groups = [{
     },
     "meetings": [{
         "start": "1970-01-02T00:30:00.000Z",
-        "day": "Tue",
+        "day": "tue",
         "format": ["b", "ls"]
     }, {
         "format": ["st"],
         "start": "1970-01-02T00:00:00.000Z",
-        "day": "Wed",
-        "notes": "[Last Wed = T]"
+        "day": "wed",
+        "notes": "[Last wed = T]"
     }, {
         "format": ["cd"],
         "start": "1970-01-02T00:30:00.000Z",
-        "day": "Fri",
-        "notes": "[Last Fri = O/Anniv]"
+        "day": "fri",
+        "notes": "[Last fri = O/Anniv]"
     }],
     "id": 28
 }, {
@@ -797,7 +797,7 @@ const groups = [{
         "street_number": "21",
         "route": "North Main Street",
         "locality": "Harriman",
-        "administrative_area_level_3": "Monroe",
+        "administrative_area_level_3": "monroe",
         "administrative_area_level_2": "Orange County",
         "administrative_area_level_1": "New York",
         "country": "United States",
@@ -809,24 +809,24 @@ const groups = [{
     "name": "Mid-Day Sobriety",
     "meetings": [{
         "start": "1970-01-01T18:30:00.000Z",
-        "day": "Mon",
+        "day": "mon",
         "format": ["ls"]
     }, {
         "format": ["bb"],
         "start": "1970-01-01T18:30:00.000Z",
-        "day": "Tue"
+        "day": "tue"
     }, {
         "format": ["od"],
-        "day": "Wed",
+        "day": "wed",
         "start": "1970-01-01T18:30:00.000Z"
     }, {
         "format": ["od"],
         "start": "1970-01-01T18:30:00.000Z",
-        "day": "Thur"
+        "day": "thur"
     }, {
         "format": ["od"],
         "start": "1970-01-01T18:30:00.000Z",
-        "day": "Fri"
+        "day": "fri"
     }],
     "id": 29
 }, {
@@ -835,7 +835,7 @@ const groups = [{
         "street_number": "21",
         "route": "North Main Street",
         "locality": "Harriman",
-        "administrative_area_level_3": "Monroe",
+        "administrative_area_level_3": "monroe",
         "administrative_area_level_2": "Orange County",
         "administrative_area_level_1": "New York",
         "country": "United States",
@@ -848,22 +848,22 @@ const groups = [{
     "isWheelchairAccessible": 1,
     "meetings": [{
         "start": "1970-01-01T22:30:00.000Z",
-        "day": "Mon",
+        "day": "mon",
         "format": ["st"],
         "notes": "[Last=T]"
     }, {
         "format": ["cd"],
         "start": "1970-01-01T22:30:00.000Z",
-        "day": "Tue",
+        "day": "tue",
         "notes": "[Last=Anniv]"
     }, {
-        "day": "Thur",
+        "day": "thur",
         "format": ["rep"],
         "start": "1970-01-01T22:30:00.000Z"
     }, {
         "format": ["b", "c"],
         "start": "1970-01-01T22:30:00.000Z",
-        "day": "Fri"
+        "day": "fri"
     }],
     "id": 30
 }, {
@@ -872,7 +872,7 @@ const groups = [{
         "street_number": "2",
         "route": "Church Street",
         "locality": "Harriman",
-        "administrative_area_level_3": "Monroe",
+        "administrative_area_level_3": "monroe",
         "administrative_area_level_2": "Orange County",
         "administrative_area_level_1": "New York",
         "country": "United States",
@@ -885,7 +885,7 @@ const groups = [{
     "meetings": [{
         "format": ["gra", "cd"],
         "start": "1970-01-01T14:00:00.000Z",
-        "day": "Sat"
+        "day": "sat"
     }],
     "id": 31
 }, {
@@ -902,22 +902,22 @@ const groups = [{
     },
     "meetings": [{
         "format": ["b"],
-        "day": "Mon",
+        "day": "mon",
         "start": "1970-01-02T00:30:00.000Z"
     }, {
         "format": ["od"],
         "start": "1970-01-02T00:30:00.000Z",
         "notes": "[Wk2=OS]",
-        "day": "Tue"
+        "day": "tue"
     }, {
         "format": ["cd", "st"],
-        "day": "Thur",
+        "day": "thur",
         "start": "1970-01-02T00:30:00.000Z",
         "notes": "[Last=T]"
     }, {
         "format": ["bb"],
         "start": "1970-01-01T13:30:00.000Z",
-        "day": "Sat"
+        "day": "sat"
     }],
     "id": 32
 }, {
@@ -941,23 +941,23 @@ const groups = [{
     "meetings": [{
         "format": ["cd"],
         "start": "1970-01-02T01:00:00.000Z",
-        "day": "Sun"
+        "day": "sun"
     }, {
         "format": ["b"],
         "start": "1970-01-01T23:30:00.000Z",
-        "day": "Mon"
+        "day": "mon"
     }, {
         "format": ["o", "s"],
-        "day": "Wed",
+        "day": "wed",
         "start": "1970-01-01T23:30:00.000Z"
     }, {
         "format": ["bb"],
-        "day": "Wed",
+        "day": "wed",
         "start": "1970-01-02T00:45:00.000Z"
     }, {
         "format": ["od"],
         "start": "1970-01-02T03:00:00.000Z",
-        "day": "Sat"
+        "day": "sat"
     }],
     "id": 33
 }, {
@@ -980,12 +980,12 @@ const groups = [{
     "isWheelchairAccessible": 1,
     "meetings": [{
         "start": "1970-01-02T00:30:00.000Z",
-        "day": "Fri",
+        "day": "fri",
         "format": ["st"]
     }, {
         "format": ["od"],
         "start": "1970-01-01T22:00:00.000Z",
-        "day": "Sat"
+        "day": "sat"
     }],
     "id": 34
 }, {
@@ -1006,12 +1006,12 @@ const groups = [{
     },
     "meetings": [{
         "start": "1970-01-02T00:30:00.000Z",
-        "day": "Fri",
+        "day": "fri",
         "format": ["st"]
     }, {
         "format": ["od"],
         "start": "1970-01-01T22:00:00.000Z",
-        "day": "Sat"
+        "day": "sat"
     }],
     "id": 35
 }, {
@@ -1030,7 +1030,7 @@ const groups = [{
     },
     "meetings": [{
         "format": ["od"],
-        "day": "Wed",
+        "day": "wed",
         "start": "1970-01-02T01:00:00.000Z",
         "notes": "[Wk1=ST]"
     }],
@@ -1041,7 +1041,7 @@ const groups = [{
         "street_number": "100",
         "route": "Broadway",
         "locality": "Maybrook",
-        "administrative_area_level_3": "Montgomery",
+        "administrative_area_level_3": "montgomery",
         "administrative_area_level_2": "Orange County",
         "administrative_area_level_1": "New York",
         "country": "United States",
@@ -1054,12 +1054,12 @@ const groups = [{
     "isWheelchairAccessible": 1,
     "meetings": [{
         "start": "1970-01-01T17:00:00.000Z",
-        "day": "Mon",
+        "day": "mon",
         "format": ["cd"]
     }, {
         "format": ["od"],
         "start": "1970-01-02T01:00:00.000Z",
-        "day": "Wed",
+        "day": "wed",
         "notes": "[Wk1=ST]"
     }],
     "id": 37
@@ -1078,7 +1078,7 @@ const groups = [{
         "notes": "Advent House"
     },
     "meetings": [{
-        "day": "Sun",
+        "day": "sun",
         "format": ["b"],
         "start": "1970-01-01T17:30:00.000Z"
     }],
@@ -1100,7 +1100,7 @@ const groups = [{
     },
     "meetings": [{
         "start": "1970-01-02T00:00:00.000Z",
-        "day": "Wed",
+        "day": "wed",
         "format": ["od"]
     }],
     "id": 39
@@ -1108,7 +1108,7 @@ const groups = [{
     "name": "Tres Legados",
     "address": {
         "street_number": "77",
-        "route": "Monhagen Avenue",
+        "route": "monhagen Avenue",
         "locality": "Middletown",
         "administrative_area_level_2": "Orange County",
         "administrative_area_level_1": "New York",
@@ -1121,31 +1121,31 @@ const groups = [{
     "meetings": [{
         "format": ["span", "od"],
         "start": "1970-01-01T23:30:00.000Z",
-        "day": "Sun"
+        "day": "sun"
     }, {
         "format": ["od", "span"],
         "start": "1970-01-02T00:30:00.000Z",
-        "day": "Mon"
+        "day": "mon"
     }, {
         "format": ["span", "od"],
         "start": "1970-01-02T00:30:00.000Z",
-        "day": "Tue"
+        "day": "tue"
     }, {
         "format": ["span", "od"],
         "start": "1970-01-02T00:30:00.000Z",
-        "day": "Wed"
+        "day": "wed"
     }, {
         "format": ["span", "od"],
         "start": "1970-01-02T00:30:00.000Z",
-        "day": "Thur"
+        "day": "thur"
     }, {
         "format": ["span", "od"],
         "start": "1970-01-02T00:30:00.000Z",
-        "day": "Fri"
+        "day": "fri"
     }, {
         "format": ["span", "od"],
         "start": "1970-01-01T23:00:00.000Z",
-        "day": "Sat"
+        "day": "sat"
     }],
     "id": 40
 }, {
@@ -1165,25 +1165,25 @@ const groups = [{
         "notes": "1st Presbyterian Church"
     },
     "meetings": [{
-        "day": "Mon",
+        "day": "mon",
         "start": "1970-01-01T17:00:00.000Z",
         "format": ["od"]
     }, {
         "format": ["st"],
-        "day": "Tue",
+        "day": "tue",
         "start": "1970-01-01T17:00:00.000Z"
     }, {
         "format": ["bb"],
-        "day": "Wed",
+        "day": "wed",
         "start": "1970-01-01T17:00:00.000Z"
     }, {
         "format": ["st"],
         "start": "1970-01-01T17:00:00.000Z",
-        "day": "Thur"
+        "day": "thur"
     }, {
         "format": ["od"],
         "start": "1970-01-01T17:00:00.000Z",
-        "day": "Fri",
+        "day": "fri",
         "notes": "[Wk1=T]"
     }],
     "id": 41
@@ -1204,22 +1204,22 @@ const groups = [{
     "isWheelchairAccessible": 1,
     "meetings": [{
         "start": "1970-01-01T23:00:00.000Z",
-        "day": "Tue",
+        "day": "tue",
         "format": ["st", "od", "t"],
         "notes": "[Wk1 = ST, Wk2 & Wk3 = OD, Wk4 = T]"
     }, {
-        "day": "Tue",
+        "day": "tue",
         "format": ["bb", "c"],
         "start": "1970-01-02T00:30:00.000Z",
         "notes": "[Wk1=T]"
     }, {
         "format": ["cd", "3711", "st"],
-        "day": "Thur",
+        "day": "thur",
         "start": "1970-01-02T00:00:00.000Z",
         "notes": "[Wk 1=ST, Wk 2 = 3711]"
     }, {
         "format": ["o", "b"],
-        "day": "Sat",
+        "day": "sat",
         "start": "1970-01-02T00:00:00.000Z"
     }],
     "id": 42
@@ -1240,11 +1240,11 @@ const groups = [{
     },
     "meetings": [{
         "format": ["st", "b"],
-        "day": "Mon",
+        "day": "mon",
         "start": "1970-01-02T01:00:00.000Z"
     }, {
         "format": ["o", "s"],
-        "day": "Sat",
+        "day": "sat",
         "start": "1970-01-02T01:00:00.000Z"
     }],
     "id": 43
@@ -1265,7 +1265,7 @@ const groups = [{
     },
     "meetings": [{
         "format": ["od"],
-        "day": "Tue",
+        "day": "tue",
         "start": "1970-01-02T00:30:00.000Z"
     }],
     "id": 44
@@ -1274,8 +1274,8 @@ const groups = [{
     "address": {
         "street_number": "21",
         "route": "Still Road",
-        "locality": "Monroe",
-        "administrative_area_level_3": "Monroe",
+        "locality": "monroe",
+        "administrative_area_level_3": "monroe",
         "administrative_area_level_2": "Orange County",
         "administrative_area_level_1": "New York",
         "country": "United States",
@@ -1287,7 +1287,7 @@ const groups = [{
     },
     "meetings": [{
         "format": ["m", "st", "cd"],
-        "day": "Mon",
+        "day": "mon",
         "start": "1970-01-02T00:30:00.000Z",
         "notes": "[Mens] [Wk1=ST, Wk 2,3,4=CD]"
     }],
@@ -1297,8 +1297,8 @@ const groups = [{
     "address": {
         "street_number": "21",
         "route": "Still Road",
-        "locality": "Monroe",
-        "administrative_area_level_3": "Monroe",
+        "locality": "monroe",
+        "administrative_area_level_3": "monroe",
         "administrative_area_level_2": "Orange County",
         "administrative_area_level_1": "New York",
         "country": "United States",
@@ -1310,18 +1310,18 @@ const groups = [{
     },
     "meetings": [{
         "start": "1970-01-02T00:30:00.000Z",
-        "day": "Tue",
+        "day": "tue",
         "format": ["od", "s", "bb", "st"],
         "notes": "[Womens] [1st=ST/2nd=BB/3rd=OD/4th=S]"
     }],
     "id": 46
 }, {
-    "name": "Sunrise",
+    "name": "sunrise",
     "address": {
         "street_number": "47",
         "route": "Maple Avenue",
-        "locality": "Monroe",
-        "administrative_area_level_3": "Monroe",
+        "locality": "monroe",
+        "administrative_area_level_3": "monroe",
         "administrative_area_level_2": "Orange County",
         "administrative_area_level_1": "New York",
         "country": "United States",
@@ -1331,7 +1331,7 @@ const groups = [{
         "lng": -74.1852958
     },
     "meetings": [{
-        "day": "Sat",
+        "day": "sat",
         "start": "1970-01-01T13:00:00.000Z",
         "format": ["cd"],
         "notes": "[Last Wk=Anniv]"
@@ -1341,8 +1341,8 @@ const groups = [{
     "address": {
         "street_number": "137",
         "route": "Stage Road",
-        "locality": "Monroe",
-        "administrative_area_level_3": "Monroe",
+        "locality": "monroe",
+        "administrative_area_level_3": "monroe",
         "administrative_area_level_2": "Orange County",
         "administrative_area_level_1": "New York",
         "country": "United States",
@@ -1351,11 +1351,11 @@ const groups = [{
         "lng": -74.18702880000001,
         "notes": "Sacred Heart Chapel"
     },
-    "name": "Monroe (Mens)",
+    "name": "monroe (Mens)",
     "isWheelchairAccessible": 1,
     "meetings": [{
         "start": "1970-01-02T00:00:00.000Z",
-        "day": "Sun",
+        "day": "sun",
         "format": ["cd"]
     }],
     "id": 48
@@ -1365,8 +1365,8 @@ const groups = [{
     "address": {
         "street_number": "137",
         "route": "Stage Road",
-        "locality": "Monroe",
-        "administrative_area_level_3": "Monroe",
+        "locality": "monroe",
+        "administrative_area_level_3": "monroe",
         "administrative_area_level_2": "Orange County",
         "administrative_area_level_1": "New York",
         "country": "United States",
@@ -1378,7 +1378,7 @@ const groups = [{
     "meetings": [{
         "format": ["s"],
         "start": "1970-01-01T20:00:00.000Z",
-        "day": "Sun"
+        "day": "sun"
     }],
     "id": 49
 }, {
@@ -1386,8 +1386,8 @@ const groups = [{
     "address": {
         "street_number": "137",
         "route": "Stage Road",
-        "locality": "Monroe",
-        "administrative_area_level_3": "Monroe",
+        "locality": "monroe",
+        "administrative_area_level_3": "monroe",
         "administrative_area_level_2": "Orange County",
         "administrative_area_level_1": "New York",
         "country": "United States",
@@ -1399,23 +1399,23 @@ const groups = [{
     "meetings": [{
         "format": ["c", "st"],
         "start": "1970-01-02T00:30:00.000Z",
-        "day": "Tue"
+        "day": "tue"
     }, {
         "format": ["cd"],
         "start": "1970-01-02T02:00:00.000Z",
-        "day": "Fri"
+        "day": "fri"
     }, {
         "format": ["bb"],
         "start": "1970-01-02T00:00:00.000Z",
-        "day": "Sat"
+        "day": "sat"
     }],
     "id": 50
 }, {
     "address": {
         "street_number": "136",
         "route": "Stage Road",
-        "locality": "Monroe",
-        "administrative_area_level_3": "Monroe",
+        "locality": "monroe",
+        "administrative_area_level_3": "monroe",
         "administrative_area_level_2": "Orange County",
         "administrative_area_level_1": "New York",
         "country": "United States",
@@ -1427,12 +1427,12 @@ const groups = [{
     "name": "SIOGA (1st Pres. Church)",
     "isWheelchairAccessible": 1,
     "meetings": [{
-        "day": "Thur",
+        "day": "thur",
         "start": "1970-01-02T00:30:00.000Z",
         "format": ["s", "o"]
     }, {
         "format": ["b", "c"],
-        "day": "Thur",
+        "day": "thur",
         "start": "1970-01-02T01:45:00.000Z"
     }],
     "id": 51
@@ -1440,8 +1440,8 @@ const groups = [{
     "address": {
         "street_number": "136",
         "route": "Stage Road",
-        "locality": "Monroe",
-        "administrative_area_level_3": "Monroe",
+        "locality": "monroe",
+        "administrative_area_level_3": "monroe",
         "administrative_area_level_2": "Orange County",
         "administrative_area_level_1": "New York",
         "country": "United States",
@@ -1453,26 +1453,26 @@ const groups = [{
     "name": "Steps to Sobriety",
     "isWheelchairAccessible": 1,
     "meetings": [{
-        "day": "Mon",
+        "day": "mon",
         "start": "1970-01-01T14:30:00.000Z",
         "format": ["dr"]
     }, {
         "format": ["st"],
         "start": "1970-01-01T14:30:00.000Z",
-        "day": "Tue"
+        "day": "tue"
     }, {
         "format": ["ls"],
         "start": "1970-01-01T14:30:00.000Z",
-        "day": "Wed",
+        "day": "wed",
         "notes": "[Wk1=OS]"
     }, {
         "format": ["b"],
-        "day": "Thur",
+        "day": "thur",
         "start": "1970-01-01T14:30:00.000Z"
     }, {
         "format": ["bb"],
         "start": "1970-01-01T14:30:00.000Z",
-        "day": "Fri",
+        "day": "fri",
         "notes": "[Last Wk=Anniv]"
     }],
     "id": 52
@@ -1481,8 +1481,8 @@ const groups = [{
     "address": {
         "street_number": "74",
         "route": "Wallkill Avenue",
-        "locality": "Montgomery",
-        "administrative_area_level_3": "Montgomery",
+        "locality": "montgomery",
+        "administrative_area_level_3": "montgomery",
         "administrative_area_level_2": "Orange County",
         "administrative_area_level_1": "New York",
         "country": "United States",
@@ -1493,69 +1493,69 @@ const groups = [{
     },
     "isWheelchairAccessible": 1,
     "meetings": [{
-        "day": "Sun",
+        "day": "sun",
         "start": "1970-01-01T23:30:00.000Z",
         "format": ["b", "o"]
     }, {
         "format": ["od"],
-        "day": "Mon",
+        "day": "mon",
         "start": "1970-01-01T17:15:00.000Z"
     }, {
         "format": ["st"],
         "start": "1970-01-01T17:15:00.000Z",
-        "day": "Wed"
+        "day": "wed"
     }, {
         "format": ["b"],
         "start": "1970-01-01T23:30:00.000Z",
-        "day": "Tue"
+        "day": "tue"
     }, {
         "format": ["bb", "o"],
         "start": "1970-01-01T17:15:00.000Z",
-        "day": "Wed"
+        "day": "wed"
     }, {
         "format": ["w", "st"],
-        "day": "Thur",
+        "day": "thur",
         "notes": "[Women's]",
         "start": "1970-01-01T14:30:00.000Z"
     }, {
         "format": ["od"],
         "start": "1970-01-01T17:15:00.000Z",
-        "day": "Thur"
+        "day": "thur"
     }, {
         "format": ["b"],
         "start": "1970-01-01T14:30:00.000Z",
-        "day": "Fri"
+        "day": "fri"
     }, {
         "format": ["o", "absi", "ls"],
         "start": "1970-01-01T17:15:00.000Z",
-        "day": "Fri"
+        "day": "fri"
     }, {
         "format": ["absi", "w"],
         "start": "1970-01-01T15:00:00.000Z",
         "notes": "[Women's]",
-        "day": "Fri"
+        "day": "fri"
     }, {
         "format": ["ls", "o", "absi"],
         "start": "1970-01-01T17:15:00.000Z",
-        "day": "Fri"
+        "day": "fri"
     }, {
         "format": ["absi", "w"],
         "start": "1970-01-01T15:00:00.000Z",
-        "day": "Sat",
+        "day": "sat",
         "notes": "[Women's]"
     }, {
         "format": ["od"],
         "start": "1970-01-01T18:00:00.000Z",
-        "day": "Sat"
+        "day": "sat"
     }],
     "id": 53
 }, {
-    "name": "The Montgomery Group",
+    "name": "The montgomery Group",
     "address": {
         "street_number": "137",
         "route": "Clinton Street",
-        "locality": "Montgomery",
-        "administrative_area_level_3": "Montgomery",
+        "locality": "montgomery",
+        "administrative_area_level_3": "montgomery",
         "administrative_area_level_2": "Orange County",
         "administrative_area_level_1": "New York",
         "country": "United States",
@@ -1568,21 +1568,21 @@ const groups = [{
         "format": ["o", "s", "t", "st"],
         "start": "1970-01-02T00:00:00.000Z",
         "notes": "[Wk2=T/3=ST/Last=Anniv]",
-        "day": "Sun"
+        "day": "sun"
     }, {
         "format": ["cd", "bb"],
-        "day": "Wed",
+        "day": "wed",
         "start": "1970-01-02T01:00:00.000Z",
         "notes": "[Wk1=CD,Last=BB]"
     }],
     "id": 54
 }, {
-    "name": "Montgomery (Brick Reformed Church)",
+    "name": "montgomery (Brick Reformed Church)",
     "address": {
         "street_number": "1588",
         "route": "New York 17K",
-        "locality": "Montgomery",
-        "administrative_area_level_3": "Montgomery",
+        "locality": "montgomery",
+        "administrative_area_level_3": "montgomery",
         "administrative_area_level_2": "Orange County",
         "administrative_area_level_1": "New York",
         "country": "United States",
@@ -1591,7 +1591,7 @@ const groups = [{
         "lng": -74.24687510000001
     },
     "meetings": [{
-        "day": "Fri",
+        "day": "fri",
         "start": "1970-01-02T01:00:00.000Z",
         "format": ["st", "bb"]
     }],
@@ -1615,11 +1615,11 @@ const groups = [{
     "meetings": [{
         "start": "1970-01-01T23:00:00.000Z",
         "format": ["cd"],
-        "day": "Sun"
+        "day": "sun"
     }, {
         "format": ["st"],
         "start": "1970-01-02T00:00:00.000Z",
-        "day": "Wed"
+        "day": "wed"
     }],
     "id": 56
 }, {
@@ -1639,7 +1639,7 @@ const groups = [{
         "notes": "SW Corner of Union Ave & 9W"
     },
     "meetings": [{
-        "day": "Mon",
+        "day": "mon",
         "start": "1970-01-02T00:30:00.000Z",
         "format": ["b", "od"]
     }],
@@ -1661,18 +1661,18 @@ const groups = [{
         "notes": "United Methodist Church"
     },
     "meetings": [{
-        "day": "Tue",
+        "day": "tue",
         "format": ["bb", "c"],
         "start": "1970-01-02T00:30:00.000Z",
         "notes": "[Wk1=T]"
     }, {
         "format": ["cd", "3711", "st"],
-        "day": "Thur",
+        "day": "thur",
         "start": "1970-01-02T00:00:00.000Z",
         "notes": "[Wk 1=ST, Wk 2 = 3711]"
     }, {
         "format": ["o", "b"],
-        "day": "Sat",
+        "day": "sat",
         "start": "1970-01-02T00:00:00.000Z"
     }],
     "id": 58
@@ -1691,9 +1691,9 @@ const groups = [{
         "lng": -74.09558870000001,
         "notes": "Bethlehem Presby. Church"
     },
-    "name": "Saturday Morning MIracle",
+    "name": "saturday Morning MIracle",
     "meetings": [{
-        "day": "Sat",
+        "day": "sat",
         "start": "1970-01-01T13:30:00.000Z",
         "format": ["od"]
     }],
@@ -1715,7 +1715,7 @@ const groups = [{
     "name": "Newburgh (Ferry Boat)",
     "meetings": [{
         "format": ["dr"],
-        "day": "Sun",
+        "day": "sun",
         "start": "1970-01-01T14:00:00.000Z"
     }],
     "id": 60
@@ -1736,16 +1736,16 @@ const groups = [{
     },
     "meetings": [{
         "start": "1970-01-01T17:00:00.000Z",
-        "day": "Mon",
+        "day": "mon",
         "format": ["ls"]
     }, {
         "format": ["cd", "dr"],
-        "day": "Tue",
+        "day": "tue",
         "start": "1970-01-01T17:00:00.000Z"
     }, {
         "format": ["span", "od"],
         "start": "1970-01-01T23:00:00.000Z",
-        "day": "Sun"
+        "day": "sun"
     }],
     "id": 61
 }, {
@@ -1763,28 +1763,28 @@ const groups = [{
     },
     "meetings": [{
         "format": ["od"],
-        "day": "Sun",
+        "day": "sun",
         "start": "1970-01-01T23:00:00.000Z"
     }, {
         "format": ["od"],
-        "day": "Mon",
+        "day": "mon",
         "start": "1970-01-02T01:00:00.000Z"
     }, {
         "format": ["od"],
-        "day": "Tue",
+        "day": "tue",
         "start": "1970-01-02T01:00:00.000Z"
     }, {
         "format": ["od"],
-        "day": "Wed",
+        "day": "wed",
         "start": "1970-01-02T01:00:00.000Z"
     }, {
         "format": ["cd"],
-        "day": "Thur",
+        "day": "thur",
         "start": "1970-01-02T01:00:00.000Z"
     }, {
         "format": ["od"],
         "start": "1970-01-02T01:00:00.000Z",
-        "day": "Fri"
+        "day": "fri"
     }],
     "id": 62
 }, {
@@ -1805,7 +1805,7 @@ const groups = [{
     "name": "New Life Group",
     "meetings": [{
         "format": ["cd", "od", "st"],
-        "day": "Sun",
+        "day": "sun",
         "start": "1970-01-02T01:00:00.000Z",
         "notes": "[Wk 1=ST/Last=OD or Anniv]"
     }],
@@ -1825,32 +1825,32 @@ const groups = [{
         "lng": -74.0217958
     },
     "meetings": [{
-        "day": "Sun",
+        "day": "sun",
         "start": "1970-01-01T15:00:00.000Z",
         "format": ["od"]
     }, {
         "format": ["od"],
-        "day": "Mon",
+        "day": "mon",
         "start": "1970-01-01T23:00:00.000Z"
     }, {
         "format": ["od"],
-        "day": "Tue",
+        "day": "tue",
         "start": "1970-01-01T23:00:00.000Z"
     }, {
         "format": ["od"],
-        "day": "Wed",
+        "day": "wed",
         "start": "1970-01-01T23:00:00.000Z"
     }, {
         "format": ["od"],
-        "day": "Thur",
+        "day": "thur",
         "start": "1970-01-01T23:00:00.000Z"
     }, {
         "format": ["od"],
-        "day": "Fri",
+        "day": "fri",
         "start": "1970-01-01T23:00:00.000Z"
     }, {
         "format": ["od", "span"],
-        "day": "Sat",
+        "day": "sat",
         "start": "1970-01-01T23:00:00.000Z"
     }],
     "id": 64
@@ -1870,16 +1870,16 @@ const groups = [{
         "notes": "St. Patrick's School, Basement"
     },
     "meetings": [{
-        "day": "Mon",
+        "day": "mon",
         "start": "1970-01-01T23:00:00.000Z",
         "format": ["st"]
     }, {
         "format": ["bb"],
-        "day": "Tue",
+        "day": "tue",
         "start": "1970-01-01T23:00:00.000Z"
     }, {
         "format": ["o", "b"],
-        "day": "Thur",
+        "day": "thur",
         "start": "1970-01-01T22:30:00.000Z"
     }],
     "id": 65
@@ -1901,7 +1901,7 @@ const groups = [{
     "meetings": [{
         "format": ["b", "span"],
         "start": "1970-01-02T00:30:00.000Z",
-        "day": "Wed"
+        "day": "wed"
     }],
     "id": 66
 }, {
@@ -1920,28 +1920,28 @@ const groups = [{
         "notes": "Baptist Temple, Corner of Ann and Williams St."
     },
     "meetings": [{
-        "day": "Mon",
+        "day": "mon",
         "start": "1970-01-02T00:00:00.000Z",
         "format": ["bb"]
     }, {
         "format": ["st"],
-        "day": "Tue",
+        "day": "tue",
         "start": "1970-01-02T00:00:00.000Z"
     }, {
         "format": ["od"],
-        "day": "Wed",
+        "day": "wed",
         "start": "1970-01-02T00:00:00.000Z"
     }, {
         "format": ["od"],
-        "day": "Thur",
+        "day": "thur",
         "start": "1970-01-02T00:00:00.000Z"
     }, {
         "format": ["m"],
-        "day": "Fri",
+        "day": "fri",
         "start": "1970-01-02T00:00:00.000Z"
     }, {
         "format": ["od"],
-        "day": "Sat",
+        "day": "sat",
         "start": "1970-01-02T00:00:00.000Z"
     }],
     "id": 67
@@ -1963,11 +1963,11 @@ const groups = [{
     "meetings": [{
         "format": ["o", "b"],
         "start": "1970-01-02T00:30:00.000Z",
-        "day": "Mon"
+        "day": "mon"
     }, {
         "format": ["cd", "sp"],
         "start": "1970-01-02T01:00:00.000Z",
-        "day": "Fri",
+        "day": "fri",
         "notes": "[Wk2=OS]"
     }],
     "id": 68
@@ -1990,29 +1990,29 @@ const groups = [{
     "isWheelchairAccessible": 1,
     "meetings": [{
         "start": "1970-01-01T23:30:00.000Z",
-        "day": "Mon",
+        "day": "mon",
         "format": ["cd", "m"],
         "notes": "[Mens]"
     }, {
         "format": ["absi", "cd"],
-        "day": "Wed",
+        "day": "wed",
         "start": "1970-01-01T17:00:00.000Z"
     }, {
         "format": ["od", "b"],
-        "day": "Thur",
+        "day": "thur",
         "start": "1970-01-01T17:00:00.000Z"
     }, {
         "format": ["bb", "cd"],
-        "day": "Thur",
+        "day": "thur",
         "start": "1970-01-01T23:30:00.000Z"
     }, {
         "format": ["dr", "cd"],
-        "day": "Fri",
+        "day": "fri",
         "start": "1970-01-01T17:00:00.000Z"
     }, {
         "format": ["cd"],
         "start": "1970-01-01T23:30:00.000Z",
-        "day": "Fri"
+        "day": "fri"
     }],
     "id": 69
 }, {
@@ -2032,7 +2032,7 @@ const groups = [{
     },
     "isWheelchairAccessible": 1,
     "meetings": [{
-        "day": "Wed",
+        "day": "wed",
         "start": "1970-01-02T01:00:00.000Z",
         "format": ["cd"]
     }],
@@ -2051,15 +2051,15 @@ const groups = [{
         "lng": -74.14484570000002,
         "notes": "St. Anne's Episco. Church"
     },
-    "name": "Friends of Bill W",
+    "name": "friends of Bill W",
     "isWheelchairAccessible": 1,
     "meetings": [{
         "start": "1970-01-02T00:30:00.000Z",
-        "day": "Tue",
+        "day": "tue",
         "format": ["o"]
     }, {
         "format": ["b"],
-        "day": "Fri",
+        "day": "fri",
         "start": "1970-01-02T01:00:00.000Z"
     }],
     "id": 71
@@ -2080,7 +2080,7 @@ const groups = [{
     },
     "meetings": [{
         "start": "1970-01-02T00:30:00.000Z",
-        "day": "Tue",
+        "day": "tue",
         "format": ["b", "bb", "t"],
         "notes": "[Wk1=T;Wk2=BB;Wk3=T;Wk4=Anniv.]"
     }],
@@ -2104,11 +2104,11 @@ const groups = [{
     "meetings": [{
         "format": ["od"],
         "start": "1970-01-02T00:30:00.000Z",
-        "day": "Wed",
+        "day": "wed",
         "notes": "[Wk4=Anniv/OD]"
     }, {
         "format": ["sp", "st"],
-        "day": "Fri",
+        "day": "fri",
         "start": "1970-01-02T00:00:00.000Z",
         "notes": "[Wk1= SP; Wk2,3 = ST]"
     }],
@@ -2132,12 +2132,12 @@ const groups = [{
     "meetings": [{
         "notes": "[Last=Anniv]",
         "start": "1970-01-02T00:00:00.000Z",
-        "day": "Mon",
+        "day": "mon",
         "format": ["b"]
     }, {
         "format": ["od", "o", "sp"],
         "start": "1970-01-02T01:00:00.000Z",
-        "day": "Fri"
+        "day": "fri"
     }],
     "id": 74
 }, {
@@ -2159,7 +2159,7 @@ const groups = [{
     "meetings": [{
         "format": ["od"],
         "start": "1970-01-02T01:30:00.000Z",
-        "day": "Fri"
+        "day": "fri"
     }],
     "id": 75
 }, {
@@ -2180,11 +2180,11 @@ const groups = [{
     "meetings": [{
         "format": ["od"],
         "start": "1970-01-02T01:00:00.000Z",
-        "day": "Fri",
+        "day": "fri",
         "notes": "[Wk1,3=LS/2=s/4=Ann.]"
     }, {
         "format": ["bb"],
-        "day": "Sat",
+        "day": "sat",
         "notes": "LIT",
         "start": "1970-01-02T00:00:00.000Z"
     }],
@@ -2206,7 +2206,7 @@ const groups = [{
     "name": "Green Memory Group",
     "meetings": [{
         "start": "1970-01-02T01:00:00.000Z",
-        "day": "Mon",
+        "day": "mon",
         "format": ["b", "od"]
     }],
     "id": 77
@@ -2228,7 +2228,7 @@ const groups = [{
     },
     "meetings": [{
         "start": "1970-01-02T01:00:00.000Z",
-        "day": "Wed",
+        "day": "wed",
         "format": ["st"]
     }],
     "id": 78
@@ -2250,7 +2250,7 @@ const groups = [{
     "meetings": [{
         "format": ["3711", "st"],
         "start": "1970-01-02T00:00:00.000Z",
-        "day": "Sat"
+        "day": "sat"
     }],
     "id": 79
 }, {
@@ -2271,16 +2271,16 @@ const groups = [{
     },
     "isWheelchairAccessible": 1,
     "meetings": [{
-        "day": "Wed",
+        "day": "wed",
         "start": "1970-01-02T01:00:00.000Z",
         "format": ["st"]
     }, {
         "format": ["od"],
-        "day": "Sat",
+        "day": "sat",
         "start": "1970-01-02T01:00:00.000Z"
     }, {
         "format": ["b"],
-        "day": "Wed",
+        "day": "wed",
         "start": "1970-01-02T00:30:00.000Z"
     }],
     "id": 80
@@ -2300,7 +2300,7 @@ const groups = [{
         "notes": "South Centerville, Holy Cross Church"
     },
     "meetings": [{
-        "day": "Sat",
+        "day": "sat",
         "start": "1970-01-01T13:00:00.000Z",
         "format": ["cd"],
         "notes": "[4th Wk=Anniv/Open]"
@@ -2311,7 +2311,7 @@ const groups = [{
         "street_number": "70",
         "route": "Scofield Street",
         "locality": "Walden",
-        "administrative_area_level_3": "Montgomery",
+        "administrative_area_level_3": "montgomery",
         "administrative_area_level_2": "Orange County",
         "administrative_area_level_1": "New York",
         "country": "United States",
@@ -2323,12 +2323,12 @@ const groups = [{
     "name": "Walden Group",
     "isWheelchairAccessible": 1,
     "meetings": [{
-        "day": "Sun",
+        "day": "sun",
         "start": "1970-01-01T19:00:00.000Z",
         "format": ["od"]
     }, {
         "format": ["cd"],
-        "day": "Fri",
+        "day": "fri",
         "start": "1970-01-02T00:00:00.000Z"
     }],
     "id": 82
@@ -2351,10 +2351,10 @@ const groups = [{
     "meetings": [{
         "format": ["bb"],
         "start": "1970-01-02T00:30:00.000Z",
-        "day": "Tue"
+        "day": "tue"
     }, {
         "format": ["st"],
-        "day": "Thur",
+        "day": "thur",
         "start": "1970-01-02T00:30:00.000Z"
     }],
     "id": 83
@@ -2375,24 +2375,24 @@ const groups = [{
     },
     "name": "Round Robin",
     "meetings": [{
-        "day": "Mon",
+        "day": "mon",
         "start": "1970-01-01T13:00:00.000Z",
         "format": ["cd"]
     }, {
         "format": ["cd"],
-        "day": "Tue",
+        "day": "tue",
         "start": "1970-01-01T13:00:00.000Z"
     }, {
         "format": ["cd"],
-        "day": "Wed",
+        "day": "wed",
         "start": "1970-01-01T13:00:00.000Z"
     }, {
         "format": ["cd"],
-        "day": "Thur",
+        "day": "thur",
         "start": "1970-01-01T13:00:00.000Z"
     }, {
         "format": ["od"],
-        "day": "Fri",
+        "day": "fri",
         "start": "1970-01-01T13:00:00.000Z"
     }],
     "id": 84
@@ -2414,7 +2414,7 @@ const groups = [{
     "name": "Orange County Young People's",
     "meetings": [{
         "format": ["yp", "bb"],
-        "day": "Sun",
+        "day": "sun",
         "start": "1970-01-02T00:30:00.000Z"
     }],
     "id": 85
@@ -2437,14 +2437,14 @@ const groups = [{
     "meetings": [{
         "start": "1970-01-01T17:30:00.000Z",
         "format": ["b"],
-        "day": "Mon"
+        "day": "mon"
     }, {
         "format": ["c", "st"],
         "start": "1970-01-01T17:30:00.000Z",
-        "day": "Wed"
+        "day": "wed"
     }, {
         "format": ["cd"],
-        "day": "Fri",
+        "day": "fri",
         "start": "1970-01-01T17:30:00.000Z",
         "notes": "[Last=Anniv]"
     }],
@@ -2468,10 +2468,10 @@ const groups = [{
     "meetings": [{
         "format": ["w"],
         "start": "1970-01-01T17:30:00.000Z",
-        "day": "Tue"
+        "day": "tue"
     }, {
         "format": ["w", "cd", "st", "sp", "bb"],
-        "day": "Thur",
+        "day": "thur",
         "start": "1970-01-02T00:30:00.000Z",
         "notes": "[Wk1=SP/2=ST/3=BB]"
     }],
@@ -2494,12 +2494,12 @@ const groups = [{
     "name": "Big Book Group",
     "meetings": [{
         "start": "1970-01-02T00:30:00.000Z",
-        "day": "Mon",
+        "day": "mon",
         "format": ["c", "bb"]
     }, {
         "format": ["bb", "cd"],
         "start": "1970-01-02T00:30:00.000Z",
-        "day": "Wed"
+        "day": "wed"
     }],
     "id": 88
 }, {
@@ -2520,12 +2520,12 @@ const groups = [{
     },
     "meetings": [{
         "start": "1970-01-01T17:30:00.000Z",
-        "day": "Tue",
+        "day": "tue",
         "format": ["od"]
     }, {
         "format": ["bb"],
         "start": "1970-01-01T17:30:00.000Z",
-        "day": "Thur"
+        "day": "thur"
     }],
     "id": 89
 }, {
@@ -2546,7 +2546,7 @@ const groups = [{
     },
     "meetings": [{
         "start": "1970-01-02T00:00:00.000Z",
-        "day": "Tue",
+        "day": "tue",
         "format": ["st"]
     }],
     "id": 90
@@ -2568,12 +2568,12 @@ const groups = [{
     "name": "Eye Opener",
     "meetings": [{
         "format": ["st"],
-        "day": "Sat",
+        "day": "sat",
         "start": "1970-01-01T13:00:00.000Z"
     }],
     "id": 91
 }, {
-    "name": "Sunday Serenity",
+    "name": "sunday Serenity",
     "address": {
         "street_number": "11",
         "route": "Hamilton Avenue",
@@ -2591,7 +2591,7 @@ const groups = [{
     "meetings": [{
         "format": ["cd"],
         "start": "1970-01-01T14:30:00.000Z",
-        "day": "Sun"
+        "day": "sun"
     }],
     "id": 92
 }, {
@@ -2612,13 +2612,13 @@ const groups = [{
         "notes": "1st Presbyterian Church"
     },
     "meetings": [{
-        "day": "Sun",
+        "day": "sun",
         "start": "1970-01-02T01:00:00.000Z",
         "format": ["cd"],
         "notes": "[Last Week=OS/Anniv]"
     }, {
         "format": ["st", "ls", "bb", "b"],
-        "day": "Wed",
+        "day": "wed",
         "start": "1970-01-02T01:00:00.000Z",
         "notes": "[ST/LS/BB/B]"
     }],
@@ -2642,12 +2642,12 @@ const groups = [{
     "name": "Dr. Bob's Back 2 Basics",
     "meetings": [{
         "format": ["c", "bb", "st"],
-        "day": "Mon",
+        "day": "mon",
         "start": "1970-01-02T00:30:00.000Z"
     }, {
         "format": ["od"],
         "start": "1970-01-02T00:00:00.000Z",
-        "day": "Sat"
+        "day": "sat"
     }],
     "id": 94
 }];
