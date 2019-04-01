@@ -25,7 +25,7 @@
             <br>
             <fieldset>
                 <legend>Address</legend>
-                <div layout="row" layout-align="space-between">
+                <div role="row" layout="row" layout-align="space-between">
                     <div role="row" layout="row">
                         <md-input-container>
                             <label for="street_number">Street Number</label>
@@ -88,7 +88,7 @@
                 <legend>Meetings</legend>
                 <fieldset ng-repeat="meeting in $ctrl.group.meetings">
                     <legend>{{meeting.day}}</legend>
-                    <div layout="column" layout-align="space-between">
+                    <div role="row" layout="column" layout-align="space-between">
                         <md-input-container>
                             <label for="day">Day</label>
                             <md-select aria-label="day" name="notes" type="text" ng-model="meeting.day">

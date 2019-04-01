@@ -1,6 +1,6 @@
 <md-toolbar class="md-table-toolbar md-default">
     <div class="md-toolbar-tools" role="banner">
-        Orange County, NY: A.A.
+        Orange County, NY
     </div>
 </md-toolbar>
 
@@ -61,7 +61,7 @@
     </md-card-content>
 </md-card>
 
-<md-card>
+<md-card class="hide-for-small">
     <md-card-content>
         <md-table-container>
             <table md-table>
@@ -78,8 +78,8 @@
                     <tr md-row
                         ng-repeat="meeting in $ctrl.sortedFilteredMeetings() | limitTo: $ctrl.myLimit: ($ctrl.myPage - 1) * $ctrl.myLimit | filter: $ctrl.filterBy.searchText">
                         <td md-cell><a ui-sref="groupDetails({id: meeting.groupId})">{{meeting.name}}</a></td>
-                        <td md-cell>{{meeting.day}}</td>
-                        <td md-cell width="80">{{meeting.time}}</td>
+                        <td md-cell>{{$ctrl.findDayDisplay(meeting.day)}}</td>
+                        <td md-cell width="80">{{meeting.time | date: 'h:mm a'}}</td>
                         <td md-cell>{{meeting.location}}</td>
                         <td md-cell>{{meeting.formatDisplay}}</td>
                     </tr>
@@ -89,5 +89,32 @@
         <md-table-pagination md-limit="$ctrl.myLimit" md-limit-options="$ctrl.limitOptions" md-page="$ctrl.myPage"
             md-total="{{$ctrl.sortedFilteredMeetings().length}}" md-on-paginate="$ctrl.getMeetings()" md-page-select>
         </md-table-pagination>
+    </md-card-content>
+</md-card>
+
+<md-card class="hide-for-large"
+    ng-repeat="meeting in $ctrl.sortedFilteredMeetings() | filter: $ctrl.filterBy.searchText">
+    <md-card-content>
+        <h2><a class="meeting-title-link capitalize"
+                ui-sref="groupDetails({id: meeting.groupId})"><strong>{{meeting.name}}</strong></a></h2>
+        <md-divider></md-divider>
+        <div layout="row" layout-align="space-between">
+            <p flex="50" class="capitalize">
+                <md-icon>today</md-icon> {{$ctrl.findDayDisplay(meeting.day)}}
+            </p>
+            <p flex="50">
+                <md-icon>access_time</md-icon>
+                {{meeting.time | date: 'h:mm a'}}
+            </p>
+
+        </div>
+        <div layout="column" layout-align="space-between">
+            <p flex="50">
+                <md-icon>meeting_room</md-icon> {{$ctrl.formatFormats(meeting.format).join(', ')}}
+            </p>
+            <p flex="50" ng-if="meeting.notes">
+                <md-icon>notes</md-icon> {{meeting.notes}}
+            </p>
+        </div>
     </md-card-content>
 </md-card>

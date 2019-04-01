@@ -1,5 +1,27 @@
+@media all and (min-width: 720px) {
+  .hide-for-large {
+    display: none;
+  }
+}
+
+@media all and (max-width: 719px) {
+  .hide-for-small {
+    display: none;
+  }
+}
+
 #map {
   height: 250px;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.meeting-title-link {
+  text-decoration: none;
+  text-align: center;
+  color: #666;
 }
 
 /* Date Time Picker */

@@ -43,6 +43,20 @@ export class MeetingListController {
     this.setMeetings();
   }
 
+  formatFormats(formats) {
+    return formats.map(format => this.findFormatDisplay(format));
+  }
+
+  findDayDisplay(dayCode) {
+    const found = days.find(day => day.code === dayCode.toLowerCase());
+    return found && found.display;
+  }
+
+  findFormatDisplay(formatCode) {
+    const found = formats.find(format => format.code === formatCode);
+    return found && found.display;
+  }
+
   setMeetings() {
     this.meetings = groups.map((group) => group.meetings.map(
       meeting => {
@@ -67,7 +81,7 @@ export class MeetingListController {
         const groupMeeting = Object.assign({}, {
           name: group.name,
           day: meeting.day,
-          time: moment(meeting.start).format('h:mm A'),
+          time: meeting.start,
           fullTime: moment(meeting.start).format('HHmm'),
           town: group.address && group.address.locality,
           formatDisplay,
