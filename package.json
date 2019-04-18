@@ -25,6 +25,7 @@
     "angular-material-data-table": "^0.10.10",
     "angular-messages": "^1.7.8",
     "angular-sanitize": "^1.7.8",
+    "edit-json-file": "^1.2.1",
     "moment": "^2.24.0",
     "ng-material-datetimepicker": "^1.18.3"
   },

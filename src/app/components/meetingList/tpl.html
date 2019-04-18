@@ -99,14 +99,9 @@
                 ui-sref="groupDetails({id: meeting.groupId})"><strong>{{meeting.name}}</strong></a></h2>
         <md-divider></md-divider>
         <div layout="row" layout-align="space-between">
-            <p flex="50" class="capitalize">
-                <md-icon>today</md-icon> {{$ctrl.findDayDisplay(meeting.day)}}
+            <p flex="100" class="capitalize">
+                <md-icon>access_time</md-icon> {{$ctrl.findDayDisplay(meeting.day)}} @ {{meeting.time | date: 'h:mm a'}}
             </p>
-            <p flex="50">
-                <md-icon>access_time</md-icon>
-                {{meeting.time | date: 'h:mm a'}}
-            </p>
-
         </div>
         <div layout="column" layout-align="space-between">
             <p flex="50">

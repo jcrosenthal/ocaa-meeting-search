@@ -1,6 +1,7 @@
 import {
   groups,
   days,
+  meetings,
   formats
 } from '../../resources';
 export class GroupDetailsController {
@@ -10,7 +11,8 @@ export class GroupDetailsController {
 
     Object.assign(this, {
       $stateParams,
-      $timeout
+      $timeout,
+      meetings
     });
 
   }
@@ -18,6 +20,7 @@ export class GroupDetailsController {
   $onInit() {
 
     this.group = groups.find(group => group.id === Number(this.$stateParams.id));
+    this.group.meetings = this.meetings.filter(meeting => meeting.group_id === this.group.id);
 
     this.initMap();
 

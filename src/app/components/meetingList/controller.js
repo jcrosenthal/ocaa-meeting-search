@@ -1,6 +1,7 @@
 import moment from 'moment';
 import {
   groups,
+  meetings as allMeetings,
   days,
   formats
 } from '../../resources';
@@ -10,6 +11,8 @@ export class MeetingListController {
     'ngInject';
 
     this.$filter = $filter;
+    this.allMeetings = allMeetings;
+    this.groups = groups;
   }
 
   $onInit() {
@@ -58,7 +61,13 @@ export class MeetingListController {
   }
 
   setMeetings() {
-    this.meetings = groups.map((group) => group.meetings.map(
+
+    // Assign all meetings to their matching groups
+    this.groups.forEach(group => group.meetings = this.allMeetings.filter(meeting => meeting.group_id === group.id));
+
+    console.log(this.groups);
+
+    this.meetings = this.groups.map((group) => group.meetings.map(
       meeting => {
 
         const formatDisplay = meeting.format.map(formatCode => {
@@ -90,8 +99,6 @@ export class MeetingListController {
           groupId: group.id,
           isWheelchairAccessible: group.isWheelchairAccessible ? 1 : 0
         });
-
-        console.log(group.id);
 
         return groupMeeting;
       }

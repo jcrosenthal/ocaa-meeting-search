@@ -37,18 +37,15 @@
         <md-list-item class="md-3-line" ng-repeat="meeting in $ctrl.group.meetings track by $index">
             <div class="md-list-item-text" layout="row" layout-align="space-between">
                 <div>
-                    <p>
-                        <md-icon>today</md-icon> {{$ctrl.findDayDisplay(meeting.day)}}
-                    </p>
-                    <p>
-                        <md-icon>access_time</md-icon>
-                        {{meeting.start | date: 'h:mm a'}}
+                    <p class="capitalize">
+                        <md-icon>access_time</md-icon> {{$ctrl.findDayDisplay(meeting.day)}} @ {{meeting.start | date: 'h:mm a'}}
                     </p>
                 </div>
                 <div>
                     <p>
                         <md-icon>meeting_room</md-icon> {{$ctrl.formatFormats(meeting.format).join(', ')}}
                     </p>
+                    <br ng-if="meeting.notes">
                     <p ng-if="meeting.notes">
                         <md-icon>notes</md-icon> {{meeting.notes}}
                     </p>

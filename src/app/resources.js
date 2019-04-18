@@ -139,11 +139,6 @@ const groups = [{
     },
     "name": "Bloomingburg Group",
     "isWheelchairAccessible": 1,
-    "meetings": [{
-        "format": ["st"],
-        "start": "1970-01-01T20:00:00.000Z",
-        "day": "sun"
-    }],
     "id": 1
 }, {
     "isWheelchairAccessible": 1,
@@ -161,11 +156,6 @@ const groups = [{
         "notes": "St. Paul's Church"
     },
     "name": "Sharing & Caring",
-    "meetings": [{
-        "day": "thur",
-        "start": "1970-01-02T00:00:00.000Z",
-        "format": ["absi", "od", "st", "b"]
-    }],
     "id": 2
 }, {
     "name": "Any Lengths",
@@ -182,12 +172,6 @@ const groups = [{
         "lng": -74.26109759999997,
         "notes": "First Presbyterian Church of Hamptonburgh"
     },
-    "meetings": [{
-        "format": ["st"],
-        "notes": "[Wk 2=T; Last Wk=Anniv]",
-        "start": "1970-01-02T00:30:00.000Z",
-        "day": "mon"
-    }],
     "id": 3
 }, {
     "name": "Journey to Sobriety",
@@ -204,12 +188,6 @@ const groups = [{
         "lng": -74.26607849999999,
         "notes": "Gather Inn Farm"
     },
-    "meetings": [{
-        "format": ["w"],
-        "notes": "[Wk 1,2 = Lit; Wk 3,4=CD; Wk 4=Anniv]",
-        "start": "1970-01-02T00:30:00.000Z",
-        "day": "wed"
-    }],
     "id": 4
 }, {
     "name": "There Is a Solution",
@@ -226,11 +204,6 @@ const groups = [{
         "lng": -74.26607849999999,
         "notes": "Gather In"
     },
-    "meetings": [{
-        "format": ["cd"],
-        "start": "1970-01-02T00:30:00.000Z",
-        "day": "tue"
-    }],
     "id": 5
 }, {
     "address": {
@@ -247,11 +220,6 @@ const groups = [{
         "notes": "St. Columbia School"
     },
     "name": "Chester Group",
-    "meetings": [{
-        "format": ["cd"],
-        "start": "1970-01-02T01:30:00.000Z",
-        "day": "fri"
-    }],
     "id": 6
 }, {
     "address": {
@@ -270,25 +238,6 @@ const groups = [{
     },
     "name": "Canterbury Tales",
     "isWheelchairAccessible": 1,
-    "meetings": [{
-        "format": ["c", "absi"],
-        "day": "sun",
-        "start": "1970-01-01T13:00:00.000Z"
-    }, {
-        "day": "sun",
-        "start": "1970-01-01T15:00:00.000Z",
-        "format": ["b", "cd", "st"]
-    }, {
-        "format": ["c", "st"],
-        "day": "thur",
-        "start": "1970-01-01T23:30:00.000Z",
-        "notes": "[Last Wk = T]"
-    }, {
-        "format": ["c", "od"],
-        "start": "1970-01-01T23:30:00.000Z",
-        "day": "sat",
-        "notes": "[Last Week = Anniv]"
-    }],
     "id": 7
 }, {
     "name": "Serenity sunday",
@@ -307,11 +256,6 @@ const groups = [{
         "lng": -74.0230211,
         "notes": "St. Thomas Church"
     },
-    "meetings": [{
-        "day": "sun",
-        "start": "1970-01-02T00:00:00.000Z",
-        "format": ["cd"]
-    }],
     "id": 8
 }, {
     "name": "S.T.A.R.",
@@ -328,12 +272,6 @@ const groups = [{
         "lng": -74.03015970000001,
         "notes": "St. John's Church"
     },
-    "meetings": [{
-        "start": "1970-01-01T23:30:00.000Z",
-        "format": ["cd", "w"],
-        "day": "tue",
-        "notes": "[Wk1 = ST]"
-    }],
     "id": 9
 }, {
     "name": "\"Wing It\" Group",
@@ -351,11 +289,6 @@ const groups = [{
         "notes": "Cornwall Hospital"
     },
     "isWheelchairAccessible": 1,
-    "meetings": [{
-        "start": "1970-01-02T00:00:00.000Z",
-        "day": "tue",
-        "format": ["cd"]
-    }],
     "id": 10
 }, {
     "name": "Cornwall Group",
@@ -372,12 +305,6 @@ const groups = [{
         "lng": -74.03057690000003,
         "notes": "St. John's Episcopal Church"
     },
-    "meetings": [{
-        "start": "1970-01-02T01:00:00.000Z",
-        "day": "tue",
-        "format": ["cd"],
-        "notes": "[Wk 1=ST; Last Week=Anniv]"
-    }],
     "id": 11
 }, {
     "address": {
@@ -394,11 +321,6 @@ const groups = [{
         "notes": "United Methodist Church"
     },
     "name": "Juggernaut Group",
-    "meetings": [{
-        "format": ["dr"],
-        "start": "1970-01-02T00:45:00.000Z",
-        "day": "wed"
-    }],
     "id": 12
 }, {
     "name": "S.H.I.P.",
@@ -414,11 +336,6 @@ const groups = [{
         "lat": 41.43557129999999,
         "lng": -74.0426736
     },
-    "meetings": [{
-        "start": "1970-01-01T17:00:00.000Z",
-        "day": "sat",
-        "format": ["cd"]
-    }],
     "id": 13
 }, {
     "isWheelchairAccessible": 1,
@@ -435,15 +352,6 @@ const groups = [{
         "notes": "Reformed Church Hall"
     },
     "name": "Foundation Group",
-    "meetings": [{
-        "format": ["cd"],
-        "start": "1970-01-02T01:00:00.000Z",
-        "day": "mon"
-    }, {
-        "format": ["cd"],
-        "start": "1970-01-02T01:00:00.000Z",
-        "day": "thur"
-    }],
     "id": 14
 }, {
     "address": {
@@ -461,16 +369,6 @@ const groups = [{
         "notes": "St. Anthony's Church"
     },
     "name": "New Beginnings",
-    "meetings": [{
-        "format": ["od"],
-        "start": "1970-01-02T01:00:00.000Z",
-        "day": "thur"
-    }, {
-        "format": ["od"],
-        "start": "1970-01-02T01:30:00.000Z",
-        "day": "fri",
-        "notes": "[Wk 2 = T]"
-    }],
     "id": 15
 }, {
     "name": "Gardiner Group",
@@ -488,12 +386,6 @@ const groups = [{
         "lng": -74.1343185,
         "notes": "St. Charles Rectory, off Rt. 208"
     },
-    "meetings": [{
-        "notes": "[Wk 2=T]",
-        "start": "1970-01-02T01:30:00.000Z",
-        "day": "fri",
-        "format": ["od"]
-    }],
     "id": 16
 }, {
     "address": {
@@ -510,11 +402,6 @@ const groups = [{
         "notes": "St. Johns Church"
     },
     "name": "Sober sundays",
-    "meetings": [{
-        "day": "sun",
-        "start": "1970-01-01T19:00:00.000Z",
-        "format": ["c", "bb"]
-    }],
     "id": 17
 }, {
     "address": {
@@ -532,12 +419,6 @@ const groups = [{
         "notes": "St. James Church"
     },
     "name": "Cup and Saucer",
-    "meetings": [{
-        "day": "wed",
-        "start": "1970-01-02T01:00:00.000Z",
-        "format": ["od"],
-        "notes": "[Last Wk = Anniv]"
-    }],
     "id": 18
 }, {
     "address": {
@@ -555,31 +436,6 @@ const groups = [{
         "notes": "1st Presbyterian Church"
     },
     "name": "Good Morn Sobriety",
-    "meetings": [{
-        "start": "1970-01-01T14:30:00.000Z",
-        "day": "mon",
-        "format": ["st", "t", "o"]
-    }, {
-        "format": ["o", "bb"],
-        "day": "tue",
-        "start": "1970-01-01T14:30:00.000Z"
-    }, {
-        "format": ["o", "ctb"],
-        "day": "wed",
-        "start": "1970-01-01T14:30:00.000Z"
-    }, {
-        "format": ["o", "ls"],
-        "day": "thur",
-        "start": "1970-01-01T14:30:00.000Z"
-    }, {
-        "format": ["o", "b"],
-        "day": "fri",
-        "start": "1970-01-01T14:30:00.000Z"
-    }, {
-        "format": ["od"],
-        "start": "1970-01-01T14:30:00.000Z",
-        "day": "sat"
-    }],
     "id": 19
 }, {
     "address": {
@@ -597,11 +453,6 @@ const groups = [{
         "notes": "1st Presbyterian Church"
     },
     "name": "Sober, Gay & Free",
-    "meetings": [{
-        "start": "1970-01-02T00:30:00.000Z",
-        "day": "mon",
-        "format": ["bb", "sp", "gay"]
-    }],
     "id": 20
 }, {
     "name": "Goshen Group",
@@ -619,11 +470,6 @@ const groups = [{
         "lng": -74.3216749,
         "notes": "1st Presbyterian Church"
     },
-    "meetings": [{
-        "day": "sat",
-        "start": "1970-01-01T18:00:00.000Z",
-        "format": ["b", "cd"]
-    }],
     "id": 21
 }, {
     "address": {
@@ -641,11 +487,6 @@ const groups = [{
         "notes": "1st Presbyterian Church"
     },
     "name": "Victory Through Surrender",
-    "meetings": [{
-        "start": "1970-01-02T01:30:00.000Z",
-        "day": "sat",
-        "format": ["od"]
-    }],
     "id": 22
 }, {
     "address": {
@@ -663,12 +504,6 @@ const groups = [{
         "notes": "ADAC"
     },
     "name": "Our Primary Purpose",
-    "meetings": [{
-        "day": "fri",
-        "start": "1970-01-02T00:00:00.000Z",
-        "format": ["yp", "bb", "od"],
-        "notes": "[Wk4=Anniv]"
-    }],
     "id": 23
 }, {
     "address": {
@@ -686,11 +521,6 @@ const groups = [{
     },
     "name": "Beacon Group",
     "isWheelchairAccessible": 1,
-    "meetings": [{
-        "day": "sun",
-        "start": "1970-01-01T14:30:00.000Z",
-        "format": ["cd"]
-    }],
     "id": 24
 }, {
     "name": "Greenwood Lake Group",
@@ -707,11 +537,6 @@ const groups = [{
         "lng": -74.29573340000002,
         "notes": "Holy Rosary Church"
     },
-    "meetings": [{
-        "format": ["cd", "w"],
-        "start": "1970-01-01T23:00:00.000Z",
-        "day": "sun"
-    }],
     "id": 25
 }, {
     "name": "Greenwood Lake Group",
@@ -728,16 +553,6 @@ const groups = [{
         "lng": -74.29377829999999,
         "notes": "Church of the Good Shepherd"
     },
-    "meetings": [{
-        "format": ["bb"],
-        "start": "1970-01-02T00:30:00.000Z",
-        "day": "mon"
-    }, {
-        "format": ["dr"],
-        "day": "sat",
-        "start": "1970-01-01T15:00:00.000Z",
-        "notes": "[Wk1=St]"
-    }],
     "id": 26
 }, {
     "name": "Last Chance Group",
@@ -754,11 +569,6 @@ const groups = [{
         "lng": -74.29377829999999,
         "notes": "Church of the Good Shepherd"
     },
-    "meetings": [{
-        "start": "1970-01-02T01:00:00.000Z",
-        "day": "thur",
-        "format": ["od"]
-    }],
     "id": 27
 }, {
     "name": "Greenwood Lake (HRC)",
@@ -775,21 +585,6 @@ const groups = [{
         "lng": -74.29573340000002,
         "notes": "Holy Rosary Church"
     },
-    "meetings": [{
-        "start": "1970-01-02T00:30:00.000Z",
-        "day": "tue",
-        "format": ["b", "ls"]
-    }, {
-        "format": ["st"],
-        "start": "1970-01-02T00:00:00.000Z",
-        "day": "wed",
-        "notes": "[Last wed = T]"
-    }, {
-        "format": ["cd"],
-        "start": "1970-01-02T00:30:00.000Z",
-        "day": "fri",
-        "notes": "[Last fri = O/Anniv]"
-    }],
     "id": 28
 }, {
     "isWheelchairAccessible": 1,
@@ -807,27 +602,6 @@ const groups = [{
         "notes": "The Shrine Church at St. Anastasia's near Rt 17M"
     },
     "name": "Mid-Day Sobriety",
-    "meetings": [{
-        "start": "1970-01-01T18:30:00.000Z",
-        "day": "mon",
-        "format": ["ls"]
-    }, {
-        "format": ["bb"],
-        "start": "1970-01-01T18:30:00.000Z",
-        "day": "tue"
-    }, {
-        "format": ["od"],
-        "day": "wed",
-        "start": "1970-01-01T18:30:00.000Z"
-    }, {
-        "format": ["od"],
-        "start": "1970-01-01T18:30:00.000Z",
-        "day": "thur"
-    }, {
-        "format": ["od"],
-        "start": "1970-01-01T18:30:00.000Z",
-        "day": "fri"
-    }],
     "id": 29
 }, {
     "name": "Joy of the Journey",
@@ -846,25 +620,6 @@ const groups = [{
         "notes": "The Shrine Church at St Anastasia Catholic Church"
     },
     "isWheelchairAccessible": 1,
-    "meetings": [{
-        "start": "1970-01-01T22:30:00.000Z",
-        "day": "mon",
-        "format": ["st"],
-        "notes": "[Last=T]"
-    }, {
-        "format": ["cd"],
-        "start": "1970-01-01T22:30:00.000Z",
-        "day": "tue",
-        "notes": "[Last=Anniv]"
-    }, {
-        "day": "thur",
-        "format": ["rep"],
-        "start": "1970-01-01T22:30:00.000Z"
-    }, {
-        "format": ["b", "c"],
-        "start": "1970-01-01T22:30:00.000Z",
-        "day": "fri"
-    }],
     "id": 30
 }, {
     "name": "The Odd Lot",
@@ -882,11 +637,6 @@ const groups = [{
         "lng": -74.15073310000002,
         "notes": "Ground Floor"
     },
-    "meetings": [{
-        "format": ["gra", "cd"],
-        "start": "1970-01-01T14:00:00.000Z",
-        "day": "sat"
-    }],
     "id": 31
 }, {
     "name": "Highland Falls Group",
@@ -900,25 +650,6 @@ const groups = [{
         "lat": 41.372977,
         "lng": -73.9662857
     },
-    "meetings": [{
-        "format": ["b"],
-        "day": "mon",
-        "start": "1970-01-02T00:30:00.000Z"
-    }, {
-        "format": ["od"],
-        "start": "1970-01-02T00:30:00.000Z",
-        "notes": "[Wk2=OS]",
-        "day": "tue"
-    }, {
-        "format": ["cd", "st"],
-        "day": "thur",
-        "start": "1970-01-02T00:30:00.000Z",
-        "notes": "[Last=T]"
-    }, {
-        "format": ["bb"],
-        "start": "1970-01-01T13:30:00.000Z",
-        "day": "sat"
-    }],
     "id": 32
 }, {
     "name": "Back to Basics",
@@ -938,27 +669,6 @@ const groups = [{
         "notes": "Senior Center, Rt. 32"
     },
     "isWheelchairAccessible": 1,
-    "meetings": [{
-        "format": ["cd"],
-        "start": "1970-01-02T01:00:00.000Z",
-        "day": "sun"
-    }, {
-        "format": ["b"],
-        "start": "1970-01-01T23:30:00.000Z",
-        "day": "mon"
-    }, {
-        "format": ["o", "s"],
-        "day": "wed",
-        "start": "1970-01-01T23:30:00.000Z"
-    }, {
-        "format": ["bb"],
-        "day": "wed",
-        "start": "1970-01-02T00:45:00.000Z"
-    }, {
-        "format": ["od"],
-        "start": "1970-01-02T03:00:00.000Z",
-        "day": "sat"
-    }],
     "id": 33
 }, {
     "name": "The Central Valley Group (St Patrick's Church)",
@@ -978,15 +688,6 @@ const groups = [{
         "notes": "St Patrick's RC Church"
     },
     "isWheelchairAccessible": 1,
-    "meetings": [{
-        "start": "1970-01-02T00:30:00.000Z",
-        "day": "fri",
-        "format": ["st"]
-    }, {
-        "format": ["od"],
-        "start": "1970-01-01T22:00:00.000Z",
-        "day": "sat"
-    }],
     "id": 34
 }, {
     "name": "The Central Valley Group (United Methodist Church)",
@@ -1004,15 +705,6 @@ const groups = [{
         "lng": -74.1195457,
         "notes": "United Methodist Church"
     },
-    "meetings": [{
-        "start": "1970-01-02T00:30:00.000Z",
-        "day": "fri",
-        "format": ["st"]
-    }, {
-        "format": ["od"],
-        "start": "1970-01-01T22:00:00.000Z",
-        "day": "sat"
-    }],
     "id": 35
 }, {
     "name": "Marlboro Group",
@@ -1028,12 +720,6 @@ const groups = [{
         "lat": 41.60234490000001,
         "lng": -73.97450879999997
     },
-    "meetings": [{
-        "format": ["od"],
-        "day": "wed",
-        "start": "1970-01-02T01:00:00.000Z",
-        "notes": "[Wk1=ST]"
-    }],
     "id": 36
 }, {
     "name": "The Way Out",
@@ -1052,16 +738,6 @@ const groups = [{
         "notes": "Off Broadway and R. 208"
     },
     "isWheelchairAccessible": 1,
-    "meetings": [{
-        "start": "1970-01-01T17:00:00.000Z",
-        "day": "mon",
-        "format": ["cd"]
-    }, {
-        "format": ["od"],
-        "start": "1970-01-02T01:00:00.000Z",
-        "day": "wed",
-        "notes": "[Wk1=ST]"
-    }],
     "id": 37
 }, {
     "name": "A New Beginning",
@@ -1077,11 +753,6 @@ const groups = [{
         "lng": -74.4171508,
         "notes": "Advent House"
     },
-    "meetings": [{
-        "day": "sun",
-        "format": ["b"],
-        "start": "1970-01-01T17:30:00.000Z"
-    }],
     "id": 38
 }, {
     "name": "A New Beginning (St.Joseph's)",
@@ -1098,11 +769,6 @@ const groups = [{
         "lng": -74.41101119999996,
         "notes": "St. Joseph's Church"
     },
-    "meetings": [{
-        "start": "1970-01-02T00:00:00.000Z",
-        "day": "wed",
-        "format": ["od"]
-    }],
     "id": 39
 }, {
     "name": "Tres Legados",
@@ -1118,35 +784,6 @@ const groups = [{
         "lat": 41.4464614,
         "lng": -74.42991259999997
     },
-    "meetings": [{
-        "format": ["span", "od"],
-        "start": "1970-01-01T23:30:00.000Z",
-        "day": "sun"
-    }, {
-        "format": ["od", "span"],
-        "start": "1970-01-02T00:30:00.000Z",
-        "day": "mon"
-    }, {
-        "format": ["span", "od"],
-        "start": "1970-01-02T00:30:00.000Z",
-        "day": "tue"
-    }, {
-        "format": ["span", "od"],
-        "start": "1970-01-02T00:30:00.000Z",
-        "day": "wed"
-    }, {
-        "format": ["span", "od"],
-        "start": "1970-01-02T00:30:00.000Z",
-        "day": "thur"
-    }, {
-        "format": ["span", "od"],
-        "start": "1970-01-02T00:30:00.000Z",
-        "day": "fri"
-    }, {
-        "format": ["span", "od"],
-        "start": "1970-01-01T23:00:00.000Z",
-        "day": "sat"
-    }],
     "id": 40
 }, {
     "isWheelchairAccessible": 1,
@@ -1164,28 +801,6 @@ const groups = [{
         "lng": -74.418747,
         "notes": "1st Presbyterian Church"
     },
-    "meetings": [{
-        "day": "mon",
-        "start": "1970-01-01T17:00:00.000Z",
-        "format": ["od"]
-    }, {
-        "format": ["st"],
-        "day": "tue",
-        "start": "1970-01-01T17:00:00.000Z"
-    }, {
-        "format": ["bb"],
-        "day": "wed",
-        "start": "1970-01-01T17:00:00.000Z"
-    }, {
-        "format": ["st"],
-        "start": "1970-01-01T17:00:00.000Z",
-        "day": "thur"
-    }, {
-        "format": ["od"],
-        "start": "1970-01-01T17:00:00.000Z",
-        "day": "fri",
-        "notes": "[Wk1=T]"
-    }],
     "id": 41
 }, {
     "address": {
@@ -1202,26 +817,6 @@ const groups = [{
     },
     "name": "One Day at a Time",
     "isWheelchairAccessible": 1,
-    "meetings": [{
-        "start": "1970-01-01T23:00:00.000Z",
-        "day": "tue",
-        "format": ["st", "od", "t"],
-        "notes": "[Wk1 = ST, Wk2 & Wk3 = OD, Wk4 = T]"
-    }, {
-        "day": "tue",
-        "format": ["bb", "c"],
-        "start": "1970-01-02T00:30:00.000Z",
-        "notes": "[Wk1=T]"
-    }, {
-        "format": ["cd", "3711", "st"],
-        "day": "thur",
-        "start": "1970-01-02T00:00:00.000Z",
-        "notes": "[Wk 1=ST, Wk 2 = 3711]"
-    }, {
-        "format": ["o", "b"],
-        "day": "sat",
-        "start": "1970-01-02T00:00:00.000Z"
-    }],
     "id": 42
 }, {
     "name": "Middletown Group",
@@ -1238,15 +833,6 @@ const groups = [{
         "lng": -74.42242620000002,
         "notes": "St. Paul's Methodist Church"
     },
-    "meetings": [{
-        "format": ["st", "b"],
-        "day": "mon",
-        "start": "1970-01-02T01:00:00.000Z"
-    }, {
-        "format": ["o", "s"],
-        "day": "sat",
-        "start": "1970-01-02T01:00:00.000Z"
-    }],
     "id": 43
 }, {
     "name": "Miracle Group",
@@ -1263,11 +849,6 @@ const groups = [{
         "lng": -74.42242620000002,
         "notes": "St. Paul's Methodist Church"
     },
-    "meetings": [{
-        "format": ["od"],
-        "day": "tue",
-        "start": "1970-01-02T00:30:00.000Z"
-    }],
     "id": 44
 }, {
     "name": "Room at the Top",
@@ -1285,12 +866,6 @@ const groups = [{
         "lng": -74.17939839999997,
         "notes": "St. Paul's Lutheran Church"
     },
-    "meetings": [{
-        "format": ["m", "st", "cd"],
-        "day": "mon",
-        "start": "1970-01-02T00:30:00.000Z",
-        "notes": "[Mens] [Wk1=ST, Wk 2,3,4=CD]"
-    }],
     "id": 45
 }, {
     "name": "Women's 12 Steps",
@@ -1308,12 +883,6 @@ const groups = [{
         "lng": -74.17939839999997,
         "notes": "St. Paul's Lutheran Church"
     },
-    "meetings": [{
-        "start": "1970-01-02T00:30:00.000Z",
-        "day": "tue",
-        "format": ["od", "s", "bb", "st"],
-        "notes": "[Womens] [1st=ST/2nd=BB/3rd=OD/4th=S]"
-    }],
     "id": 46
 }, {
     "name": "sunrise",
@@ -1330,12 +899,6 @@ const groups = [{
         "lat": 41.3258461,
         "lng": -74.1852958
     },
-    "meetings": [{
-        "day": "sat",
-        "start": "1970-01-01T13:00:00.000Z",
-        "format": ["cd"],
-        "notes": "[Last Wk=Anniv]"
-    }],
     "id": 47
 }, {
     "address": {
@@ -1353,11 +916,6 @@ const groups = [{
     },
     "name": "monroe (Mens)",
     "isWheelchairAccessible": 1,
-    "meetings": [{
-        "start": "1970-01-02T00:00:00.000Z",
-        "day": "sun",
-        "format": ["cd"]
-    }],
     "id": 48
 }, {
     "isWheelchairAccessible": 1,
@@ -1375,11 +933,6 @@ const groups = [{
         "lng": -74.18702880000001,
         "notes": "Sacred Heart Chapel"
     },
-    "meetings": [{
-        "format": ["s"],
-        "start": "1970-01-01T20:00:00.000Z",
-        "day": "sun"
-    }],
     "id": 49
 }, {
     "name": "SIOGA",
@@ -1396,19 +949,6 @@ const groups = [{
         "lng": -74.18702880000001
     },
     "isWheelchairAccessible": 1,
-    "meetings": [{
-        "format": ["c", "st"],
-        "start": "1970-01-02T00:30:00.000Z",
-        "day": "tue"
-    }, {
-        "format": ["cd"],
-        "start": "1970-01-02T02:00:00.000Z",
-        "day": "fri"
-    }, {
-        "format": ["bb"],
-        "start": "1970-01-02T00:00:00.000Z",
-        "day": "sat"
-    }],
     "id": 50
 }, {
     "address": {
@@ -1426,15 +966,6 @@ const groups = [{
     },
     "name": "SIOGA (1st Pres. Church)",
     "isWheelchairAccessible": 1,
-    "meetings": [{
-        "day": "thur",
-        "start": "1970-01-02T00:30:00.000Z",
-        "format": ["s", "o"]
-    }, {
-        "format": ["b", "c"],
-        "day": "thur",
-        "start": "1970-01-02T01:45:00.000Z"
-    }],
     "id": 51
 }, {
     "address": {
@@ -1452,29 +983,6 @@ const groups = [{
     },
     "name": "Steps to Sobriety",
     "isWheelchairAccessible": 1,
-    "meetings": [{
-        "day": "mon",
-        "start": "1970-01-01T14:30:00.000Z",
-        "format": ["dr"]
-    }, {
-        "format": ["st"],
-        "start": "1970-01-01T14:30:00.000Z",
-        "day": "tue"
-    }, {
-        "format": ["ls"],
-        "start": "1970-01-01T14:30:00.000Z",
-        "day": "wed",
-        "notes": "[Wk1=OS]"
-    }, {
-        "format": ["b"],
-        "day": "thur",
-        "start": "1970-01-01T14:30:00.000Z"
-    }, {
-        "format": ["bb"],
-        "start": "1970-01-01T14:30:00.000Z",
-        "day": "fri",
-        "notes": "[Last Wk=Anniv]"
-    }],
     "id": 52
 }, {
     "name": "Stairway to Sobriety",
@@ -1492,62 +1000,6 @@ const groups = [{
         "notes": "St. Francis of Assissi, St. Andrew's Hall"
     },
     "isWheelchairAccessible": 1,
-    "meetings": [{
-        "day": "sun",
-        "start": "1970-01-01T23:30:00.000Z",
-        "format": ["b", "o"]
-    }, {
-        "format": ["od"],
-        "day": "mon",
-        "start": "1970-01-01T17:15:00.000Z"
-    }, {
-        "format": ["st"],
-        "start": "1970-01-01T17:15:00.000Z",
-        "day": "wed"
-    }, {
-        "format": ["b"],
-        "start": "1970-01-01T23:30:00.000Z",
-        "day": "tue"
-    }, {
-        "format": ["bb", "o"],
-        "start": "1970-01-01T17:15:00.000Z",
-        "day": "wed"
-    }, {
-        "format": ["w", "st"],
-        "day": "thur",
-        "notes": "[Women's]",
-        "start": "1970-01-01T14:30:00.000Z"
-    }, {
-        "format": ["od"],
-        "start": "1970-01-01T17:15:00.000Z",
-        "day": "thur"
-    }, {
-        "format": ["b"],
-        "start": "1970-01-01T14:30:00.000Z",
-        "day": "fri"
-    }, {
-        "format": ["o", "absi", "ls"],
-        "start": "1970-01-01T17:15:00.000Z",
-        "day": "fri"
-    }, {
-        "format": ["absi", "w"],
-        "start": "1970-01-01T15:00:00.000Z",
-        "notes": "[Women's]",
-        "day": "fri"
-    }, {
-        "format": ["ls", "o", "absi"],
-        "start": "1970-01-01T17:15:00.000Z",
-        "day": "fri"
-    }, {
-        "format": ["absi", "w"],
-        "start": "1970-01-01T15:00:00.000Z",
-        "day": "sat",
-        "notes": "[Women's]"
-    }, {
-        "format": ["od"],
-        "start": "1970-01-01T18:00:00.000Z",
-        "day": "sat"
-    }],
     "id": 53
 }, {
     "name": "The montgomery Group",
@@ -1564,17 +1016,6 @@ const groups = [{
         "lng": -74.23645039999997,
         "notes": "1st Presbyterian Church"
     },
-    "meetings": [{
-        "format": ["o", "s", "t", "st"],
-        "start": "1970-01-02T00:00:00.000Z",
-        "notes": "[Wk2=T/3=ST/Last=Anniv]",
-        "day": "sun"
-    }, {
-        "format": ["cd", "bb"],
-        "day": "wed",
-        "start": "1970-01-02T01:00:00.000Z",
-        "notes": "[Wk1=CD,Last=BB]"
-    }],
     "id": 54
 }, {
     "name": "montgomery (Brick Reformed Church)",
@@ -1590,11 +1031,6 @@ const groups = [{
         "lat": 41.5322605,
         "lng": -74.24687510000001
     },
-    "meetings": [{
-        "day": "fri",
-        "start": "1970-01-02T01:00:00.000Z",
-        "format": ["st", "bb"]
-    }],
     "id": 55
 }, {
     "address": {
@@ -1612,15 +1048,6 @@ const groups = [{
         "notes": "King of Kings Church"
     },
     "name": "Chapel Hill Group #2",
-    "meetings": [{
-        "start": "1970-01-01T23:00:00.000Z",
-        "format": ["cd"],
-        "day": "sun"
-    }, {
-        "format": ["st"],
-        "start": "1970-01-02T00:00:00.000Z",
-        "day": "wed"
-    }],
     "id": 56
 }, {
     "name": "Forge Hill Group",
@@ -1638,11 +1065,6 @@ const groups = [{
         "lng": -74.01887799999997,
         "notes": "SW Corner of Union Ave & 9W"
     },
-    "meetings": [{
-        "day": "mon",
-        "start": "1970-01-02T00:30:00.000Z",
-        "format": ["b", "od"]
-    }],
     "id": 57
 }, {
     "name": "One Day at a Time",
@@ -1660,21 +1082,6 @@ const groups = [{
         "lng": -74.05353479999997,
         "notes": "United Methodist Church"
     },
-    "meetings": [{
-        "day": "tue",
-        "format": ["bb", "c"],
-        "start": "1970-01-02T00:30:00.000Z",
-        "notes": "[Wk1=T]"
-    }, {
-        "format": ["cd", "3711", "st"],
-        "day": "thur",
-        "start": "1970-01-02T00:00:00.000Z",
-        "notes": "[Wk 1=ST, Wk 2 = 3711]"
-    }, {
-        "format": ["o", "b"],
-        "day": "sat",
-        "start": "1970-01-02T00:00:00.000Z"
-    }],
     "id": 58
 }, {
     "address": {
@@ -1692,11 +1099,6 @@ const groups = [{
         "notes": "Bethlehem Presby. Church"
     },
     "name": "saturday Morning MIracle",
-    "meetings": [{
-        "day": "sat",
-        "start": "1970-01-01T13:30:00.000Z",
-        "format": ["od"]
-    }],
     "id": 59
 }, {
     "address": {
@@ -1713,11 +1115,6 @@ const groups = [{
         "notes": "Oct. thru Spring: 172 LIberty St.; Spring through Sept.: Ferry Boat Landing"
     },
     "name": "Newburgh (Ferry Boat)",
-    "meetings": [{
-        "format": ["dr"],
-        "day": "sun",
-        "start": "1970-01-01T14:00:00.000Z"
-    }],
     "id": 60
 }, {
     "name": "Oasis",
@@ -1734,19 +1131,6 @@ const groups = [{
         "lng": -74.02922899999999,
         "notes": "Grace Methodist Church"
     },
-    "meetings": [{
-        "start": "1970-01-01T17:00:00.000Z",
-        "day": "mon",
-        "format": ["ls"]
-    }, {
-        "format": ["cd", "dr"],
-        "day": "tue",
-        "start": "1970-01-01T17:00:00.000Z"
-    }, {
-        "format": ["span", "od"],
-        "start": "1970-01-01T23:00:00.000Z",
-        "day": "sun"
-    }],
     "id": 61
 }, {
     "name": "El Nuevo Amanecer",
@@ -1761,31 +1145,6 @@ const groups = [{
         "lat": 41.5002553,
         "lng": -74.01796259999998
     },
-    "meetings": [{
-        "format": ["od"],
-        "day": "sun",
-        "start": "1970-01-01T23:00:00.000Z"
-    }, {
-        "format": ["od"],
-        "day": "mon",
-        "start": "1970-01-02T01:00:00.000Z"
-    }, {
-        "format": ["od"],
-        "day": "tue",
-        "start": "1970-01-02T01:00:00.000Z"
-    }, {
-        "format": ["od"],
-        "day": "wed",
-        "start": "1970-01-02T01:00:00.000Z"
-    }, {
-        "format": ["cd"],
-        "day": "thur",
-        "start": "1970-01-02T01:00:00.000Z"
-    }, {
-        "format": ["od"],
-        "start": "1970-01-02T01:00:00.000Z",
-        "day": "fri"
-    }],
     "id": 62
 }, {
     "address": {
@@ -1803,12 +1162,6 @@ const groups = [{
         "notes": "Trinity United Methodist Church"
     },
     "name": "New Life Group",
-    "meetings": [{
-        "format": ["cd", "od", "st"],
-        "day": "sun",
-        "start": "1970-01-02T01:00:00.000Z",
-        "notes": "[Wk 1=ST/Last=OD or Anniv]"
-    }],
     "id": 63
 }, {
     "name": "La Oportunidad",
@@ -1824,35 +1177,6 @@ const groups = [{
         "lat": 41.5000028,
         "lng": -74.0217958
     },
-    "meetings": [{
-        "day": "sun",
-        "start": "1970-01-01T15:00:00.000Z",
-        "format": ["od"]
-    }, {
-        "format": ["od"],
-        "day": "mon",
-        "start": "1970-01-01T23:00:00.000Z"
-    }, {
-        "format": ["od"],
-        "day": "tue",
-        "start": "1970-01-01T23:00:00.000Z"
-    }, {
-        "format": ["od"],
-        "day": "wed",
-        "start": "1970-01-01T23:00:00.000Z"
-    }, {
-        "format": ["od"],
-        "day": "thur",
-        "start": "1970-01-01T23:00:00.000Z"
-    }, {
-        "format": ["od"],
-        "day": "fri",
-        "start": "1970-01-01T23:00:00.000Z"
-    }, {
-        "format": ["od", "span"],
-        "day": "sat",
-        "start": "1970-01-01T23:00:00.000Z"
-    }],
     "id": 64
 }, {
     "name": "Focus on Recovery",
@@ -1869,19 +1193,6 @@ const groups = [{
         "lng": -74.01045699999997,
         "notes": "St. Patrick's School, Basement"
     },
-    "meetings": [{
-        "day": "mon",
-        "start": "1970-01-01T23:00:00.000Z",
-        "format": ["st"]
-    }, {
-        "format": ["bb"],
-        "day": "tue",
-        "start": "1970-01-01T23:00:00.000Z"
-    }, {
-        "format": ["o", "b"],
-        "day": "thur",
-        "start": "1970-01-01T22:30:00.000Z"
-    }],
     "id": 65
 }, {
     "name": "Somos Un Milagro",
@@ -1898,11 +1209,6 @@ const groups = [{
         "lng": -74.01045699999997,
         "notes": "St. Patrick's School"
     },
-    "meetings": [{
-        "format": ["b", "span"],
-        "start": "1970-01-02T00:30:00.000Z",
-        "day": "wed"
-    }],
     "id": 66
 }, {
     "name": "Happy Hour AA",
@@ -1919,31 +1225,6 @@ const groups = [{
         "lng": -74.01536899999996,
         "notes": "Baptist Temple, Corner of Ann and Williams St."
     },
-    "meetings": [{
-        "day": "mon",
-        "start": "1970-01-02T00:00:00.000Z",
-        "format": ["bb"]
-    }, {
-        "format": ["st"],
-        "day": "tue",
-        "start": "1970-01-02T00:00:00.000Z"
-    }, {
-        "format": ["od"],
-        "day": "wed",
-        "start": "1970-01-02T00:00:00.000Z"
-    }, {
-        "format": ["od"],
-        "day": "thur",
-        "start": "1970-01-02T00:00:00.000Z"
-    }, {
-        "format": ["m"],
-        "day": "fri",
-        "start": "1970-01-02T00:00:00.000Z"
-    }, {
-        "format": ["od"],
-        "day": "sat",
-        "start": "1970-01-02T00:00:00.000Z"
-    }],
     "id": 67
 }, {
     "name": "Newburgh Group",
@@ -1960,16 +1241,6 @@ const groups = [{
         "lng": -74.02922899999999,
         "notes": "Grace United Methodist Church"
     },
-    "meetings": [{
-        "format": ["o", "b"],
-        "start": "1970-01-02T00:30:00.000Z",
-        "day": "mon"
-    }, {
-        "format": ["cd", "sp"],
-        "start": "1970-01-02T01:00:00.000Z",
-        "day": "fri",
-        "notes": "[Wk2=OS]"
-    }],
     "id": 68
 }, {
     "name": "Safe 'n Sound Group",
@@ -1988,32 +1259,6 @@ const groups = [{
         "notes": "Rick's Place"
     },
     "isWheelchairAccessible": 1,
-    "meetings": [{
-        "start": "1970-01-01T23:30:00.000Z",
-        "day": "mon",
-        "format": ["cd", "m"],
-        "notes": "[Mens]"
-    }, {
-        "format": ["absi", "cd"],
-        "day": "wed",
-        "start": "1970-01-01T17:00:00.000Z"
-    }, {
-        "format": ["od", "b"],
-        "day": "thur",
-        "start": "1970-01-01T17:00:00.000Z"
-    }, {
-        "format": ["bb", "cd"],
-        "day": "thur",
-        "start": "1970-01-01T23:30:00.000Z"
-    }, {
-        "format": ["dr", "cd"],
-        "day": "fri",
-        "start": "1970-01-01T17:00:00.000Z"
-    }, {
-        "format": ["cd"],
-        "start": "1970-01-01T23:30:00.000Z",
-        "day": "fri"
-    }],
     "id": 69
 }, {
     "name": "Balmville Fellowship",
@@ -2031,11 +1276,6 @@ const groups = [{
         "notes": "Union Presb. Church (Opp. Powelton Club)"
     },
     "isWheelchairAccessible": 1,
-    "meetings": [{
-        "day": "wed",
-        "start": "1970-01-02T01:00:00.000Z",
-        "format": ["cd"]
-    }],
     "id": 70
 }, {
     "address": {
@@ -2053,15 +1293,6 @@ const groups = [{
     },
     "name": "friends of Bill W",
     "isWheelchairAccessible": 1,
-    "meetings": [{
-        "start": "1970-01-02T00:30:00.000Z",
-        "day": "tue",
-        "format": ["o"]
-    }, {
-        "format": ["b"],
-        "day": "fri",
-        "start": "1970-01-02T01:00:00.000Z"
-    }],
     "id": 71
 }, {
     "name": "Wurtsboro Group",
@@ -2078,12 +1309,6 @@ const groups = [{
         "lng": -74.48564729999998,
         "notes": "Community Church Hall, 4th and Pine Sts."
     },
-    "meetings": [{
-        "start": "1970-01-02T00:30:00.000Z",
-        "day": "tue",
-        "format": ["b", "bb", "t"],
-        "notes": "[Wk1=T;Wk2=BB;Wk3=T;Wk4=Anniv.]"
-    }],
     "id": 72
 }, {
     "address": {
@@ -2101,17 +1326,6 @@ const groups = [{
         "notes": "Otisville Presb. Church"
     },
     "name": "The Mountain",
-    "meetings": [{
-        "format": ["od"],
-        "start": "1970-01-02T00:30:00.000Z",
-        "day": "wed",
-        "notes": "[Wk4=Anniv/OD]"
-    }, {
-        "format": ["sp", "st"],
-        "day": "fri",
-        "start": "1970-01-02T00:00:00.000Z",
-        "notes": "[Wk1= SP; Wk2,3 = ST]"
-    }],
     "id": 73
 }, {
     "isWheelchairAccessible": 1,
@@ -2129,16 +1343,6 @@ const groups = [{
         "lng": -74.30483549999997,
         "notes": "Across Street from Infant Savior Church"
     },
-    "meetings": [{
-        "notes": "[Last=Anniv]",
-        "start": "1970-01-02T00:00:00.000Z",
-        "day": "mon",
-        "format": ["b"]
-    }, {
-        "format": ["od", "o", "sp"],
-        "start": "1970-01-02T01:00:00.000Z",
-        "day": "fri"
-    }],
     "id": 74
 }, {
     "name": "Pine Island",
@@ -2156,11 +1360,6 @@ const groups = [{
         "lng": -74.4615182,
         "notes": "St. Stanislaus Rectory"
     },
-    "meetings": [{
-        "format": ["od"],
-        "start": "1970-01-02T01:30:00.000Z",
-        "day": "fri"
-    }],
     "id": 75
 }, {
     "address": {
@@ -2177,17 +1376,6 @@ const groups = [{
         "notes": "Drew United Methodist Church"
     },
     "name": "Never Alone",
-    "meetings": [{
-        "format": ["od"],
-        "start": "1970-01-02T01:00:00.000Z",
-        "day": "fri",
-        "notes": "[Wk1,3=LS/2=s/4=Ann.]"
-    }, {
-        "format": ["bb"],
-        "day": "sat",
-        "notes": "LIT",
-        "start": "1970-01-02T00:00:00.000Z"
-    }],
     "id": 76
 }, {
     "address": {
@@ -2204,11 +1392,6 @@ const groups = [{
         "notes": "1st Presbyterian Church"
     },
     "name": "Green Memory Group",
-    "meetings": [{
-        "start": "1970-01-02T01:00:00.000Z",
-        "day": "mon",
-        "format": ["b", "od"]
-    }],
     "id": 77
 }, {
     "isWheelchairAccessible": 1,
@@ -2226,11 +1409,6 @@ const groups = [{
         "lng": -74.68955929999998,
         "notes": "1st Presbyterian Church"
     },
-    "meetings": [{
-        "start": "1970-01-02T01:00:00.000Z",
-        "day": "wed",
-        "format": ["st"]
-    }],
     "id": 78
 }, {
     "name": "3-7-11 Step Meeting",
@@ -2247,11 +1425,6 @@ const groups = [{
         "lng": -74.36019779999998,
         "notes": "Schotchtown Presby Church"
     },
-    "meetings": [{
-        "format": ["3711", "st"],
-        "start": "1970-01-02T00:00:00.000Z",
-        "day": "sat"
-    }],
     "id": 79
 }, {
     "name": "Shawangunk",
@@ -2270,19 +1443,6 @@ const groups = [{
         "notes": "Shawangunk Reform Church"
     },
     "isWheelchairAccessible": 1,
-    "meetings": [{
-        "day": "wed",
-        "start": "1970-01-02T01:00:00.000Z",
-        "format": ["st"]
-    }, {
-        "format": ["od"],
-        "day": "sat",
-        "start": "1970-01-02T01:00:00.000Z"
-    }, {
-        "format": ["b"],
-        "day": "wed",
-        "start": "1970-01-02T00:30:00.000Z"
-    }],
     "id": 80
 }, {
     "name": "The \"Just for Today\" Group",
@@ -2299,12 +1459,6 @@ const groups = [{
         "lng": -74.52293220000001,
         "notes": "South Centerville, Holy Cross Church"
     },
-    "meetings": [{
-        "day": "sat",
-        "start": "1970-01-01T13:00:00.000Z",
-        "format": ["cd"],
-        "notes": "[4th Wk=Anniv/Open]"
-    }],
     "id": 81
 }, {
     "address": {
@@ -2322,15 +1476,6 @@ const groups = [{
     },
     "name": "Walden Group",
     "isWheelchairAccessible": 1,
-    "meetings": [{
-        "day": "sun",
-        "start": "1970-01-01T19:00:00.000Z",
-        "format": ["od"]
-    }, {
-        "format": ["cd"],
-        "day": "fri",
-        "start": "1970-01-02T00:00:00.000Z"
-    }],
     "id": 82
 }, {
     "address": {
@@ -2348,15 +1493,6 @@ const groups = [{
         "notes": "New Hurley Church"
     },
     "name": "Wallkill Group",
-    "meetings": [{
-        "format": ["bb"],
-        "start": "1970-01-02T00:30:00.000Z",
-        "day": "tue"
-    }, {
-        "format": ["st"],
-        "day": "thur",
-        "start": "1970-01-02T00:30:00.000Z"
-    }],
     "id": 83
 }, {
     "address": {
@@ -2374,27 +1510,6 @@ const groups = [{
         "notes": "Reformed Church, across from Hospital"
     },
     "name": "Round Robin",
-    "meetings": [{
-        "day": "mon",
-        "start": "1970-01-01T13:00:00.000Z",
-        "format": ["cd"]
-    }, {
-        "format": ["cd"],
-        "day": "tue",
-        "start": "1970-01-01T13:00:00.000Z"
-    }, {
-        "format": ["cd"],
-        "day": "wed",
-        "start": "1970-01-01T13:00:00.000Z"
-    }, {
-        "format": ["cd"],
-        "day": "thur",
-        "start": "1970-01-01T13:00:00.000Z"
-    }, {
-        "format": ["od"],
-        "day": "fri",
-        "start": "1970-01-01T13:00:00.000Z"
-    }],
     "id": 84
 }, {
     "address": {
@@ -2412,11 +1527,6 @@ const groups = [{
         "notes": "St. Stephen's Parish Church"
     },
     "name": "Orange County Young People's",
-    "meetings": [{
-        "format": ["yp", "bb"],
-        "day": "sun",
-        "start": "1970-01-02T00:30:00.000Z"
-    }],
     "id": 85
 }, {
     "address": {
@@ -2434,20 +1544,6 @@ const groups = [{
         "notes": "Warwick Episcopal Church"
     },
     "name": "Amazing Grace",
-    "meetings": [{
-        "start": "1970-01-01T17:30:00.000Z",
-        "format": ["b"],
-        "day": "mon"
-    }, {
-        "format": ["c", "st"],
-        "start": "1970-01-01T17:30:00.000Z",
-        "day": "wed"
-    }, {
-        "format": ["cd"],
-        "day": "fri",
-        "start": "1970-01-01T17:30:00.000Z",
-        "notes": "[Last=Anniv]"
-    }],
     "id": 86
 }, {
     "address": {
@@ -2465,16 +1561,6 @@ const groups = [{
         "notes": "Warwick Episcopal Church"
     },
     "name": "Warwick Group (1)",
-    "meetings": [{
-        "format": ["w"],
-        "start": "1970-01-01T17:30:00.000Z",
-        "day": "tue"
-    }, {
-        "format": ["w", "cd", "st", "sp", "bb"],
-        "day": "thur",
-        "start": "1970-01-02T00:30:00.000Z",
-        "notes": "[Wk1=SP/2=ST/3=BB]"
-    }],
     "id": 87
 }, {
     "address": {
@@ -2492,15 +1578,6 @@ const groups = [{
         "notes": "United Methodist Church"
     },
     "name": "Big Book Group",
-    "meetings": [{
-        "start": "1970-01-02T00:30:00.000Z",
-        "day": "mon",
-        "format": ["c", "bb"]
-    }, {
-        "format": ["bb", "cd"],
-        "start": "1970-01-02T00:30:00.000Z",
-        "day": "wed"
-    }],
     "id": 88
 }, {
     "name": "Complete Abandon",
@@ -2518,15 +1595,6 @@ const groups = [{
         "lng": -74.35651189999999,
         "notes": "Reformed Church, across from hospital"
     },
-    "meetings": [{
-        "start": "1970-01-01T17:30:00.000Z",
-        "day": "tue",
-        "format": ["od"]
-    }, {
-        "format": ["bb"],
-        "start": "1970-01-01T17:30:00.000Z",
-        "day": "thur"
-    }],
     "id": 89
 }, {
     "name": "Florida Step Group",
@@ -2544,11 +1612,6 @@ const groups = [{
         "lng": -74.35651189999999,
         "notes": "Reformed Church"
     },
-    "meetings": [{
-        "start": "1970-01-02T00:00:00.000Z",
-        "day": "tue",
-        "format": ["st"]
-    }],
     "id": 90
 }, {
     "address": {
@@ -2566,11 +1629,6 @@ const groups = [{
         "notes": "Reformed Church"
     },
     "name": "Eye Opener",
-    "meetings": [{
-        "format": ["st"],
-        "day": "sat",
-        "start": "1970-01-01T13:00:00.000Z"
-    }],
     "id": 91
 }, {
     "name": "sunday Serenity",
@@ -2588,11 +1646,6 @@ const groups = [{
         "lng": -74.36410819999998,
         "notes": "Doc Fry Community Center"
     },
-    "meetings": [{
-        "format": ["cd"],
-        "start": "1970-01-01T14:30:00.000Z",
-        "day": "sun"
-    }],
     "id": 92
 }, {
     "isWheelchairAccessible": 1,
@@ -2611,17 +1664,6 @@ const groups = [{
         "lng": -74.16894059999998,
         "notes": "1st Presbyterian Church"
     },
-    "meetings": [{
-        "day": "sun",
-        "start": "1970-01-02T01:00:00.000Z",
-        "format": ["cd"],
-        "notes": "[Last Week=OS/Anniv]"
-    }, {
-        "format": ["st", "ls", "bb", "b"],
-        "day": "wed",
-        "start": "1970-01-02T01:00:00.000Z",
-        "notes": "[ST/LS/BB/B]"
-    }],
     "id": 93
 }, {
     "isWheelchairAccessible": 1,
@@ -2640,20 +1682,1093 @@ const groups = [{
         "notes": "1st Presb. Church"
     },
     "name": "Dr. Bob's Back 2 Basics",
-    "meetings": [{
-        "format": ["c", "bb", "st"],
-        "day": "mon",
-        "start": "1970-01-02T00:30:00.000Z"
-    }, {
-        "format": ["od"],
-        "start": "1970-01-02T00:00:00.000Z",
-        "day": "sat"
-    }],
     "id": 94
+}];
+
+let meetings = [{
+    "format": ["st"],
+    "start": "1970-01-01T20:00:00.000Z",
+    "day": "sun",
+    "group_id": 1
+}, {
+    "day": "thur",
+    "start": "1970-01-02T00:00:00.000Z",
+    "format": ["absi", "od", "st", "b"],
+    "group_id": 2
+}, {
+    "format": ["st"],
+    "notes": "[Wk 2=T; Last Wk=Anniv]",
+    "start": "1970-01-02T00:30:00.000Z",
+    "day": "mon",
+    "group_id": 3
+}, {
+    "format": ["w"],
+    "notes": "[Wk 1,2 = Lit; Wk 3,4=CD; Wk 4=Anniv]",
+    "start": "1970-01-02T00:30:00.000Z",
+    "day": "wed",
+    "group_id": 4
+}, {
+    "format": ["cd"],
+    "start": "1970-01-02T00:30:00.000Z",
+    "day": "tue",
+    "group_id": 5
+}, {
+    "format": ["cd"],
+    "start": "1970-01-02T01:30:00.000Z",
+    "day": "fri",
+    "group_id": 6
+}, {
+    "format": ["c", "absi"],
+    "day": "sun",
+    "start": "1970-01-01T13:00:00.000Z",
+    "group_id": 7
+}, {
+    "day": "sun",
+    "start": "1970-01-01T15:00:00.000Z",
+    "format": ["b", "cd", "st"],
+    "group_id": 7
+}, {
+    "format": ["c", "st"],
+    "day": "thur",
+    "start": "1970-01-01T23:30:00.000Z",
+    "notes": "[Last Wk = T]",
+    "group_id": 7
+}, {
+    "format": ["c", "od"],
+    "start": "1970-01-01T23:30:00.000Z",
+    "day": "sat",
+    "notes": "[Last Week = Anniv]",
+    "group_id": 7
+}, {
+    "day": "sun",
+    "start": "1970-01-02T00:00:00.000Z",
+    "format": ["cd"],
+    "group_id": 8
+}, {
+    "start": "1970-01-01T23:30:00.000Z",
+    "format": ["cd", "w"],
+    "day": "tue",
+    "notes": "[Wk1 = ST]",
+    "group_id": 9
+}, {
+    "start": "1970-01-02T00:00:00.000Z",
+    "day": "tue",
+    "format": ["cd"],
+    "group_id": 10
+}, {
+    "start": "1970-01-02T01:00:00.000Z",
+    "day": "tue",
+    "format": ["cd"],
+    "notes": "[Wk 1=ST; Last Week=Anniv]",
+    "group_id": 11
+}, {
+    "format": ["dr"],
+    "start": "1970-01-02T00:45:00.000Z",
+    "day": "wed",
+    "group_id": 12
+}, {
+    "start": "1970-01-01T17:00:00.000Z",
+    "day": "sat",
+    "format": ["cd"],
+    "group_id": 13
+}, {
+    "format": ["cd"],
+    "start": "1970-01-02T01:00:00.000Z",
+    "day": "mon",
+    "group_id": 14
+}, {
+    "format": ["cd"],
+    "start": "1970-01-02T01:00:00.000Z",
+    "day": "thur",
+    "group_id": 14
+}, {
+    "format": ["od"],
+    "start": "1970-01-02T01:00:00.000Z",
+    "day": "thur",
+    "group_id": 15
+}, {
+    "format": ["od"],
+    "start": "1970-01-02T01:30:00.000Z",
+    "day": "fri",
+    "notes": "[Wk 2 = T]",
+    "group_id": 15
+}, {
+    "notes": "[Wk 2=T]",
+    "start": "1970-01-02T01:30:00.000Z",
+    "day": "fri",
+    "format": ["od"],
+    "group_id": 16
+}, {
+    "day": "sun",
+    "start": "1970-01-01T19:00:00.000Z",
+    "format": ["c", "bb"],
+    "group_id": 17
+}, {
+    "day": "wed",
+    "start": "1970-01-02T01:00:00.000Z",
+    "format": ["od"],
+    "notes": "[Last Wk = Anniv]",
+    "group_id": 18
+}, {
+    "start": "1970-01-01T14:30:00.000Z",
+    "day": "mon",
+    "format": ["st", "t", "o"],
+    "group_id": 19
+}, {
+    "format": ["o", "bb"],
+    "day": "tue",
+    "start": "1970-01-01T14:30:00.000Z",
+    "group_id": 19
+}, {
+    "format": ["o", "ctb"],
+    "day": "wed",
+    "start": "1970-01-01T14:30:00.000Z",
+    "group_id": 19
+}, {
+    "format": ["o", "ls"],
+    "day": "thur",
+    "start": "1970-01-01T14:30:00.000Z",
+    "group_id": 19
+}, {
+    "format": ["o", "b"],
+    "day": "fri",
+    "start": "1970-01-01T14:30:00.000Z",
+    "group_id": 19
+}, {
+    "format": ["od"],
+    "start": "1970-01-01T14:30:00.000Z",
+    "day": "sat",
+    "group_id": 19
+}, {
+    "start": "1970-01-02T00:30:00.000Z",
+    "day": "mon",
+    "format": ["bb", "sp", "gay"],
+    "group_id": 20
+}, {
+    "day": "sat",
+    "start": "1970-01-01T18:00:00.000Z",
+    "format": ["b", "cd"],
+    "group_id": 21
+}, {
+    "start": "1970-01-02T01:30:00.000Z",
+    "day": "sat",
+    "format": ["od"],
+    "group_id": 22
+}, {
+    "day": "fri",
+    "start": "1970-01-02T00:00:00.000Z",
+    "format": ["yp", "bb", "od"],
+    "notes": "[Wk4=Anniv]",
+    "group_id": 23
+}, {
+    "day": "sun",
+    "start": "1970-01-01T14:30:00.000Z",
+    "format": ["cd"],
+    "group_id": 24
+}, {
+    "format": ["cd", "w"],
+    "start": "1970-01-01T23:00:00.000Z",
+    "day": "sun",
+    "group_id": 25
+}, {
+    "format": ["bb"],
+    "start": "1970-01-02T00:30:00.000Z",
+    "day": "mon",
+    "group_id": 26
+}, {
+    "format": ["dr"],
+    "day": "sat",
+    "start": "1970-01-01T15:00:00.000Z",
+    "notes": "[Wk1=St]",
+    "group_id": 26
+}, {
+    "start": "1970-01-02T01:00:00.000Z",
+    "day": "thur",
+    "format": ["od"],
+    "group_id": 27
+}, {
+    "start": "1970-01-02T00:30:00.000Z",
+    "day": "tue",
+    "format": ["b", "ls"],
+    "group_id": 28
+}, {
+    "format": ["st"],
+    "start": "1970-01-02T00:00:00.000Z",
+    "day": "wed",
+    "notes": "[Last wed = T]",
+    "group_id": 28
+}, {
+    "format": ["cd"],
+    "start": "1970-01-02T00:30:00.000Z",
+    "day": "fri",
+    "notes": "[Last fri = O/Anniv]",
+    "group_id": 28
+}, {
+    "start": "1970-01-01T18:30:00.000Z",
+    "day": "mon",
+    "format": ["ls"],
+    "group_id": 29
+}, {
+    "format": ["bb"],
+    "start": "1970-01-01T18:30:00.000Z",
+    "day": "tue",
+    "group_id": 29
+}, {
+    "format": ["od"],
+    "day": "wed",
+    "start": "1970-01-01T18:30:00.000Z",
+    "group_id": 29
+}, {
+    "format": ["od"],
+    "start": "1970-01-01T18:30:00.000Z",
+    "day": "thur",
+    "group_id": 29
+}, {
+    "format": ["od"],
+    "start": "1970-01-01T18:30:00.000Z",
+    "day": "fri",
+    "group_id": 29
+}, {
+    "start": "1970-01-01T22:30:00.000Z",
+    "day": "mon",
+    "format": ["st"],
+    "notes": "[Last=T]",
+    "group_id": 30
+}, {
+    "format": ["cd"],
+    "start": "1970-01-01T22:30:00.000Z",
+    "day": "tue",
+    "notes": "[Last=Anniv]",
+    "group_id": 30
+}, {
+    "day": "thur",
+    "format": ["rep"],
+    "start": "1970-01-01T22:30:00.000Z",
+    "group_id": 30
+}, {
+    "format": ["b", "c"],
+    "start": "1970-01-01T22:30:00.000Z",
+    "day": "fri",
+    "group_id": 30
+}, {
+    "format": ["gra", "cd"],
+    "start": "1970-01-01T14:00:00.000Z",
+    "day": "sat",
+    "group_id": 31
+}, {
+    "format": ["b"],
+    "day": "mon",
+    "start": "1970-01-02T00:30:00.000Z",
+    "group_id": 32
+}, {
+    "format": ["od"],
+    "start": "1970-01-02T00:30:00.000Z",
+    "notes": "[Wk2=OS]",
+    "day": "tue",
+    "group_id": 32
+}, {
+    "format": ["cd", "st"],
+    "day": "thur",
+    "start": "1970-01-02T00:30:00.000Z",
+    "notes": "[Last=T]",
+    "group_id": 32
+}, {
+    "format": ["bb"],
+    "start": "1970-01-01T13:30:00.000Z",
+    "day": "sat",
+    "group_id": 32
+}, {
+    "format": ["cd"],
+    "start": "1970-01-02T01:00:00.000Z",
+    "day": "sun",
+    "group_id": 33
+}, {
+    "format": ["b"],
+    "start": "1970-01-01T23:30:00.000Z",
+    "day": "mon",
+    "group_id": 33
+}, {
+    "format": ["o", "s"],
+    "day": "wed",
+    "start": "1970-01-01T23:30:00.000Z",
+    "group_id": 33
+}, {
+    "format": ["bb"],
+    "day": "wed",
+    "start": "1970-01-02T00:45:00.000Z",
+    "group_id": 33
+}, {
+    "format": ["od"],
+    "start": "1970-01-02T03:00:00.000Z",
+    "day": "sat",
+    "group_id": 33
+}, {
+    "start": "1970-01-02T00:30:00.000Z",
+    "day": "fri",
+    "format": ["st"],
+    "group_id": 34
+}, {
+    "format": ["od"],
+    "start": "1970-01-01T22:00:00.000Z",
+    "day": "sat",
+    "group_id": 34
+}, {
+    "start": "1970-01-02T00:30:00.000Z",
+    "day": "fri",
+    "format": ["st"],
+    "group_id": 35
+}, {
+    "format": ["od"],
+    "start": "1970-01-01T22:00:00.000Z",
+    "day": "sat",
+    "group_id": 35
+}, {
+    "format": ["od"],
+    "day": "wed",
+    "start": "1970-01-02T01:00:00.000Z",
+    "notes": "[Wk1=ST]",
+    "group_id": 36
+}, {
+    "start": "1970-01-01T17:00:00.000Z",
+    "day": "mon",
+    "format": ["cd"],
+    "group_id": 37
+}, {
+    "format": ["od"],
+    "start": "1970-01-02T01:00:00.000Z",
+    "day": "wed",
+    "notes": "[Wk1=ST]",
+    "group_id": 37
+}, {
+    "day": "sun",
+    "format": ["b"],
+    "start": "1970-01-01T17:30:00.000Z",
+    "group_id": 38
+}, {
+    "start": "1970-01-02T00:00:00.000Z",
+    "day": "wed",
+    "format": ["od"],
+    "group_id": 39
+}, {
+    "format": ["span", "od"],
+    "start": "1970-01-01T23:30:00.000Z",
+    "day": "sun",
+    "group_id": 40
+}, {
+    "format": ["od", "span"],
+    "start": "1970-01-02T00:30:00.000Z",
+    "day": "mon",
+    "group_id": 40
+}, {
+    "format": ["span", "od"],
+    "start": "1970-01-02T00:30:00.000Z",
+    "day": "tue",
+    "group_id": 40
+}, {
+    "format": ["span", "od"],
+    "start": "1970-01-02T00:30:00.000Z",
+    "day": "wed",
+    "group_id": 40
+}, {
+    "format": ["span", "od"],
+    "start": "1970-01-02T00:30:00.000Z",
+    "day": "thur",
+    "group_id": 40
+}, {
+    "format": ["span", "od"],
+    "start": "1970-01-02T00:30:00.000Z",
+    "day": "fri",
+    "group_id": 40
+}, {
+    "format": ["span", "od"],
+    "start": "1970-01-01T23:00:00.000Z",
+    "day": "sat",
+    "group_id": 40
+}, {
+    "day": "mon",
+    "start": "1970-01-01T17:00:00.000Z",
+    "format": ["od"],
+    "group_id": 41
+}, {
+    "format": ["st"],
+    "day": "tue",
+    "start": "1970-01-01T17:00:00.000Z",
+    "group_id": 41
+}, {
+    "format": ["bb"],
+    "day": "wed",
+    "start": "1970-01-01T17:00:00.000Z",
+    "group_id": 41
+}, {
+    "format": ["st"],
+    "start": "1970-01-01T17:00:00.000Z",
+    "day": "thur",
+    "group_id": 41
+}, {
+    "format": ["od"],
+    "start": "1970-01-01T17:00:00.000Z",
+    "day": "fri",
+    "notes": "[Wk1=T]",
+    "group_id": 41
+}, {
+    "start": "1970-01-01T23:00:00.000Z",
+    "day": "tue",
+    "format": ["st", "od", "t"],
+    "notes": "[Wk1 = ST, Wk2 & Wk3 = OD, Wk4 = T]",
+    "group_id": 42
+}, {
+    "day": "tue",
+    "format": ["bb", "c"],
+    "start": "1970-01-02T00:30:00.000Z",
+    "notes": "[Wk1=T]",
+    "group_id": 42
+}, {
+    "format": ["cd", "3711", "st"],
+    "day": "thur",
+    "start": "1970-01-02T00:00:00.000Z",
+    "notes": "[Wk 1=ST, Wk 2 = 3711]",
+    "group_id": 42
+}, {
+    "format": ["o", "b"],
+    "day": "sat",
+    "start": "1970-01-02T00:00:00.000Z",
+    "group_id": 42
+}, {
+    "format": ["st", "b"],
+    "day": "mon",
+    "start": "1970-01-02T01:00:00.000Z",
+    "group_id": 43
+}, {
+    "format": ["o", "s"],
+    "day": "sat",
+    "start": "1970-01-02T01:00:00.000Z",
+    "group_id": 43
+}, {
+    "format": ["od"],
+    "day": "tue",
+    "start": "1970-01-02T00:30:00.000Z",
+    "group_id": 44
+}, {
+    "format": ["m", "st", "cd"],
+    "day": "mon",
+    "start": "1970-01-02T00:30:00.000Z",
+    "notes": "[Mens] [Wk1=ST, Wk 2,3,4=CD]",
+    "group_id": 45
+}, {
+    "start": "1970-01-02T00:30:00.000Z",
+    "day": "tue",
+    "format": ["od", "s", "bb", "st"],
+    "notes": "[Womens] [1st=ST/2nd=BB/3rd=OD/4th=S]",
+    "group_id": 46
+}, {
+    "day": "sat",
+    "start": "1970-01-01T13:00:00.000Z",
+    "format": ["cd"],
+    "notes": "[Last Wk=Anniv]",
+    "group_id": 47
+}, {
+    "start": "1970-01-02T00:00:00.000Z",
+    "day": "sun",
+    "format": ["cd"],
+    "group_id": 48
+}, {
+    "format": ["s"],
+    "start": "1970-01-01T20:00:00.000Z",
+    "day": "sun",
+    "group_id": 49
+}, {
+    "format": ["c", "st"],
+    "start": "1970-01-02T00:30:00.000Z",
+    "day": "tue",
+    "group_id": 50
+}, {
+    "format": ["cd"],
+    "start": "1970-01-02T02:00:00.000Z",
+    "day": "fri",
+    "group_id": 50
+}, {
+    "format": ["bb"],
+    "start": "1970-01-02T00:00:00.000Z",
+    "day": "sat",
+    "group_id": 50
+}, {
+    "day": "thur",
+    "start": "1970-01-02T00:30:00.000Z",
+    "format": ["s", "o"],
+    "group_id": 51
+}, {
+    "format": ["b", "c"],
+    "day": "thur",
+    "start": "1970-01-02T01:45:00.000Z",
+    "group_id": 51
+}, {
+    "day": "mon",
+    "start": "1970-01-01T14:30:00.000Z",
+    "format": ["dr"],
+    "group_id": 52
+}, {
+    "format": ["st"],
+    "start": "1970-01-01T14:30:00.000Z",
+    "day": "tue",
+    "group_id": 52
+}, {
+    "format": ["ls"],
+    "start": "1970-01-01T14:30:00.000Z",
+    "day": "wed",
+    "notes": "[Wk1=OS]",
+    "group_id": 52
+}, {
+    "format": ["b"],
+    "day": "thur",
+    "start": "1970-01-01T14:30:00.000Z",
+    "group_id": 52
+}, {
+    "format": ["bb"],
+    "start": "1970-01-01T14:30:00.000Z",
+    "day": "fri",
+    "notes": "[Last Wk=Anniv]",
+    "group_id": 52
+}, {
+    "day": "sun",
+    "start": "1970-01-01T23:30:00.000Z",
+    "format": ["b", "o"],
+    "group_id": 53
+}, {
+    "format": ["od"],
+    "day": "mon",
+    "start": "1970-01-01T17:15:00.000Z",
+    "group_id": 53
+}, {
+    "format": ["st"],
+    "start": "1970-01-01T17:15:00.000Z",
+    "day": "wed",
+    "group_id": 53
+}, {
+    "format": ["b"],
+    "start": "1970-01-01T23:30:00.000Z",
+    "day": "tue",
+    "group_id": 53
+}, {
+    "format": ["bb", "o"],
+    "start": "1970-01-01T17:15:00.000Z",
+    "day": "wed",
+    "group_id": 53
+}, {
+    "format": ["w", "st"],
+    "day": "thur",
+    "notes": "[Women's]",
+    "start": "1970-01-01T14:30:00.000Z",
+    "group_id": 53
+}, {
+    "format": ["od"],
+    "start": "1970-01-01T17:15:00.000Z",
+    "day": "thur",
+    "group_id": 53
+}, {
+    "format": ["b"],
+    "start": "1970-01-01T14:30:00.000Z",
+    "day": "fri",
+    "group_id": 53
+}, {
+    "format": ["o", "absi", "ls"],
+    "start": "1970-01-01T17:15:00.000Z",
+    "day": "fri",
+    "group_id": 53
+}, {
+    "format": ["absi", "w"],
+    "start": "1970-01-01T15:00:00.000Z",
+    "notes": "[Women's]",
+    "day": "fri",
+    "group_id": 53
+}, {
+    "format": ["ls", "o", "absi"],
+    "start": "1970-01-01T17:15:00.000Z",
+    "day": "fri",
+    "group_id": 53
+}, {
+    "format": ["absi", "w"],
+    "start": "1970-01-01T15:00:00.000Z",
+    "day": "sat",
+    "notes": "[Women's]",
+    "group_id": 53
+}, {
+    "format": ["od"],
+    "start": "1970-01-01T18:00:00.000Z",
+    "day": "sat",
+    "group_id": 53
+}, {
+    "format": ["o", "s", "t", "st"],
+    "start": "1970-01-02T00:00:00.000Z",
+    "notes": "[Wk2=T/3=ST/Last=Anniv]",
+    "day": "sun",
+    "group_id": 54
+}, {
+    "format": ["cd", "bb"],
+    "day": "wed",
+    "start": "1970-01-02T01:00:00.000Z",
+    "notes": "[Wk1=CD,Last=BB]",
+    "group_id": 54
+}, {
+    "day": "fri",
+    "start": "1970-01-02T01:00:00.000Z",
+    "format": ["st", "bb"],
+    "group_id": 55
+}, {
+    "start": "1970-01-01T23:00:00.000Z",
+    "format": ["cd"],
+    "day": "sun",
+    "group_id": 56
+}, {
+    "format": ["st"],
+    "start": "1970-01-02T00:00:00.000Z",
+    "day": "wed",
+    "group_id": 56
+}, {
+    "day": "mon",
+    "start": "1970-01-02T00:30:00.000Z",
+    "format": ["b", "od"],
+    "group_id": 57
+}, {
+    "day": "tue",
+    "format": ["bb", "c"],
+    "start": "1970-01-02T00:30:00.000Z",
+    "notes": "[Wk1=T]",
+    "group_id": 58
+}, {
+    "format": ["cd", "3711", "st"],
+    "day": "thur",
+    "start": "1970-01-02T00:00:00.000Z",
+    "notes": "[Wk 1=ST, Wk 2 = 3711]",
+    "group_id": 58
+}, {
+    "format": ["o", "b"],
+    "day": "sat",
+    "start": "1970-01-02T00:00:00.000Z",
+    "group_id": 58
+}, {
+    "day": "sat",
+    "start": "1970-01-01T13:30:00.000Z",
+    "format": ["od"],
+    "group_id": 59
+}, {
+    "format": ["dr"],
+    "day": "sun",
+    "start": "1970-01-01T14:00:00.000Z",
+    "group_id": 60
+}, {
+    "start": "1970-01-01T17:00:00.000Z",
+    "day": "mon",
+    "format": ["ls"],
+    "group_id": 61
+}, {
+    "format": ["cd", "dr"],
+    "day": "tue",
+    "start": "1970-01-01T17:00:00.000Z",
+    "group_id": 61
+}, {
+    "format": ["span", "od"],
+    "start": "1970-01-01T23:00:00.000Z",
+    "day": "sun",
+    "group_id": 61
+}, {
+    "format": ["od"],
+    "day": "sun",
+    "start": "1970-01-01T23:00:00.000Z",
+    "group_id": 62
+}, {
+    "format": ["od"],
+    "day": "mon",
+    "start": "1970-01-02T01:00:00.000Z",
+    "group_id": 62
+}, {
+    "format": ["od"],
+    "day": "tue",
+    "start": "1970-01-02T01:00:00.000Z",
+    "group_id": 62
+}, {
+    "format": ["od"],
+    "day": "wed",
+    "start": "1970-01-02T01:00:00.000Z",
+    "group_id": 62
+}, {
+    "format": ["cd"],
+    "day": "thur",
+    "start": "1970-01-02T01:00:00.000Z",
+    "group_id": 62
+}, {
+    "format": ["od"],
+    "start": "1970-01-02T01:00:00.000Z",
+    "day": "fri",
+    "group_id": 62
+}, {
+    "format": ["cd", "od", "st"],
+    "day": "sun",
+    "start": "1970-01-02T01:00:00.000Z",
+    "notes": "[Wk 1=ST/Last=OD or Anniv]",
+    "group_id": 63
+}, {
+    "day": "sun",
+    "start": "1970-01-01T15:00:00.000Z",
+    "format": ["od"],
+    "group_id": 64
+}, {
+    "format": ["od"],
+    "day": "mon",
+    "start": "1970-01-01T23:00:00.000Z",
+    "group_id": 64
+}, {
+    "format": ["od"],
+    "day": "tue",
+    "start": "1970-01-01T23:00:00.000Z",
+    "group_id": 64
+}, {
+    "format": ["od"],
+    "day": "wed",
+    "start": "1970-01-01T23:00:00.000Z",
+    "group_id": 64
+}, {
+    "format": ["od"],
+    "day": "thur",
+    "start": "1970-01-01T23:00:00.000Z",
+    "group_id": 64
+}, {
+    "format": ["od"],
+    "day": "fri",
+    "start": "1970-01-01T23:00:00.000Z",
+    "group_id": 64
+}, {
+    "format": ["od", "span"],
+    "day": "sat",
+    "start": "1970-01-01T23:00:00.000Z",
+    "group_id": 64
+}, {
+    "day": "mon",
+    "start": "1970-01-01T23:00:00.000Z",
+    "format": ["st"],
+    "group_id": 65
+}, {
+    "format": ["bb"],
+    "day": "tue",
+    "start": "1970-01-01T23:00:00.000Z",
+    "group_id": 65
+}, {
+    "format": ["o", "b"],
+    "day": "thur",
+    "start": "1970-01-01T22:30:00.000Z",
+    "group_id": 65
+}, {
+    "format": ["b", "span"],
+    "start": "1970-01-02T00:30:00.000Z",
+    "day": "wed",
+    "group_id": 66
+}, {
+    "day": "mon",
+    "start": "1970-01-02T00:00:00.000Z",
+    "format": ["bb"],
+    "group_id": 67
+}, {
+    "format": ["st"],
+    "day": "tue",
+    "start": "1970-01-02T00:00:00.000Z",
+    "group_id": 67
+}, {
+    "format": ["od"],
+    "day": "wed",
+    "start": "1970-01-02T00:00:00.000Z",
+    "group_id": 67
+}, {
+    "format": ["od"],
+    "day": "thur",
+    "start": "1970-01-02T00:00:00.000Z",
+    "group_id": 67
+}, {
+    "format": ["m"],
+    "day": "fri",
+    "start": "1970-01-02T00:00:00.000Z",
+    "group_id": 67
+}, {
+    "format": ["od"],
+    "day": "sat",
+    "start": "1970-01-02T00:00:00.000Z",
+    "group_id": 67
+}, {
+    "format": ["o", "b"],
+    "start": "1970-01-02T00:30:00.000Z",
+    "day": "mon",
+    "group_id": 68
+}, {
+    "format": ["cd", "sp"],
+    "start": "1970-01-02T01:00:00.000Z",
+    "day": "fri",
+    "notes": "[Wk2=OS]",
+    "group_id": 68
+}, {
+    "start": "1970-01-01T23:30:00.000Z",
+    "day": "mon",
+    "format": ["cd", "m"],
+    "notes": "[Mens]",
+    "group_id": 69
+}, {
+    "format": ["absi", "cd"],
+    "day": "wed",
+    "start": "1970-01-01T17:00:00.000Z",
+    "group_id": 69
+}, {
+    "format": ["od", "b"],
+    "day": "thur",
+    "start": "1970-01-01T17:00:00.000Z",
+    "group_id": 69
+}, {
+    "format": ["bb", "cd"],
+    "day": "thur",
+    "start": "1970-01-01T23:30:00.000Z",
+    "group_id": 69
+}, {
+    "format": ["dr", "cd"],
+    "day": "fri",
+    "start": "1970-01-01T17:00:00.000Z",
+    "group_id": 69
+}, {
+    "format": ["cd"],
+    "start": "1970-01-01T23:30:00.000Z",
+    "day": "fri",
+    "group_id": 69
+}, {
+    "day": "wed",
+    "start": "1970-01-02T01:00:00.000Z",
+    "format": ["cd"],
+    "group_id": 70
+}, {
+    "start": "1970-01-02T00:30:00.000Z",
+    "day": "tue",
+    "format": ["o"],
+    "group_id": 71
+}, {
+    "format": ["b"],
+    "day": "fri",
+    "start": "1970-01-02T01:00:00.000Z",
+    "group_id": 71
+}, {
+    "start": "1970-01-02T00:30:00.000Z",
+    "day": "tue",
+    "format": ["b", "bb", "t"],
+    "notes": "[Wk1=T;Wk2=BB;Wk3=T;Wk4=Anniv.]",
+    "group_id": 72
+}, {
+    "format": ["od"],
+    "start": "1970-01-02T00:30:00.000Z",
+    "day": "wed",
+    "notes": "[Wk4=Anniv/OD]",
+    "group_id": 73
+}, {
+    "format": ["sp", "st"],
+    "day": "fri",
+    "start": "1970-01-02T00:00:00.000Z",
+    "notes": "[Wk1= SP; Wk2,3 = ST]",
+    "group_id": 73
+}, {
+    "notes": "[Last=Anniv]",
+    "start": "1970-01-02T00:00:00.000Z",
+    "day": "mon",
+    "format": ["b"],
+    "group_id": 74
+}, {
+    "format": ["od", "o", "sp"],
+    "start": "1970-01-02T01:00:00.000Z",
+    "day": "fri",
+    "group_id": 74
+}, {
+    "format": ["od"],
+    "start": "1970-01-02T01:30:00.000Z",
+    "day": "fri",
+    "group_id": 75
+}, {
+    "format": ["od"],
+    "start": "1970-01-02T01:00:00.000Z",
+    "day": "fri",
+    "notes": "[Wk1,3=LS/2=s/4=Ann.]",
+    "group_id": 76
+}, {
+    "format": ["bb"],
+    "day": "sat",
+    "notes": "LIT",
+    "start": "1970-01-02T00:00:00.000Z",
+    "group_id": 76
+}, {
+    "start": "1970-01-02T01:00:00.000Z",
+    "day": "mon",
+    "format": ["b", "od"],
+    "group_id": 77
+}, {
+    "start": "1970-01-02T01:00:00.000Z",
+    "day": "wed",
+    "format": ["st"],
+    "group_id": 78
+}, {
+    "format": ["3711", "st"],
+    "start": "1970-01-02T00:00:00.000Z",
+    "day": "sat",
+    "group_id": 79
+}, {
+    "day": "wed",
+    "start": "1970-01-02T01:00:00.000Z",
+    "format": ["st"],
+    "group_id": 80
+}, {
+    "format": ["od"],
+    "day": "sat",
+    "start": "1970-01-02T01:00:00.000Z",
+    "group_id": 80
+}, {
+    "format": ["b"],
+    "day": "wed",
+    "start": "1970-01-02T00:30:00.000Z",
+    "group_id": 80
+}, {
+    "day": "sat",
+    "start": "1970-01-01T13:00:00.000Z",
+    "format": ["cd"],
+    "notes": "[4th Wk=Anniv/Open]",
+    "group_id": 81
+}, {
+    "day": "sun",
+    "start": "1970-01-01T19:00:00.000Z",
+    "format": ["od"],
+    "group_id": 82
+}, {
+    "format": ["cd"],
+    "day": "fri",
+    "start": "1970-01-02T00:00:00.000Z",
+    "group_id": 82
+}, {
+    "format": ["bb"],
+    "start": "1970-01-02T00:30:00.000Z",
+    "day": "tue",
+    "group_id": 83
+}, {
+    "format": ["st"],
+    "day": "thur",
+    "start": "1970-01-02T00:30:00.000Z",
+    "group_id": 83
+}, {
+    "day": "mon",
+    "start": "1970-01-01T13:00:00.000Z",
+    "format": ["cd"],
+    "group_id": 84
+}, {
+    "format": ["cd"],
+    "day": "tue",
+    "start": "1970-01-01T13:00:00.000Z",
+    "group_id": 84
+}, {
+    "format": ["cd"],
+    "day": "wed",
+    "start": "1970-01-01T13:00:00.000Z",
+    "group_id": 84
+}, {
+    "format": ["cd"],
+    "day": "thur",
+    "start": "1970-01-01T13:00:00.000Z",
+    "group_id": 84
+}, {
+    "format": ["od"],
+    "day": "fri",
+    "start": "1970-01-01T13:00:00.000Z",
+    "group_id": 84
+}, {
+    "format": ["yp", "bb"],
+    "day": "sun",
+    "start": "1970-01-02T00:30:00.000Z",
+    "group_id": 85
+}, {
+    "start": "1970-01-01T17:30:00.000Z",
+    "format": ["b"],
+    "day": "mon",
+    "group_id": 86
+}, {
+    "format": ["c", "st"],
+    "start": "1970-01-01T17:30:00.000Z",
+    "day": "wed",
+    "group_id": 86
+}, {
+    "format": ["cd"],
+    "day": "fri",
+    "start": "1970-01-01T17:30:00.000Z",
+    "notes": "[Last=Anniv]",
+    "group_id": 86
+}, {
+    "format": ["w"],
+    "start": "1970-01-01T17:30:00.000Z",
+    "day": "tue",
+    "group_id": 87
+}, {
+    "format": ["w", "cd", "st", "sp", "bb"],
+    "day": "thur",
+    "start": "1970-01-02T00:30:00.000Z",
+    "notes": "[Wk1=SP/2=ST/3=BB]",
+    "group_id": 87
+}, {
+    "start": "1970-01-02T00:30:00.000Z",
+    "day": "mon",
+    "format": ["c", "bb"],
+    "group_id": 88
+}, {
+    "format": ["bb", "cd"],
+    "start": "1970-01-02T00:30:00.000Z",
+    "day": "wed",
+    "group_id": 88
+}, {
+    "start": "1970-01-01T17:30:00.000Z",
+    "day": "tue",
+    "format": ["od"],
+    "group_id": 89
+}, {
+    "format": ["bb"],
+    "start": "1970-01-01T17:30:00.000Z",
+    "day": "thur",
+    "group_id": 89
+}, {
+    "start": "1970-01-02T00:00:00.000Z",
+    "day": "tue",
+    "format": ["st"],
+    "group_id": 90
+}, {
+    "format": ["st"],
+    "day": "sat",
+    "start": "1970-01-01T13:00:00.000Z",
+    "group_id": 91
+}, {
+    "format": ["cd"],
+    "start": "1970-01-01T14:30:00.000Z",
+    "day": "sun",
+    "group_id": 92
+}, {
+    "day": "sun",
+    "start": "1970-01-02T01:00:00.000Z",
+    "format": ["cd"],
+    "notes": "[Last Week=OS/Anniv]",
+    "group_id": 93
+}, {
+    "format": ["st", "ls", "bb", "b"],
+    "day": "wed",
+    "start": "1970-01-02T01:00:00.000Z",
+    "notes": "[ST/LS/BB/B]",
+    "group_id": 93
+}, {
+    "format": ["c", "bb", "st"],
+    "day": "mon",
+    "start": "1970-01-02T00:30:00.000Z",
+    "group_id": 94
+}, {
+    "format": ["od"],
+    "start": "1970-01-02T00:00:00.000Z",
+    "day": "sat",
+    "group_id": 94
 }];
 
 export {
     days,
     formats,
-    groups
+    groups,
+    meetings
 };

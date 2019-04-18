@@ -13,6 +13,12 @@
                     <label for="name">Name</label>
                     <input aria-label="name" name="name" ng-model="$ctrl.group.name" type="text">
                 </md-input-container>
+
+                <md-checkbox aria-label="name" name="name" ng-model="$ctrl.group.is_wheelchair_accessible"
+                    type="checkbox">
+                    Is Wheelchair Accessible
+                </md-checkbox>
+
             </fieldset>
             <br>
             <fieldset>
@@ -26,61 +32,58 @@
             <fieldset>
                 <legend>Address</legend>
                 <div role="row" layout="row" layout-align="space-between">
-                    <div role="row" layout="row">
+                    <div role="row" layout="column">
                         <md-input-container>
                             <label for="street_number">Street Number</label>
                             <input aria-label="street_number" name="street_number" type="text"
-                                ng-model="$ctrl.group.address.street_number" type="text">
+                                ng-model="$ctrl.group.street_number" type="text">
                         </md-input-container>
                         <md-input-container>
                             <label for="route">Route</label>
-                            <input type="text" ng-model="$ctrl.group.address.route" aria-label="route" name="route"
-                                type="text">
+                            <input type="text" ng-model="$ctrl.group.route" aria-label="route" name="route" type="text">
                         </md-input-container>
                         <md-input-container>
                             <label for="locality">Locality</label>
-                            <input type="text" ng-model="$ctrl.group.address.locality" aria-label="locality"
-                                name="locality" type="text">
+                            <input type="text" ng-model="$ctrl.group.locality" aria-label="locality" name="locality"
+                                type="text">
                         </md-input-container>
                     </div>
-                    <div role="row" layout="row">
+                    <div role="row" layout="column">
                         <md-input-container>
                             <label for="administrative_area_level_3">Admin area 3</label>
-                            <input type="text" ng-model="$ctrl.group.address.administrative_area_level_3"
+                            <input type="text" ng-model="$ctrl.group.administrative_area_level_3"
                                 aria-label="administrative_area_level_3" name="administrative_area_level_3" type="text">
                         </md-input-container>
                         <md-input-container>
                             <label for="administrative_area_level_2">Admin area 2</label>
-                            <input type="text" ng-model="$ctrl.group.address.administrative_area_level_2"
+                            <input type="text" ng-model="$ctrl.group.administrative_area_level_2"
                                 aria-label="administrative_area_level_2" name="administrative_area_level_2" type="text">
                         </md-input-container>
                         <md-input-container>
                             <label for="administrative_area_level_1">Admin area 1</label>
-                            <input type="text" ng-model="$ctrl.group.address.administrative_area_level_1"
+                            <input type="text" ng-model="$ctrl.group.administrative_area_level_1"
                                 aria-label="administrative_area_level_1" name="administrative_area_level_1" type="text">
                         </md-input-container>
                     </div>
-                    <div role="row" layout="row">
+                    <div role="row" layout="column">
                         <md-input-container>
                             <label for="postal_code">Postal/Zip Code</label>
-                            <input type="text" ng-model="$ctrl.group.address.postal_code" aria-label="postal_code"
+                            <input type="text" ng-model="$ctrl.group.postal_code" aria-label="postal_code"
                                 name="postal_code" type="text">
                         </md-input-container>
                         <md-input-container>
                             <label for="lat">Lat</label>
-                            <input type="number" ng-model="$ctrl.group.address.lat" aria-label="lat" name="lat"
-                                type="text">
+                            <input type="number" ng-model="$ctrl.group.lat" aria-label="lat" name="lat" type="text">
                         </md-input-container>
                         <md-input-container>
                             <label for="lng">Longitude</label>
-                            <input type="number" ng-model="$ctrl.group.address.lng" aria-label="lng" name="lng"
-                                type="text">
+                            <input type="number" ng-model="$ctrl.group.lng" aria-label="lng" name="lng" type="text">
                         </md-input-container>
                     </div>
                 </div>
                 <md-input-container>
                     <label for="notes">Address Notes (Building name, etc.)</label>
-                    <input aria-label="notes" name="notes" type="text" ng-model="$ctrl.group.address.notes" type="text">
+                    <input aria-label="notes" name="notes" type="text" ng-model="$ctrl.group.location" type="text">
                 </md-input-container>
             </fieldset>
             <br>
@@ -115,8 +118,11 @@
                             </md-chip-template>
                         </md-chips>
                     </div>
+                    <md-button class="md-secondary" ng-click="$ctrl.removeMeeting($index)">Remove Meeting</md-button>
                 </fieldset>
+                <md-button class="md-secondary" ng-click="$ctrl.addMeeting()">Add Meeting</md-button>
             </fieldset>
+            <md-button class="md-primary" ng-click="$ctrl.save()">Save</md-button>
         </form>
     </md-card-content>
 </md-card>
