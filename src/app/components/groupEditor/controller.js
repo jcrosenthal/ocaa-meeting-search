@@ -23,17 +23,17 @@ export class GroupEditorController {
   }
 
   $onInit() {
-    this.group = {}; //this.groups.find(group => group.id === Number(this.$stateParams.id));
-    this.group.meetings = []; //meetings.filter(meeting => meeting.group_id === this.group.id);
+    this.group = {};
+    this.group.meetings = [];
 
     this.initAutocomplete();
   }
 
   addMeeting() {
     this.group.meetings.push({
-      "format": ["od"],
-      "start": "1970-01-02T01:00:00.000Z",
-      "day": "mon"
+      format: ['cd'],
+      start: '1970-01-02T01:00:00.000Z',
+      day: 'mon'
     });
   }
 
@@ -42,16 +42,20 @@ export class GroupEditorController {
   }
 
   save() {
-    this.$http.post('http://localhost:3000/api/groups', Object.assign({}, this.group, {
-        meetings: this.group.meetings.map(m => Object.assign({}, m, {
-          start: moment(m.start).format('HH:mm:ss'),
-          format: m.format.join(','),
+    if (this.$stateParams.id) {
+
+    } else {
+      this.$http.post('http://localhost:3000/api/groups', Object.assign({}, this.group, {
+          meetings: this.group.meetings.map(m => Object.assign({}, m, {
+            start: moment(m.start).format('HH:mm:ss'),
+            format: m.format.join(','),
+          }))
         }))
-      }))
-      .then(res => {
-        this.group = {};
-        this.group.meetings = [];
-      });
+        .then(res => {
+          this.group = {};
+          this.group.meetings = [];
+        });
+    }
   }
 
   initAutocomplete() {

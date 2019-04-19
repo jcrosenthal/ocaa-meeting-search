@@ -1,7 +1,5 @@
 import moment from 'moment';
 import {
-  groups,
-  meetings as allMeetings,
   days,
   formats
 } from '../../resources';
@@ -63,46 +61,41 @@ export class MeetingListController {
   setMeetings() {
 
     // Assign all meetings to their matching groups
-    this.groups.forEach(group => group.meetings = this.allMeetings.filter(meeting => meeting.group_id === group.id));
+    this.$http.get('http://0.0.0.0:3000/api/meetings')
+      .then(meetings => {
+        this.meetings = meetings;
+        console.log(this.meetings);
+        this.meetings = this.meetings.map(meeting => {
 
-    console.log(this.groups);
+          const formatDisplay = meeting.format.map(formatCode => {
+            const foundFormat = this.formats.find(format => format.code === formatCode);
+            return foundFormat && foundFormat.display || '';
+          }).sort().filter(e => e).join(', ');
 
-    this.meetings = this.groups.map((group) => group.meetings.map(
-      meeting => {
+          const streetAddr = group && [
+            (group.notes ? group.notes + ' - ' : ''),
+            group.street_number,
+            group.route
+          ].filter(e => e).join(' ');
 
-        const formatDisplay = meeting.format.map(formatCode => {
-          const foundFormat = this.formats.find(format => format.code === formatCode);
-          return foundFormat && foundFormat.display || '';
-        }).sort().filter(e => e).join(', ');
+          const location = group && [
+            streetAddr,
+            group.locality,
+            group.administrative_area_level_1,
+          ].filter(e => e).join(', ');
 
-        const streetAddr = group.address && [
-          (group.address.notes ? group.address.notes + ' - ' : ''),
-          group.address.street_number,
-          group.address.route
-        ].filter(e => e).join(' ');
-
-        const location = group.address && [
-          streetAddr,
-          group.address.locality,
-          group.address.administrative_area_level_1,
-        ].filter(e => e).join(', ');
-
-        const groupMeeting = Object.assign({}, {
-          name: group.name,
-          day: meeting.day,
-          time: meeting.start,
-          fullTime: moment(meeting.start).format('HHmm'),
-          town: group.address && group.address.locality,
-          formatDisplay,
-          format: meeting.format,
-          location,
-          groupId: group.id,
-          isWheelchairAccessible: group.isWheelchairAccessible ? 1 : 0
+          return Object.assign({}, meeting, {
+            time: meeting.start,
+            fullTime: moment(meeting.start).format('HHmm'),
+            town: group.address && group.address.locality,
+            formatDisplay,
+            location,
+            isWheelchairAccessible: group.isWheelchairAccessible ? 1 : 0
+          });
         });
 
-        return groupMeeting;
-      }
-    )).reduce((a, b) => a.concat(b));
+      });
+
   }
 
   resetResults() {
