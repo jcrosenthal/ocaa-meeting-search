@@ -10,13 +10,14 @@
     <md-card-content layout="row">
         <div flex="80">
             <p class="address">
-                <strong ng-if="$ctrl.group.address.notes">{{$ctrl.group.address.notes}}</strong>
-                <br ng-if="$ctrl.group.address.notes">
-                {{$ctrl.group.address.street_number}} {{$ctrl.group.address.route}},
-                {{$ctrl.group.address.locality}}
+                <strong ng-if="$ctrl.group.location">{{$ctrl.group.location}}</strong>
+                <br ng-if="$ctrl.group.location">
+                {{$ctrl.group.street_number}} {{$ctrl.group.route}},
                 <br>
-                {{$ctrl.group.address.administrative_area_level_2}}, {{$ctrl.group.address.administrative_area_level_1}}
-                {{$ctrl.group.address.postal_code}}
+                {{$ctrl.group.locality}}
+                <br>
+                {{$ctrl.group.administrative_area_level_2}}, {{$ctrl.group.administrative_area_level_1}}
+                {{$ctrl.group.postal_code}}
             </p>
         </div>
         <div flex="20">
@@ -34,7 +35,7 @@
         </div>
     </md-toolbar>
     <md-list flex>
-        <md-list-item class="md-3-line" ng-repeat="meeting in $ctrl.group.meetings track by $index">
+        <md-list-item class="md-3-line" ng-repeat="meeting in $ctrl.group.Meetings track by $index">
             <div class="md-list-item-text" layout="row" layout-align="space-between">
                 <div>
                     <p class="capitalize">
@@ -43,7 +44,7 @@
                 </div>
                 <div>
                     <p>
-                        <md-icon>meeting_room</md-icon> {{$ctrl.formatFormats(meeting.format).join(', ')}}
+                        <md-icon>meeting_room</md-icon> {{$ctrl.formatFormats(meeting.format)}}
                     </p>
                     <br ng-if="meeting.notes">
                     <p ng-if="meeting.notes">

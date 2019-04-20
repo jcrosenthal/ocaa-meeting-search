@@ -69,7 +69,7 @@
                     <tr md-row>
                         <th md-column md-order-by="name">Name</th>
                         <th md-column md-order-by="day">Day</th>
-                        <th md-column md-order-by="fullTime">Time</th>
+                        <th md-column md-order-by="start">Time</th>
                         <th md-column md-order-by="town">Location</th>
                         <th md-column md-order-by="formatDisplay">Format</th>
                     </tr>
@@ -77,10 +77,10 @@
                 <tbody md-body>
                     <tr md-row
                         ng-repeat="meeting in $ctrl.sortedFilteredMeetings() | limitTo: $ctrl.myLimit: ($ctrl.myPage - 1) * $ctrl.myLimit | filter: $ctrl.filterBy.searchText">
-                        <td md-cell><a ui-sref="groupDetails({id: meeting.groupId})">{{meeting.name}}</a></td>
+                        <td md-cell><a ui-sref="groupDetails({id: meeting.Group.id})">{{meeting.name}}</a></td>
                         <td md-cell>{{$ctrl.findDayDisplay(meeting.day)}}</td>
-                        <td md-cell width="80">{{meeting.time | date: 'h:mm a'}}</td>
-                        <td md-cell>{{meeting.location}}</td>
+                        <td md-cell width="80">{{meeting.fullTime}}</td>
+                        <td md-cell>{{meeting.Group.location}}<br ng-if="meeting.Group.location">{{meeting.location}}</td>
                         <td md-cell>{{meeting.formatDisplay}}</td>
                     </tr>
                 </tbody>
@@ -96,11 +96,11 @@
     ng-repeat="meeting in $ctrl.sortedFilteredMeetings() | filter: $ctrl.filterBy.searchText">
     <md-card-content>
         <h2><a class="meeting-title-link capitalize"
-                ui-sref="groupDetails({id: meeting.groupId})"><strong>{{meeting.name}}</strong></a></h2>
+                ui-sref="groupDetails({id: meeting.groupId})"><strong>{{meeting.group.name}}</strong></a></h2>
         <md-divider></md-divider>
         <div layout="row" layout-align="space-between">
             <p flex="100" class="capitalize">
-                <md-icon>access_time</md-icon> {{$ctrl.findDayDisplay(meeting.day)}} @ {{meeting.time | date: 'h:mm a'}}
+                <md-icon>access_time</md-icon> {{$ctrl.findDayDisplay(meeting.day)}} @ {{meeting.fullTime}}
             </p>
         </div>
         <div layout="column" layout-align="space-between">

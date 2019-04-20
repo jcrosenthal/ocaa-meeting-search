@@ -1,37 +1,30 @@
 import moment from 'moment';
-import {
-  days,
-  formats
-} from '../../resources';
 
 export class MeetingListController {
-  constructor($filter) {
+  constructor($filter, $http) {
     'ngInject';
 
     this.$filter = $filter;
-    this.allMeetings = allMeetings;
-    this.groups = groups;
+    this.$http = $http;
   }
 
   $onInit() {
 
-    // console.log(groups, days, formats);
-
     const _this = this;
 
+    this.meetings = [];
+    this.days = [];
+    this.formats = [];
+
     Object.assign(this, {
-      days,
-      formats,
       myPage: 1,
       myLimit: 10,
       query: {
         order: 'name',
-        limit: this.sortedFilteredMeetings().length,
         page: 1
       },
       selected: [],
       filterBy: {},
-      meetings: []
     });
 
     this.limitOptions = [15, 25, 50, {
@@ -41,65 +34,86 @@ export class MeetingListController {
       }
     }];
 
-    this.setMeetings();
+    this.$http.get('http://localhost:3000/api/days')
+      .then(res => this.days = res.data)
+      .then(() => this.$http.get('http://localhost:3000/api/formats')
+        .then(res => this.formats = res.data))
+      .then(() => {
+
+        this.$http.get('http://localhost:3000/api/meetings')
+          .then(res => {
+
+            this.meetingsMaster = res.data;
+
+            this.setMeetings();
+
+            this.query.limit = this.sortedFilteredMeetings().length || this.meetingsMaster.length;
+
+          });
+
+      });
+
   }
 
   formatFormats(formats) {
-    return formats.map(format => this.findFormatDisplay(format));
+    return formats.split(',').map(format => this.findFormatDisplay(format));
   }
 
   findDayDisplay(dayCode) {
-    const found = days.find(day => day.code === dayCode.toLowerCase());
+    const found = this.days.find(day => day.code === dayCode.toLowerCase());
     return found && found.display;
   }
 
   findFormatDisplay(formatCode) {
-    const found = formats.find(format => format.code === formatCode);
+    const found = this.formats.find(format => format.code === formatCode);
     return found && found.display;
   }
 
   setMeetings() {
 
     // Assign all meetings to their matching groups
-    this.$http.get('http://0.0.0.0:3000/api/meetings')
-      .then(meetings => {
-        this.meetings = meetings;
-        console.log(this.meetings);
-        this.meetings = this.meetings.map(meeting => {
+    this.meetings = this.meetingsMaster.map(meeting => {
 
-          const formatDisplay = meeting.format.map(formatCode => {
-            const foundFormat = this.formats.find(format => format.code === formatCode);
-            return foundFormat && foundFormat.display || '';
-          }).sort().filter(e => e).join(', ');
+      let group = meeting.Group;
+      let meetingFormats = meeting.format.split(',');
 
-          const streetAddr = group && [
-            (group.notes ? group.notes + ' - ' : ''),
-            group.street_number,
-            group.route
-          ].filter(e => e).join(' ');
+      const formatDisplay = meetingFormats.map(formatCode => {
+        const foundFormat = this.formats.find(format => format.code === formatCode);
+        return foundFormat && foundFormat.display || '';
+      }).sort().filter(e => e).join(', ');
 
-          const location = group && [
-            streetAddr,
-            group.locality,
-            group.administrative_area_level_1,
-          ].filter(e => e).join(', ');
+      const streetAddr = group && [
+        group.street_number,
+        group.route
+      ].filter(e => e).join(' ');
 
-          return Object.assign({}, meeting, {
-            time: meeting.start,
-            fullTime: moment(meeting.start).format('HHmm'),
-            town: group.address && group.address.locality,
-            formatDisplay,
-            location,
-            isWheelchairAccessible: group.isWheelchairAccessible ? 1 : 0
-          });
-        });
+      // console.log(streetAddr);
 
+      const location = group && [
+        streetAddr,
+        group.locality,
+      ].filter(e => e).join(', ');
+
+      const todayMomentFormatted = moment().format('YYYY-MM-DD');
+
+      const updatedMeeting = Object.assign({}, meeting, {
+        name: group.name,
+        time: meeting.start.replace(/:/gi, ''),
+        fullTime: moment(todayMomentFormatted + ' ' + meeting.start).format('h:mm a'),
+        town: group.locality,
+        formatDisplay: formatDisplay,
+        location: location,
+        isWheelchairAccessible: group.isWheelchairAccessible ? 1 : 0
       });
+
+      return updatedMeeting;
+    });
 
   }
 
   resetResults() {
     this.filterBy = {};
+    this.meetings = angular.copy(this.meetingsMaster);
     this.setMeetings();
   }
 
@@ -108,7 +122,9 @@ export class MeetingListController {
       return meetings;
     }
 
-    let filtered = meetings.filter(meeting => meeting.format.find(format => filterBy.formats.includes(format.toLowerCase())));
+    let filtered = meetings.filter(meeting =>
+      meeting.format.split(',').find(format =>
+        filterBy.formats.includes(format.toLowerCase())));
 
     return filtered;
   }
@@ -117,7 +133,6 @@ export class MeetingListController {
     if (!filterBy || !filterBy.days || !filterBy.days.length) {
       return meetings;
     }
-
 
     let filtered = meetings.filter(meeting => filterBy.days.includes(meeting.day.toLowerCase()));
 
@@ -167,7 +182,9 @@ export class MeetingListController {
       'os'
     ];
 
-    let filtered = meetings.filter(meeting => meeting.format.find(format => openMeetingTypes.includes(format.toLowerCase())));
+    let filtered = meetings.filter(meeting =>
+      meeting.format.split(',').find(format =>
+        openMeetingTypes.includes(format.toLowerCase())));
 
     return filtered;
   }

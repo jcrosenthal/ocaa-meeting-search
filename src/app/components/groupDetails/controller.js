@@ -1,35 +1,38 @@
-import {
-  groups,
-  days,
-  meetings,
-  formats
-} from '../../resources';
 export class GroupDetailsController {
 
-  constructor($stateParams, $timeout) {
+  constructor($stateParams, $timeout, $http) {
     'ngInject';
 
     Object.assign(this, {
       $stateParams,
       $timeout,
-      meetings
+      $http
     });
 
   }
 
   $onInit() {
 
-    this.group = groups.find(group => group.id === Number(this.$stateParams.id));
-    this.group.meetings = this.meetings.filter(meeting => meeting.group_id === this.group.id);
+    this.$http.get('http://localhost:3000/api/days')
+      .then(res => this.days = res.data)
+      .then(() => this.$http.get('http://localhost:3000/api/formats')
+        .then(res => this.formats = res.data))
+      .then(() => {
 
-    this.initMap();
+        this.$http.get('http://localhost:3000/api/groups/' + this.$stateParams.id)
+          .then((res) => {
+            this.group = res.data[0];
+            this.initMap();
+          });
+
+      });
 
   }
 
   initMap() {
     const center = {
-      lat: this.group.address.lat,
-      lng: this.group.address.lng
+      lat: parseFloat(this.group.lat),
+      lng: parseFloat(this.group.lng)
     };
 
     const map = new google.maps.Map(document.getElementById('map'), {
@@ -42,21 +45,23 @@ export class GroupDetailsController {
       map
     });
 
-    this.directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${this.group.address.lat},${this.group.address.lng}`;
+    this.directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${this.group.lat},${this.group.lng}`;
 
   }
 
   formatFormats(formats) {
-    return formats.map(format => this.findFormatDisplay(format));
+    return formats.split(',')
+      .map(format => this.findFormatDisplay(format))
+      .filter(e => e).join(', ');
   }
 
   findDayDisplay(dayCode) {
-    const found = days.find(day => day.code === dayCode.toLowerCase());
+    const found = this.days.find(day => day.code === dayCode.toLowerCase());
     return found && found.display;
   }
 
   findFormatDisplay(formatCode) {
-    const found = formats.find(format => format.code === formatCode);
+    const found = this.formats.find(format => format.code === formatCode);
     return found && found.display;
   }
 
