@@ -1,4 +1,4 @@
-export class Config {
+class Config {
     constructor($mdThemingProvider, $logProvider, $locationProvider, $urlRouterProvider, $stateProvider, $qProvider) {
         'ngInject';
 
@@ -71,3 +71,5 @@ export class Config {
 
     }
 }
+
+export default Config;

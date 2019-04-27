@@ -6,9 +6,7 @@ import 'angular-material-data-table';
 import '@uirouter/angularjs';
 import 'ng-material-datetimepicker';
 
-import {
-  Config
-} from './app.config';
+import Config from './app.config';
 
 import {
   app,
