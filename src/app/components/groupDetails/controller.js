@@ -1,3 +1,4 @@
+import moment from 'moment';
 export class GroupDetailsController {
 
   constructor($stateParams, $timeout, $http) {
@@ -18,11 +19,21 @@ export class GroupDetailsController {
       .then(() => this.$http.get('http://localhost:3000/api/formats')
         .then(res => this.formats = res.data))
       .then(() => {
+        const todayFormatted = moment().format('YYYY-MM-DD');
 
         this.$http.get('http://localhost:3000/api/groups/' + this.$stateParams.id)
           .then((res) => {
             this.group = res.data[0];
-            this.initMap();
+            this.directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${this.group.lat},${this.group.lng}`;
+
+            this.group.Meetings = this.group.Meetings.map(meeting => {
+
+              return Object.assign({}, meeting, {
+                time: moment(`${todayFormatted} ${meeting.start}`).format('h:mm A'),
+                notes: meeting.notes && meeting.notes.replace(/\[|\]/ig, '')
+              });
+
+            })
           });
 
       });
@@ -52,7 +63,7 @@ export class GroupDetailsController {
   formatFormats(formats) {
     return formats.split(',')
       .map(format => this.findFormatDisplay(format))
-      .filter(e => e).join(', ');
+      .filter(e => e);
   }
 
   findDayDisplay(dayCode) {

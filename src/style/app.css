@@ -947,3 +947,10 @@ table.md-table td.md-cell md-select>.md-select-value>span.md-select-icon:after {
   -webkit-transform: scaleY(0.4) scaleX(0.8);
   transform: scaleY(0.4) scaleX(0.8)
 }
+
+.formatgrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20px auto;
+  grid-column-gap: 10px;
+}

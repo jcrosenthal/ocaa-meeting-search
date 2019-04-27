@@ -99,11 +99,12 @@ export class MeetingListController {
       const updatedMeeting = Object.assign({}, meeting, {
         name: group.name,
         time: meeting.start.replace(/:/gi, ''),
-        fullTime: moment(todayMomentFormatted + ' ' + meeting.start).format('h:mm a'),
+        fullTime: moment(todayMomentFormatted + ' ' + meeting.start).format('h:mm A'),
         town: group.locality,
         formatDisplay: formatDisplay,
         location: location,
-        isWheelchairAccessible: group.isWheelchairAccessible ? 1 : 0
+        isWheelchairAccessible: group.isWheelchairAccessible ? 1 : 0,
+        notes: meeting.notes && meeting.notes.replace(/\[|\]/ig, '')
       });
 
       return updatedMeeting;
@@ -162,7 +163,7 @@ export class MeetingListController {
     let filtered = meetings.filter(meeting => {
 
       const hours = hoursMap[filterBy.timeRange];
-      const meetingStart = meeting.fullTime;
+      const meetingStart = meeting.start.replace(/:/ig, '') * .01;
 
       return (meetingStart >= hours.start && meetingStart < hours.end);
 
@@ -182,9 +183,15 @@ export class MeetingListController {
       'os'
     ];
 
-    let filtered = meetings.filter(meeting =>
-      meeting.format.split(',').find(format =>
-        openMeetingTypes.includes(format.toLowerCase())));
+    let filtered = filterBy.openClosed === 'open' ?
+      meetings.filter(meeting =>
+        meeting.format.split(',').find(format =>
+          openMeetingTypes.includes(format.toLowerCase())
+        )) :
+      meetings.filter(meeting =>
+        meeting.format.split(',').find(format =>
+          !openMeetingTypes.includes(format.toLowerCase())
+        ));
 
     return filtered;
   }

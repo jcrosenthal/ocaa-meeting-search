@@ -26,7 +26,7 @@
                         <label for="">Time</label>
                         <md-select ng-model="$ctrl.filterBy.timeRange" placeholder="Any Time">
                             <md-option value="any">Any Time</md-option>
-                            <md-option value="morning">Morning (12:30 AM - 11:30 AM)</md-option>
+                            <md-option value="morning">Morning (5:00 AM - 11:30 AM)</md-option>
                             <md-option value="afternoon">Afternoon (Noon - 5:30 PM)</md-option>
                             <md-option value="evening">Evening (6:00 PM - Midnight)</md-option>
                         </md-select>
@@ -77,7 +77,7 @@
                 <tbody md-body>
                     <tr md-row
                         ng-repeat="meeting in $ctrl.sortedFilteredMeetings() | limitTo: $ctrl.myLimit: ($ctrl.myPage - 1) * $ctrl.myLimit | filter: $ctrl.filterBy.searchText">
-                        <td md-cell><a ui-sref="groupDetails({id: meeting.Group.id})">{{meeting.name}}</a></td>
+                        <td md-cell><a class="capitalize" title="View group details" ui-sref="groupDetails({id: meeting.Group.id})">{{meeting.name | capitalize}}</a></td>
                         <td md-cell>{{$ctrl.findDayDisplay(meeting.day)}}</td>
                         <td md-cell width="80">{{meeting.fullTime}}</td>
                         <td md-cell>{{meeting.Group.location}}<br ng-if="meeting.Group.location">{{meeting.location}}</td>
@@ -96,7 +96,7 @@
     ng-repeat="meeting in $ctrl.sortedFilteredMeetings() | filter: $ctrl.filterBy.searchText">
     <md-card-content>
         <h2><a class="meeting-title-link capitalize"
-                ui-sref="groupDetails({id: meeting.groupId})"><strong>{{meeting.group.name}}</strong></a></h2>
+                ui-sref="groupDetails({id: meeting.groupId})"><strong>{{meeting.name | capitalize}}</strong></a></h2>
         <md-divider></md-divider>
         <div layout="row" layout-align="space-between">
             <p flex="100" class="capitalize">
@@ -104,8 +104,8 @@
             </p>
         </div>
         <div layout="column" layout-align="space-between">
-            <p flex="50">
-                <md-icon>meeting_room</md-icon> {{$ctrl.formatFormats(meeting.format).join(', ')}}
+            <p flex="50" ng-repeat="format in $ctrl.formatFormats(meeting.format)">
+                <md-icon>meeting_room</md-icon> {{format}}
             </p>
             <p flex="50" ng-if="meeting.notes">
                 <md-icon>notes</md-icon> {{meeting.notes}}

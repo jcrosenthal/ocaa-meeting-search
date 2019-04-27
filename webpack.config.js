@@ -30,7 +30,7 @@ module.exports = function makeWebpackConfig() {
    * Karma will set this when it's a test build
    */
   config.entry = isTest ? void 0 : {
-    app: './src/app/index.js'
+    app: ['@babel/polyfill', './src/app/index.js']
   };
 
   /**
@@ -83,12 +83,24 @@ module.exports = function makeWebpackConfig() {
       // Reference: https://github.com/babel/babel-loader
       // Transpile .js files using babel-loader
       // Compiles ES6 and ES7 into ES5 code
-      test: /\.js$/,
-      loader: 'babel-loader',
-      exclude: /node_modules/,
-      options: {
-        presets: ['@babel/preset-env']
-      }
+      test: /\.js?$/,
+      exclude: [
+        /node_modules/
+      ],
+      use: [{
+        loader: 'babel-loader',
+        options: {
+          cacheDirectory: true,
+          presets: ['@babel/preset-env'],
+          plugins: [
+            [
+              'angularjs-annotate', {
+                explicitOnly: true
+              }
+            ]
+          ]
+        }
+      }]
     }, {
       // CSS LOADER
       // Reference: https://github.com/webpack/css-loader

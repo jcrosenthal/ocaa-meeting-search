@@ -1,4 +1,5 @@
 class Config {
+    static get $$ngIsClass(){return true;}
     constructor($mdThemingProvider, $logProvider, $locationProvider, $urlRouterProvider, $stateProvider, $qProvider) {
         'ngInject';
 

@@ -1,4 +1,5 @@
 import angular from 'angular';
+
 import 'angular-messages';
 import 'angular-material';
 import 'angular-sanitize';
@@ -7,6 +8,8 @@ import '@uirouter/angularjs';
 import 'ng-material-datetimepicker';
 
 import Config from './app.config';
+
+import capitalize from './capitalize.filter';
 
 import {
   app,
@@ -40,6 +43,8 @@ ocaaApp.filter('trusted', ['$sce', function ($sce) {
     return $sce.trustAsResourceUrl(url);
   };
 }]);
+
+ocaaApp.filter('capitalize', capitalize);
 
 ocaaApp.config(Config);
 

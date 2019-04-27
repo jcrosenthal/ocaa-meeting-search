@@ -1,12 +1,15 @@
 <md-card>
     <md-toolbar layout="row" class="md-hue-2">
         <div class="md-toolbar-tools">
-            <span>{{$ctrl.group.name}}
+            <md-button ui-sref="meetingList">
+                <md-icon>arrow_back</md-icon> Back
+            </md-button>
+            <h2 class="capitalize">{{$ctrl.group.name | capitalize}}
                 <md-icon ng-if="$ctrl.group.isWheelchairAccessible">accessible_forward</md-icon>
-            </span>
+            </h2>
         </div>
     </md-toolbar>
-    <div id="map"></div>
+    <!-- <div id="map"></div> -->
     <md-card-content layout="row">
         <div flex="80">
             <p class="address">
@@ -14,9 +17,8 @@
                 <br ng-if="$ctrl.group.location">
                 {{$ctrl.group.street_number}} {{$ctrl.group.route}},
                 <br>
-                {{$ctrl.group.locality}}
+                {{$ctrl.group.locality}}, {{$ctrl.group.administrative_area_level_1}}
                 <br>
-                {{$ctrl.group.administrative_area_level_2}}, {{$ctrl.group.administrative_area_level_1}}
                 {{$ctrl.group.postal_code}}
             </p>
         </div>
@@ -37,19 +39,26 @@
     <md-list flex>
         <md-list-item class="md-3-line" ng-repeat="meeting in $ctrl.group.Meetings track by $index">
             <div class="md-list-item-text" layout="row" layout-align="space-between">
-                <div>
+                <div flex="50" layout="column">
                     <p class="capitalize">
-                        <md-icon>access_time</md-icon> {{$ctrl.findDayDisplay(meeting.day)}} @ {{meeting.start | date: 'h:mm a'}}
+                        <md-icon>access_time</md-icon> {{$ctrl.findDayDisplay(meeting.day)}} @
+                        {{meeting.time}}
                     </p>
                 </div>
-                <div>
-                    <p>
-                        <md-icon>meeting_room</md-icon> {{$ctrl.formatFormats(meeting.format)}}
-                    </p>
+                <div flex="50" layout="column">
+                    <div class="formatgrid" ng-repeat="format in $ctrl.formatFormats(meeting.format)">
+                        <md-icon>meeting_room</md-icon>
+                        <p>
+                            {{format}}
+                        </p>
+                    </div>
                     <br ng-if="meeting.notes">
-                    <p ng-if="meeting.notes">
-                        <md-icon>notes</md-icon> {{meeting.notes}}
-                    </p>
+                    <div class="formatgrid" ng-if="meeting.notes">
+                        <md-icon>notes</md-icon>
+                        <p>
+                            {{meeting.notes}}
+                        </p>
+                    </div>
                 </div>
             </div>
             <md-divider></md-divider>
