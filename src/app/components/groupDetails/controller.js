@@ -14,14 +14,14 @@ export class GroupDetailsController {
 
   $onInit() {
 
-    this.$http.get('http://localhost:3000/api/days')
+    this.$http.get('https://api.orangenyaa.org/api/days')
       .then(res => this.days = res.data)
-      .then(() => this.$http.get('http://localhost:3000/api/formats')
+      .then(() => this.$http.get('https://api.orangenyaa.org/api/formats')
         .then(res => this.formats = res.data))
       .then(() => {
         const todayFormatted = moment().format('YYYY-MM-DD');
-
-        this.$http.get('http://localhost:3000/api/groups/' + this.$stateParams.id)
+        
+        this.$http.get('https://api.orangenyaa.org/api/groups/' + this.$stateParams.id)
           .then((res) => {
             this.group = res.data[0];
             this.directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${this.group.lat},${this.group.lng}`;

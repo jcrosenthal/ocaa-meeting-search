@@ -1,9 +1,6 @@
-<md-toolbar class="md-table-toolbar md-default">
-    <div class="md-toolbar-tools" role="banner">
-        Orange County, NY
-    </div>
-</md-toolbar>
-
+<pre>
+    {{$ctrl.query | json}}
+</pre>
 <md-card>
     <md-card-content layout="row" layout-align="space-between">
         <div flex="35" role="presentation" layout="row">
@@ -76,7 +73,7 @@
                 </thead>
                 <tbody md-body>
                     <tr md-row
-                        ng-repeat="meeting in $ctrl.sortedFilteredMeetings() | limitTo: $ctrl.myLimit: ($ctrl.myPage - 1) * $ctrl.myLimit | filter: $ctrl.filterBy.searchText">
+                        ng-repeat="meeting in $ctrl.sortedFilteredMeetings() | limitTo: $ctrl.myLimit: ($ctrl.myPage - 1) * $ctrl.myLimit">
                         <td md-cell><a class="capitalize" title="View group details" ui-sref="groupDetails({id: meeting.Group.id})">{{meeting.name | capitalize}}</a></td>
                         <td md-cell>{{$ctrl.findDayDisplay(meeting.day)}}</td>
                         <td md-cell width="80">{{meeting.fullTime}}</td>

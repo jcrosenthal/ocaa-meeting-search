@@ -18,7 +18,7 @@ export class MeetingListController {
 
     Object.assign(this, {
       myPage: 1,
-      myLimit: 10,
+      myLimit: 15,
       query: {
         order: 'name',
         page: 1
@@ -30,17 +30,17 @@ export class MeetingListController {
     this.limitOptions = [15, 25, 50, {
       label: 'All',
       value: function () {
-        return _this.meetings ? _this.meetings.length : 0;
+        return _this.sortedFilteredMeetings() ? _this.sortedFilteredMeetings().length : 0;
       }
     }];
 
-    this.$http.get('http://localhost:3000/api/days')
+    this.$http.get('https://api.orangenyaa.org/api/days')
       .then(res => this.days = res.data)
-      .then(() => this.$http.get('http://localhost:3000/api/formats')
+      .then(() => this.$http.get('https://api.orangenyaa.org/api/formats')
         .then(res => this.formats = res.data))
       .then(() => {
 
-        this.$http.get('http://localhost:3000/api/meetings')
+        this.$http.get('https://api.orangenyaa.org/api/meetings')
           .then(res => {
 
             this.meetingsMaster = res.data;
@@ -224,7 +224,7 @@ export class MeetingListController {
 
     let ordered = this.$filter('orderBy')(this.meetings, this.query.order);
 
-    return ordered;
+    return this.$filter('filter')(ordered, this.filterBy.searchText);
 
   }
 

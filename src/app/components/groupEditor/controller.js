@@ -45,7 +45,7 @@ export class GroupEditorController {
     if (this.$stateParams.id) {
 
     } else {
-      this.$http.post('http://localhost:3000/api/groups', Object.assign({}, this.group, {
+      this.$http.post('https://api.orangenyaa.org/api/groups', Object.assign({}, this.group, {
           meetings: this.group.meetings.map(m => Object.assign({}, m, {
             start: moment(m.start).format('HH:mm:ss'),
             format: m.format.join(','),
