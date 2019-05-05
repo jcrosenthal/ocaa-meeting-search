@@ -36,13 +36,13 @@ export class MeetingListController {
       }
     }];
 
-    this.$http.get('https://api.orangenyaa.org/api/days')
+    this.$http.get('http://localhost:5000/api/days')
       .then(res => this.days = res.data)
-      .then(() => this.$http.get('https://api.orangenyaa.org/api/formats')
+      .then(() => this.$http.get('http://localhost:5000/api/formats')
         .then(res => this.formats = res.data))
       .then(() => {
 
-        this.$http.get('https://api.orangenyaa.org/api/meetings')
+        this.$http.get('http://localhost:5000/api/meetings')
           .then(res => {
 
             this.meetingsMaster = res.data;

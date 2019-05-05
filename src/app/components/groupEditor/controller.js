@@ -17,22 +17,25 @@ export class GroupEditorController {
     this.group = {};
     this.group.meetings = [];
 
-    this.$http.get('https://api.orangenyaa.org/api/days')
+    this.$http.get('http://localhost:5000/api/days')
       .then(res => this.days = res.data)
-      .then(() => this.$http.get('https://api.orangenyaa.org/api/formats')
+      .then(() => this.$http.get('http://localhost:5000/api/formats')
         .then(res => this.formats = res.data))
       .then(() => {
         const todayFormatted = moment().format('YYYY-MM-DD');
 
-        this.$http.get('https://api.orangenyaa.org/api/groups/' + (this.$stateParams.id || ''))
+        this.$http.get('http://localhost:5000/api/groups/' + (this.$stateParams.id || ''))
           .then((res) => {
             
             this.group = res.data[0];
 
-            this.group.meetings = this.group.Meetings.map(meeting => Object.assign({}, meeting, {
-              time: moment(`${todayFormatted} ${meeting.start}`).format('h:mm A'),
-              notes: meeting.notes && meeting.notes.replace(/\[|\]/ig, '')
-            }));
+            this.group.meetings = this.group.Meetings && this.group.Meetings.map(meeting => Object.assign({}, meeting, {
+              time: moment(`${todayFormatted} ${meeting.start}`).toDate(),
+              notes: meeting.notes && meeting.notes.replace(/\[|\]/ig, ''),
+              format: meeting.format.split(',')
+            })) || [];
+
+            console.log('this.group.meetings', this.group.meetings);
 
           });
 
@@ -55,9 +58,19 @@ export class GroupEditorController {
 
   save() {
     if (this.$stateParams.id) {
+      this.$http.put('http://localhost:5000/api/groups/' + this.$stateParams.id, Object.assign({}, this.group, {
+          meetings: this.group.meetings.map(m => Object.assign({}, m, {
+            start: moment(m.start).format('HH:mm:ss'),
+            format: m.format.join(','),
+          }))
+        }))
+        .then(() => {
 
+          this.$onInit();
+
+        })
     } else {
-      this.$http.post('https://api.orangenyaa.org/api/groups', Object.assign({}, this.group, {
+      this.$http.post('http://localhost:5000/api/groups', Object.assign({}, this.group, {
           meetings: this.group.meetings.map(m => Object.assign({}, m, {
             start: moment(m.start).format('HH:mm:ss'),
             format: m.format.join(','),
