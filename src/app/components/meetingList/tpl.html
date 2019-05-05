@@ -101,7 +101,7 @@
 <md-card ng-if="!$ctrl.isLoading && $ctrl.isMobile" ng-repeat="meeting in $ctrl.sortedFilteredMeetings()">
     <md-card-content>
         <h2><a class="meeting-title-link capitalize"
-                ui-sref="groupDetails({id: meeting.groupId})"><strong>{{meeting.name | capitalize}}</strong></a></h2>
+                ui-sref="groupDetails({id: meeting.Group.id})"><strong>{{meeting.name | capitalize}}</strong></a></h2>
         <md-divider></md-divider>
         <div layout="row" layout-align="space-between">
             <div flex="50">

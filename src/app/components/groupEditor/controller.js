@@ -1,9 +1,3 @@
-import {
-  groups,
-  days,
-  formats
-} from '../../resources';
-
 import moment from 'moment';
 export class GroupEditorController {
 
@@ -15,9 +9,6 @@ export class GroupEditorController {
       $timeout,
       $scope,
       $http,
-      groups,
-      days,
-      formats
     });
 
   }
@@ -25,6 +16,27 @@ export class GroupEditorController {
   $onInit() {
     this.group = {};
     this.group.meetings = [];
+
+    this.$http.get('https://api.orangenyaa.org/api/days')
+      .then(res => this.days = res.data)
+      .then(() => this.$http.get('https://api.orangenyaa.org/api/formats')
+        .then(res => this.formats = res.data))
+      .then(() => {
+        const todayFormatted = moment().format('YYYY-MM-DD');
+
+        this.$http.get('https://api.orangenyaa.org/api/groups/' + (this.$stateParams.id || ''))
+          .then((res) => {
+            
+            this.group = res.data[0];
+
+            this.group.meetings = this.group.Meetings.map(meeting => Object.assign({}, meeting, {
+              time: moment(`${todayFormatted} ${meeting.start}`).format('h:mm A'),
+              notes: meeting.notes && meeting.notes.replace(/\[|\]/ig, '')
+            }));
+
+          });
+
+      });
 
     this.initAutocomplete();
   }
