@@ -1,27 +1,28 @@
 import moment from 'moment';
 export class GroupDetailsController {
 
-  constructor($stateParams, $timeout, $http) {
+  constructor($stateParams, $timeout, $http, ENV) {
     'ngInject';
 
     Object.assign(this, {
       $stateParams,
       $timeout,
-      $http
+      $http,
+      ENV
     });
 
   }
 
   $onInit() {
 
-    this.$http.get('http://localhost:5000/api/days')
+    this.$http.get(this.ENV.API_BASE_URL + '/api/days')
       .then(res => this.days = res.data)
-      .then(() => this.$http.get('http://localhost:5000/api/formats')
+      .then(() => this.$http.get(this.ENV.API_BASE_URL + '/api/formats')
         .then(res => this.formats = res.data))
       .then(() => {
         const todayFormatted = moment().format('YYYY-MM-DD');
         
-        this.$http.get('http://localhost:5000/api/groups/' + this.$stateParams.id)
+        this.$http.get(this.ENV.API_BASE_URL + '/api/groups/' + this.$stateParams.id)
           .then((res) => {
             this.group = res.data[0];
             this.directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${this.group.lat},${this.group.lng}`;

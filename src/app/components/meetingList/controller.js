@@ -1,11 +1,13 @@
 import moment from 'moment';
 
 export class MeetingListController {
-  constructor($filter, $http) {
+  constructor($filter, $http, ENV) {
     'ngInject';
 
     this.$filter = $filter;
     this.$http = $http;
+    this.ENV = ENV;
+    
   }
 
   $onInit() {
@@ -36,13 +38,13 @@ export class MeetingListController {
       }
     }];
 
-    this.$http.get('http://localhost:5000/api/days')
+    this.$http.get(this.ENV.API_BASE_URL + '/api/days')
       .then(res => this.days = res.data)
-      .then(() => this.$http.get('http://localhost:5000/api/formats')
+      .then(() => this.$http.get(this.ENV.API_BASE_URL + '/api/formats')
         .then(res => this.formats = res.data))
       .then(() => {
 
-        this.$http.get('http://localhost:5000/api/meetings')
+        this.$http.get(this.ENV.API_BASE_URL + '/api/meetings')
           .then(res => {
 
             this.meetingsMaster = res.data;

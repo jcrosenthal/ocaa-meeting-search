@@ -1,7 +1,7 @@
 import moment from 'moment';
 export class GroupEditorController {
 
-  constructor($scope, $stateParams, $http, $timeout) {
+  constructor($scope, $stateParams, $http, $timeout, ENV) {
     'ngInject';
 
     Object.assign(this, {
@@ -9,6 +9,7 @@ export class GroupEditorController {
       $timeout,
       $scope,
       $http,
+      ENV
     });
 
   }
@@ -17,14 +18,14 @@ export class GroupEditorController {
     this.group = {};
     this.group.meetings = [];
 
-    this.$http.get('http://localhost:5000/api/days')
+    this.$http.get(this.ENV.API_BASE_URL + '/api/days')
       .then(res => this.days = res.data)
-      .then(() => this.$http.get('http://localhost:5000/api/formats')
+      .then(() => this.$http.get(this.ENV.API_BASE_URL + '/api/formats')
         .then(res => this.formats = res.data))
       .then(() => {
         const todayFormatted = moment().format('YYYY-MM-DD');
 
-        this.$http.get('http://localhost:5000/api/groups/' + (this.$stateParams.id || ''))
+        this.$http.get(this.ENV.API_BASE_URL + '/api/groups/' + (this.$stateParams.id || ''))
           .then((res) => {
             
             this.group = res.data[0];
@@ -58,7 +59,7 @@ export class GroupEditorController {
 
   save() {
     if (this.$stateParams.id) {
-      this.$http.put('http://localhost:5000/api/groups/' + this.$stateParams.id, Object.assign({}, this.group, {
+      this.$http.put(this.ENV.API_BASE_URL + '/api/groups/' + this.$stateParams.id, Object.assign({}, this.group, {
           meetings: this.group.meetings.map(m => Object.assign({}, m, {
             start: moment(m.start).format('HH:mm:ss'),
             format: m.format.join(','),
@@ -70,7 +71,7 @@ export class GroupEditorController {
 
         })
     } else {
-      this.$http.post('http://localhost:5000/api/groups', Object.assign({}, this.group, {
+      this.$http.post(this.ENV.API_BASE_URL + '/api/groups', Object.assign({}, this.group, {
           meetings: this.group.meetings.map(m => Object.assign({}, m, {
             start: moment(m.start).format('HH:mm:ss'),
             format: m.format.join(','),
