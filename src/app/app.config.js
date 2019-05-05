@@ -31,19 +31,21 @@ class Config {
             .primaryPalette('amazingPaletteName')
 
         $locationProvider.html5Mode({
-            enabled: true,
+            enabled: false,
             requireBase: false
         });
+
+        $urlRouterProvider.otherwise('/');  
 
         $stateProvider
             .state('meetingList', {
                 url: '/',
                 component: 'meetingList',
             })
-            .state('groupEditor', {
-                url: '/group/edit/:id',
-                component: 'groupEditor',
-            })
+            // .state('groupEditor', {
+            //     url: '/group/edit/:id',
+            //     component: 'groupEditor',
+            // })
             .state('groupDetails', {
                 url: '/group/details/:id',
                 component: 'groupDetails',
@@ -52,19 +54,6 @@ class Config {
                 url: '/error',
                 component: 'error'
             });
-
-        // A standard URL change causes infdig in karma tests
-        // when event.preventDefault is called during $stateChangeStart
-        //
-        // See https://github.com/angular-ui/ui-router/issues/600#issuecomment-47228922
-        $urlRouterProvider.otherwise($injector => {
-
-            let $state = $injector.get('$state');
-
-            $state.go('error')
-                .catch(console.error);
-
-        });
 
         $logProvider.debugEnabled(process.env.NODE_ENV !== 'production');
 

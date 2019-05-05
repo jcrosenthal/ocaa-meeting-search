@@ -17,7 +17,7 @@ import {
 } from './app';
 import MeetingListComponent from './components/meetingList';
 import GroupDetailsComponent from './components/groupDetails';
-import GroupEditorComponent from './components/groupEditor';
+// import GroupEditorComponent from './components/groupEditor';
 import ErrorComponent from './components/error';
 
 const MODULE_NAME = 'app';
@@ -35,7 +35,7 @@ ocaaApp.directive('app', app)
 ocaaApp.controller('AppCtrl', AppCtrl);
 ocaaApp.component('meetingList', MeetingListComponent);
 ocaaApp.component('groupDetails', GroupDetailsComponent);
-ocaaApp.component('groupEditor', GroupEditorComponent);
+// ocaaApp.component('groupEditor', GroupEditorComponent);
 ocaaApp.component('error', ErrorComponent);
 
 ocaaApp.filter('trusted', ['$sce', function ($sce) {

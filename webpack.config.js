@@ -121,7 +121,7 @@ module.exports = function makeWebpackConfig() {
             loader: 'css-loader',
             query: {
               sourceMap: true
-            }
+            },
           },
           {
             loader: 'postcss-loader'
@@ -164,15 +164,6 @@ module.exports = function makeWebpackConfig() {
       }
     })
   }
-
-  /**
-   * PostCSS
-   * Reference: https://github.com/postcss/autoprefixer-core
-   * Add vendor prefixes to your css
-   */
-  // NOTE: This is now handled in the `postcss.config.js`
-  //       webpack2 has some issues, making the config file necessary
-
   /**
    * Plugins
    * Reference: http://webpack.github.io/docs/configuration.html#plugins

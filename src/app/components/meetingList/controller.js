@@ -12,6 +12,8 @@ export class MeetingListController {
 
     const _this = this;
 
+    this.isMobile = window.innerWidth <= 720;
+
     this.meetings = [];
     this.days = [];
     this.formats = [];
@@ -45,7 +47,7 @@ export class MeetingListController {
 
             this.meetingsMaster = res.data;
 
-            this.setMeetings();
+            this.meetings = this.setMeetings();
 
             this.query.limit = this.sortedFilteredMeetings().length || this.meetingsMaster.length;
 
@@ -72,7 +74,7 @@ export class MeetingListController {
   setMeetings() {
 
     // Assign all meetings to their matching groups
-    this.meetings = this.meetingsMaster.map(meeting => {
+    return this.meetingsMaster.map(meeting => {
 
       let group = meeting.Group;
       let meetingFormats = meeting.format.split(',');
@@ -80,7 +82,7 @@ export class MeetingListController {
       const formatDisplay = meetingFormats.map(formatCode => {
         const foundFormat = this.formats.find(format => format.code === formatCode);
         return foundFormat && foundFormat.display || '';
-      }).sort().filter(e => e).join(', ');
+      }).sort().filter(e => e).join(' | ');
 
       const streetAddr = group && [
         group.street_number,
@@ -104,7 +106,8 @@ export class MeetingListController {
         formatDisplay: formatDisplay,
         location: location,
         isWheelchairAccessible: group.isWheelchairAccessible ? 1 : 0,
-        notes: meeting.notes && meeting.notes.replace(/\[|\]/ig, '')
+        notes: meeting.notes && meeting.notes.replace(/\[|\]/ig, ''),
+        directionsUrl: `https://www.google.com/maps/dir/?api=1&destination=${meeting.Group.lat},${meeting.Group.lng}`
       });
 
       return updatedMeeting;
@@ -114,8 +117,8 @@ export class MeetingListController {
 
   resetResults() {
     this.filterBy = {};
-    this.meetings = angular.copy(this.meetingsMaster);
-    this.setMeetings();
+    this.meetings = [];
+    this.$onInit();
   }
 
   filterByFormat(meetings, filterBy) {
@@ -135,7 +138,8 @@ export class MeetingListController {
       return meetings;
     }
 
-    let filtered = meetings.filter(meeting => filterBy.days.includes(meeting.day.toLowerCase()));
+    let filtered = meetings.filter(meeting =>
+      filterBy.days.includes(meeting.day.toLowerCase()));
 
     return filtered;
   }
@@ -152,10 +156,10 @@ export class MeetingListController {
       },
       afternoon: {
         start: 1200,
-        end: 1759
+        end: 1659
       },
       evening: {
-        start: 1800,
+        start: 1700,
         end: 2359
       },
     };
@@ -197,7 +201,10 @@ export class MeetingListController {
   }
 
   filterResults(filterBy) {
-    this.setMeetings();
+
+    this.isLoading = true;
+
+    this.meetings = this.setMeetings();
 
     const allMeetings = this.meetings;
 
@@ -214,6 +221,8 @@ export class MeetingListController {
     // console.log('filteredByOpenClosed', filteredByOpenClosed);
 
     this.meetings = filteredByOpenClosed;
+
+    this.isLoading = false;
   }
 
   sortedFilteredMeetings() {

@@ -31,6 +31,7 @@
     "angularjs-template-loader": "^0.1.1",
     "babel-loader": "^8.0.5",
     "babel-plugin-angularjs-annotate": "^0.10.0",
+    "cssnano": "^4.1.10",
     "edit-json-file": "^1.2.1",
     "moment": "^2.24.0",
     "ng-material-datetimepicker": "^1.18.3"

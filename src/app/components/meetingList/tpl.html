@@ -1,12 +1,13 @@
 <md-card>
-    <md-card-content layout="row" layout-align="space-between">
-        <div flex="35" role="presentation" layout="row">
-            <md-input-container flex="100">
+    <md-card-content layout-xs="column" layout="row" layout-align="space-between">
+        <div flex-xs="100" flex="35" role="presentation">
+            <md-input-container flex="100" style="width: 100%; margin-bottom: 0">
                 <label for="searchText">Search</label>
-                <input name="searchText" type="search" ng-model="$ctrl.filterBy.searchText" aria-label="search">
+                <input name="searchText" placeholder="Town, Group Name" type="search"
+                    ng-model="$ctrl.filterBy.searchText" aria-label="search">
             </md-input-container>
         </div>
-        <div flex="65" role="presentation">
+        <div flex-xs="100" flex="65" role="presentation">
             <div>
                 <div layout="row" role="presentation">
                     <md-input-container flex="50">
@@ -20,9 +21,9 @@
                         <label for="">Time</label>
                         <md-select ng-model="$ctrl.filterBy.timeRange" placeholder="Any Time">
                             <md-option value="any">Any Time</md-option>
-                            <md-option value="morning">Morning (5:00 AM - 11:30 AM)</md-option>
-                            <md-option value="afternoon">Afternoon (Noon - 5:30 PM)</md-option>
-                            <md-option value="evening">Evening (6:00 PM - Midnight)</md-option>
+                            <md-option value="morning">Morning (5 AM - 11:30 AM)</md-option>
+                            <md-option value="afternoon">Afternoon (Noon - 4:30 PM)</md-option>
+                            <md-option value="evening">Evening (5 PM - Midnight)</md-option>
                         </md-select>
                     </md-input-container>
                 </div>
@@ -55,7 +56,15 @@
     </md-card-content>
 </md-card>
 
-<md-card class="hide-for-small">
+<md-card role="status" ng-if="$ctrl.isLoading" class="text-center">
+    <md-content>
+        <p>
+            <small>Loading...</small>
+        </p>
+    </md-content>
+</md-card>
+
+<md-card ng-if="!$ctrl.isLoading && !$ctrl.isMobile">
     <md-card-content>
         <md-table-container>
             <table md-table>
@@ -71,10 +80,13 @@
                 <tbody md-body>
                     <tr md-row
                         ng-repeat="meeting in $ctrl.sortedFilteredMeetings() | limitTo: $ctrl.myLimit: ($ctrl.myPage - 1) * $ctrl.myLimit">
-                        <td md-cell><a class="capitalize" title="View group details" ui-sref="groupDetails({id: meeting.Group.id})">{{meeting.name | capitalize}}</a></td>
+                        <td md-cell><a class="capitalize" title="View group details"
+                                ui-sref="groupDetails({id: meeting.Group.id})">{{meeting.name | capitalize}}</a></td>
                         <td md-cell>{{$ctrl.findDayDisplay(meeting.day)}}</td>
                         <td md-cell width="80">{{meeting.fullTime}}</td>
-                        <td md-cell>{{meeting.Group.location}}<br ng-if="meeting.Group.location">{{meeting.location}}</td>
+                        <td md-cell> <a ng-href="{{meeting.directionsUrl}}"
+                                target="_blank"><strong>{{meeting.Group.location}}</strong>
+                                <br ng-if="meeting.Group.location">{{meeting.location}}</a></td>
                         <td md-cell>{{meeting.formatDisplay}}</td>
                     </tr>
                 </tbody>
@@ -86,12 +98,22 @@
     </md-card-content>
 </md-card>
 
-<md-card class="hide-for-large"
-    ng-repeat="meeting in $ctrl.sortedFilteredMeetings() | filter: $ctrl.filterBy.searchText">
+<md-card ng-if="!$ctrl.isLoading && $ctrl.isMobile" ng-repeat="meeting in $ctrl.sortedFilteredMeetings()">
     <md-card-content>
         <h2><a class="meeting-title-link capitalize"
                 ui-sref="groupDetails({id: meeting.groupId})"><strong>{{meeting.name | capitalize}}</strong></a></h2>
         <md-divider></md-divider>
+        <div layout="row" layout-align="space-between">
+            <div flex="50">
+                <p>
+                    <strong>{{meeting.Group.location}}</strong> <br ng-if="meeting.Group.location">{{meeting.location}}
+                </p>
+            </div>
+            <div flex="50">
+                <md-button style="float:right;" class="md-primary md-raised" ng-href="{{meeting.directionsUrl}}"
+                    target="_blank" title="Directions">Directions</md-button>
+            </div>
+        </div>
         <div layout="row" layout-align="space-between">
             <p flex="100" class="capitalize">
                 <md-icon>access_time</md-icon> {{$ctrl.findDayDisplay(meeting.day)}} @ {{meeting.fullTime}}
