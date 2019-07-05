@@ -11,7 +11,7 @@
     </md-toolbar>
     <!-- <div id="map"></div> -->
     <md-card-content layout="row">
-        <div flex="80">
+        <div flex="80" flex-xs="100">
             <p class="address">
                 <strong ng-if="$ctrl.group.location">{{$ctrl.group.location}}</strong>
                 <br ng-if="$ctrl.group.location">
@@ -22,7 +22,7 @@
                 {{$ctrl.group.postal_code}}
             </p>
         </div>
-        <div flex="20">
+        <div flex="20" flex-xs="100">
             <md-button ng-href="{{$ctrl.directionsUrl}}" target="_blank" title="Get directions to this meeting">
                 <md-icon>map</md-icon> Directions
             </md-button>
@@ -39,13 +39,13 @@
     <md-list flex>
         <md-list-item class="md-3-line" ng-repeat="meeting in $ctrl.group.Meetings track by $index">
             <div class="md-list-item-text" layout="row" layout-align="space-between">
-                <div flex="50" layout="column">
+                <div flex="50" flex-xs="100" layout="column">
                     <p class="capitalize">
                         <md-icon>access_time</md-icon> {{$ctrl.findDayDisplay(meeting.day)}} @
                         {{meeting.time}}
                     </p>
                 </div>
-                <div flex="50" layout="column">
+                <div flex="50" flex-xs="100" layout="column">
                     <div class="formatgrid" ng-repeat="format in $ctrl.formatFormats(meeting.format)">
                         <md-icon>meeting_room</md-icon>
                         <p>

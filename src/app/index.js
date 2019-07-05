@@ -26,7 +26,7 @@ const ocaaApp = angular.module(MODULE_NAME, [
   'md.data.table',
   'ngMessages',
   'ui.router',
-  'ngMaterialDatePicker'
+  'ngMaterialDatePicker',
 ]);
 
 window.app = ocaaApp;
@@ -51,5 +51,7 @@ ocaaApp.filter('trusted', ['$sce', function ($sce) {
 ocaaApp.filter('capitalize', capitalize);
 
 ocaaApp.config(Config);
+
+// ocaaApp.run(Run);
 
 export default MODULE_NAME;

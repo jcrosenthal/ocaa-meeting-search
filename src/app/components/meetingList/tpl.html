@@ -12,7 +12,8 @@
                 <div layout="row" role="presentation">
                     <md-input-container flex="50">
                         <label for="">Day</label>
-                        <md-select multiple ng-model="$ctrl.filterBy.days" placeholder="All Days">
+                        <md-select ng-model="$ctrl.filterBy.day" placeholder="All Days">
+                            <md-option value="">Any Day</md-option>
                             <md-option ng-repeat="day in $ctrl.days" ng-value="day.code">{{day.display}}</md-option>
                         </md-select>
                     </md-input-container>
@@ -61,6 +62,8 @@
         <p>
             <small>Loading...</small>
         </p>
+        <md-progress-linear class="md-warn" md-mode="buffer" value="{{$ctrl.determinateValue}}"
+            md-buffer-value="{{$ctrl.determinateValue2}}" ng-disabled="!$ctrl.showList[0]"></md-progress-linear>
     </md-content>
 </md-card>
 
@@ -74,19 +77,27 @@
                         <th md-column md-order-by="day">Day</th>
                         <th md-column md-order-by="start">Time</th>
                         <th md-column md-order-by="town">Location</th>
+                        <th md-column md-order-by="distance" ng-if="$ctrl.isDistanceActive">Distance</th>
                         <th md-column md-order-by="formatDisplay">Format</th>
                     </tr>
                 </thead>
                 <tbody md-body>
-                    <tr md-row
-                        ng-repeat="meeting in $ctrl.sortedFilteredMeetings() | limitTo: $ctrl.myLimit: ($ctrl.myPage - 1) * $ctrl.myLimit">
-                        <td md-cell><a class="capitalize" title="View group details"
-                                ui-sref="groupDetails({id: meeting.Group.id})">{{meeting.name | capitalize}}</a></td>
+                    <tr md-row ng-repeat="meeting in $ctrl.sortedFilteredMeetings() | limitTo: $ctrl.myLimit: ($ctrl.myPage - 1) * $ctrl.myLimit">
+                        <td md-cell>
+                            <a class="capitalize" title="View group details"
+                                ui-sref="groupDetails({id: meeting.Group.id})">{{meeting.name | capitalize}}</a>
+                        </td>
                         <td md-cell>{{$ctrl.findDayDisplay(meeting.day)}}</td>
                         <td md-cell width="80">{{meeting.fullTime}}</td>
-                        <td md-cell> <a ng-href="{{meeting.directionsUrl}}"
-                                target="_blank"><strong>{{meeting.Group.location}}</strong>
-                                <br ng-if="meeting.Group.location">{{meeting.location}}</a></td>
+                        <td md-cell>
+                            <a ng-href="{{meeting.directionsUrl}}" title="Directions to {{meeting.name}}"
+                                target="_blank">
+                                <strong>{{meeting.Group.location}}</strong>
+                                <br ng-if="meeting.Group.location">{{meeting.location}}</a>
+                        </td>
+                        <td md-cell ng-if="$ctrl.isDistanceActive">
+                            {{meeting.distance}} Mi
+                        </td>
                         <td md-cell>{{meeting.formatDisplay}}</td>
                     </tr>
                 </tbody>

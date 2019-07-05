@@ -1,18 +1,28 @@
 import moment from 'moment';
 
 export class MeetingListController {
-  constructor($filter, $http, ENV) {
+  constructor($filter, $http, $interval, ENV) {
     'ngInject';
 
     this.$filter = $filter;
     this.$http = $http;
+    this.$interval = $interval;
+
     this.ENV = ENV;
-    
+
+  }
+
+  $onChanges(changes) {
+    console.log('changes', changes);
   }
 
   $onInit() {
 
     const _this = this;
+
+    this.getLocation();
+
+    this.setLoading();
 
     this.isMobile = window.innerWidth <= 720;
 
@@ -20,15 +30,19 @@ export class MeetingListController {
     this.days = [];
     this.formats = [];
 
+    this.isLoading = true;
+
     Object.assign(this, {
       myPage: 1,
       myLimit: 15,
       query: {
-        order: 'name',
+        order: 'start',
         page: 1
       },
       selected: [],
-      filterBy: {},
+      filterBy: {
+        day: moment().format('ddd').toLowerCase()
+      },
     });
 
     this.limitOptions = [15, 25, 50, {
@@ -49,6 +63,8 @@ export class MeetingListController {
 
             this.meetingsMaster = res.data;
 
+            this.isLoading = false;
+
             this.meetings = this.setMeetings();
 
             this.query.limit = this.sortedFilteredMeetings().length || this.meetingsMaster.length;
@@ -57,6 +73,68 @@ export class MeetingListController {
 
       });
 
+  }
+
+  getLocation() {
+    console.log('getLocation');
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.position = position;
+      });
+      
+      this.isDistanceActive = true;
+    } else {
+      this.locationDisplay = "Geolocation is not supported by this browser.";
+    }
+  }
+
+  setLoading() {
+    var self = this,
+      j = 0,
+      counter = 0;
+
+    self.mode = 'query';
+    self.activated = true;
+    self.determinateValue = 30;
+    self.determinateValue2 = 30;
+
+    self.showList = [];
+
+    /**
+     * Turn off or on the 5 themed loaders
+     */
+    self.toggleActivation = function () {
+      if (!self.activated) self.showList = [];
+      if (self.activated) {
+        j = counter = 0;
+        self.determinateValue = 30;
+        self.determinateValue2 = 30;
+      }
+    };
+
+    this.$interval(function () {
+      self.determinateValue += 1;
+      self.determinateValue2 += 1.5;
+
+      if (self.determinateValue > 100) self.determinateValue = 30;
+      if (self.determinateValue2 > 100) self.determinateValue2 = 30;
+
+      // Incrementally start animation the five (5) Indeterminate,
+      // themed progress circular bars
+
+      if ((j < 2) && !self.showList[j] && self.activated) {
+        self.showList[j] = true;
+      }
+      if (counter++ % 4 === 0) j++;
+
+      // Show the indicator in the "Used within Containers" after 200ms delay
+      if (j == 2) self.contained = "indeterminate";
+
+    }, 100, 0, true);
+
+    this.$interval(function () {
+      self.mode = (self.mode == 'query' ? 'determinate' : 'query');
+    }, 7200, 0, true);
   }
 
   formatFormats(formats) {
@@ -73,8 +151,47 @@ export class MeetingListController {
     return found && found.display;
   }
 
-  setMeetings() {
+  getDistance(lat, lng) {
+    var groupPosition = {
+      lat: Number(lat),
+      lng: Number(lng)
+    };
 
+    console.log(groupPosition);
+    console.log(this.position.coords);
+
+    var lat1 = groupPosition.lat;
+    var lon1 = groupPosition.lng;
+    var lat2 = this.position.coords.latitude;
+    var lon2 = this.position.coords.longitude;
+    var unit = 'M';
+
+    if ((lat1 == lat2) && (lon1 == lon2)) {
+      return 0;
+    } else {
+      var radlat1 = Math.PI * lat1 / 180;
+      var radlat2 = Math.PI * lat2 / 180;
+      var theta = lon1 - lon2;
+      var radtheta = Math.PI * theta / 180;
+      var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+      if (dist > 1) {
+        dist = 1;
+      }
+      dist = Math.acos(dist);
+      dist = dist * 180 / Math.PI;
+      dist = dist * 60 * 1.1515;
+      if (unit == "K") {
+        dist = dist * 1.609344
+      }
+      if (unit == "N") {
+        dist = dist * 0.8684
+      }
+      return Math.round(dist * 100) / 100;
+    }
+  }
+
+  setMeetings() {
+console.log('setMeetings');
     // Assign all meetings to their matching groups
     return this.meetingsMaster.map(meeting => {
 
@@ -91,8 +208,6 @@ export class MeetingListController {
         group.route
       ].filter(e => e).join(' ');
 
-      // console.log(streetAddr);
-
       const location = group && [
         streetAddr,
         group.locality,
@@ -107,10 +222,13 @@ export class MeetingListController {
         town: group.locality,
         formatDisplay: formatDisplay,
         location: location,
+        distance: this.isDistanceActive && this.getDistance(group.lat, group.lng),
         isWheelchairAccessible: group.isWheelchairAccessible ? 1 : 0,
         notes: meeting.notes && meeting.notes.replace(/\[|\]/ig, ''),
         directionsUrl: `https://www.google.com/maps/dir/?api=1&destination=${meeting.Group.lat},${meeting.Group.lng}`
       });
+
+      console.log('updatedMeeting', updatedMeeting);
 
       return updatedMeeting;
     });
@@ -136,12 +254,12 @@ export class MeetingListController {
   }
 
   filterByDay(meetings, filterBy) {
-    if (!filterBy || !filterBy.days || !filterBy.days.length) {
+    if (!filterBy || !filterBy.day || !filterBy.day.length) {
       return meetings;
     }
 
     let filtered = meetings.filter(meeting =>
-      filterBy.days.includes(meeting.day.toLowerCase()));
+      filterBy.day === meeting.day.toLowerCase());
 
     return filtered;
   }
@@ -223,6 +341,9 @@ export class MeetingListController {
     // console.log('filteredByOpenClosed', filteredByOpenClosed);
 
     this.meetings = filteredByOpenClosed;
+
+    // sort by time
+    this.query.order = 'start';
 
     this.isLoading = false;
   }

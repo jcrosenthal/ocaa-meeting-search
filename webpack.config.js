@@ -4,7 +4,7 @@
 var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 /**
@@ -108,26 +108,16 @@ module.exports = function makeWebpackConfig() {
       //
       // Reference: https://github.com/postcss/postcss-loader
       // Postprocess your css with PostCSS plugins
-      test: /\.css$/,
-      // Reference: https://github.com/webpack/extract-text-webpack-plugin
-      // Extract css files in production builds
-      //
-      // Reference: https://github.com/webpack/style-loader
-      // Use style-loader in development.
-
-      loader: isTest ? 'null-loader' : ExtractTextPlugin.extract({
-        fallbackLoader: 'style-loader',
-        loader: [{
-            loader: 'css-loader',
-            query: {
-              sourceMap: true
-            },
+      test: /\.(sa|sc|c)ss$/,
+      use: [{
+          loader: MiniCssExtractPlugin.loader,
+          options: {
+            hmr: process.env.NODE_ENV === 'development',
           },
-          {
-            loader: 'postcss-loader'
-          }
-        ],
-      })
+        },
+        'css-loader',
+        'postcss-loader',
+      ],
     }, {
       // ASSET LOADER
       // Reference: https://github.com/webpack/file-loader
@@ -193,8 +183,9 @@ module.exports = function makeWebpackConfig() {
       // Reference: https://github.com/webpack/extract-text-webpack-plugin
       // Extract css files
       // Disabled when in test mode or not in build mode
-      new ExtractTextPlugin({
-        filename: 'css/[name].css',
+      new MiniCssExtractPlugin({
+        filename: !isProd ? 'css/[name].css' : 'css/[name].[hash].css',
+        chunkFilename: !isProd ? 'css/[id].css' : 'css/[id].[hash].css',
         disable: !isProd,
         allChunks: true
       })
@@ -232,7 +223,9 @@ module.exports = function makeWebpackConfig() {
   config.devServer = {
     contentBase: './src/public',
     stats: 'minimal',
-    host: '0.0.0.0'
+    host: '0.0.0.0',
+    http2: true,
+    https: true
   };
 
   return config;

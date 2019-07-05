@@ -28,7 +28,9 @@ export class GroupEditorController {
         this.$http.get(this.ENV.API_BASE_URL + '/api/groups/' + (this.$stateParams.id || ''))
           .then((res) => {
             
-            this.group = res.data[0];
+            if (this.$stateParams.id){
+              this.group = res.data[0];
+            }
 
             this.group.meetings = this.group.Meetings && this.group.Meetings.map(meeting => Object.assign({}, meeting, {
               time: moment(`${todayFormatted} ${meeting.start}`).toDate(),
