@@ -9,7 +9,7 @@ class Config {
             .primaryPalette('orange');
 
         $locationProvider.html5Mode({
-            enabled: true,
+            enabled: false,
             requireBase: false
         });
 
@@ -20,10 +20,10 @@ class Config {
                 url: '/',
                 component: 'meetingList',
             })
-            .state('groupEditor', {
-                url: '/group/edit/:id',
-                component: 'groupEditor',
-            })
+            // .state('groupEditor', {
+            //     url: '/group/edit/:id',
+            //     component: 'groupEditor',
+            // })
             .state('groupDetails', {
                 url: '/group/details/:id',
                 component: 'groupDetails',

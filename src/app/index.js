@@ -39,7 +39,8 @@ ocaaApp.component('groupEditor', GroupEditorComponent);
 ocaaApp.component('error', ErrorComponent);
 
 ocaaApp.constant('ENV', {  
-  API_BASE_URL: 'http://localhost:5000',
+  // API_BASE_URL: 'http://localhost:5000',
+  API_BASE_URL: 'https://api.orangenyaa.org'
 });
 
 ocaaApp.filter('trusted', ['$sce', function ($sce) {

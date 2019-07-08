@@ -28,6 +28,15 @@
   text-align: center;
 }
 
+.distance-marker {
+  border: solid 5px #717171;
+  background: #fefefe;
+  text-align: center;
+  padding: 10px;
+  float: right;
+  margin-top: 20px;
+}
+
 /* Date Time Picker */
 md-dialog.dtp {
   font-size: 14px;

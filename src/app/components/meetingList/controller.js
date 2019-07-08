@@ -76,13 +76,14 @@ export class MeetingListController {
   }
 
   getLocation() {
-    console.log('getLocation');
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
         this.position = position;
+        this.isDistanceActive = true;
+        if (this.meetings.length > 1 && this.meetingsMaster.length > 1 && !this.meetingsMaster[0].distance) {
+          this.filterResults();
+        }
       });
-      
-      this.isDistanceActive = true;
     } else {
       this.locationDisplay = "Geolocation is not supported by this browser.";
     }
@@ -157,8 +158,7 @@ export class MeetingListController {
       lng: Number(lng)
     };
 
-    console.log(groupPosition);
-    console.log(this.position.coords);
+    console.log('why');
 
     var lat1 = groupPosition.lat;
     var lon1 = groupPosition.lng;
@@ -191,7 +191,6 @@ export class MeetingListController {
   }
 
   setMeetings() {
-console.log('setMeetings');
     // Assign all meetings to their matching groups
     return this.meetingsMaster.map(meeting => {
 
@@ -214,6 +213,7 @@ console.log('setMeetings');
       ].filter(e => e).join(', ');
 
       const todayMomentFormatted = moment().format('YYYY-MM-DD');
+      const distance = this.isDistanceActive ? this.getDistance(group.lat, group.lng) : 0;
 
       const updatedMeeting = Object.assign({}, meeting, {
         name: group.name,
@@ -222,13 +222,13 @@ console.log('setMeetings');
         town: group.locality,
         formatDisplay: formatDisplay,
         location: location,
-        distance: this.isDistanceActive && this.getDistance(group.lat, group.lng),
+        distance,
         isWheelchairAccessible: group.isWheelchairAccessible ? 1 : 0,
         notes: meeting.notes && meeting.notes.replace(/\[|\]/ig, ''),
         directionsUrl: `https://www.google.com/maps/dir/?api=1&destination=${meeting.Group.lat},${meeting.Group.lng}`
       });
 
-      console.log('updatedMeeting', updatedMeeting);
+      // console.log(updatedMeeting);
 
       return updatedMeeting;
     });

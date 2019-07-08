@@ -82,7 +82,8 @@
                     </tr>
                 </thead>
                 <tbody md-body>
-                    <tr md-row ng-repeat="meeting in $ctrl.sortedFilteredMeetings() | limitTo: $ctrl.myLimit: ($ctrl.myPage - 1) * $ctrl.myLimit">
+                    <tr md-row
+                        ng-repeat="meeting in $ctrl.sortedFilteredMeetings() | limitTo: $ctrl.myLimit: ($ctrl.myPage - 1) * $ctrl.myLimit">
                         <td md-cell>
                             <a class="capitalize" title="View group details"
                                 ui-sref="groupDetails({id: meeting.Group.id})">{{meeting.name | capitalize}}</a>
@@ -112,17 +113,21 @@
 <md-card ng-if="!$ctrl.isLoading && $ctrl.isMobile" ng-repeat="meeting in $ctrl.sortedFilteredMeetings()">
     <md-card-content>
         <h2><a class="meeting-title-link capitalize"
+                title="Group details"
                 ui-sref="groupDetails({id: meeting.Group.id})"><strong>{{meeting.name | capitalize}}</strong></a></h2>
         <md-divider></md-divider>
         <div layout="row" layout-align="space-between">
-            <div flex="50">
+            <div flex="70">
                 <p>
                     <strong>{{meeting.Group.location}}</strong> <br ng-if="meeting.Group.location">{{meeting.location}}
                 </p>
             </div>
-            <div flex="50">
-                <md-button style="float:right;" class="md-primary md-raised" ng-href="{{meeting.directionsUrl}}"
-                    target="_blank" title="Directions">Directions</md-button>
+            <div flex="30">
+                <div class="distance-marker" ng-if="$ctrl.isDistanceActive">
+                    <strong>{{meeting.distance}}</strong>
+                    <br>
+                    Miles
+                </div>
             </div>
         </div>
         <div layout="row" layout-align="space-between">
@@ -137,6 +142,10 @@
             <p flex="50" ng-if="meeting.notes">
                 <md-icon>notes</md-icon> {{meeting.notes}}
             </p>
+        </div>
+        <div flex="100">
+            <md-button style="width: 100%" class="md-primary md-raised" ng-href="{{meeting.directionsUrl}}"
+                target="_blank" title="Directions">Directions</md-button>
         </div>
     </md-card-content>
 </md-card>
