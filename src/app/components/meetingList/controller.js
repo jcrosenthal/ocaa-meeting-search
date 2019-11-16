@@ -69,6 +69,8 @@ export class MeetingListController {
 
             this.query.limit = this.sortedFilteredMeetings().length || this.meetingsMaster.length;
 
+            this.filterResults();
+            
           });
 
       });

@@ -172,7 +172,6 @@ module.exports = function makeWebpackConfig() {
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-      // "OCAA_API_DOMAIN": isProd ? 'https://api.orangenyaa.org' : 'http://localhost:5000'
     })
   ];
 

@@ -7,7 +7,7 @@
     "server": "webpack-dev-server --history-api-fallback --inline --progress",
     "test": "karma start",
     "test-watch": "karma start --auto-watch --no-single-run",
-    "start": "npm run server"
+    "dev": "npm run server"
   },
   "repository": {
     "type": "git",
