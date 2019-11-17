@@ -1,14 +1,17 @@
 import moment from 'moment';
 export class GroupEditorController {
 
-  constructor($scope, $stateParams, $http, $timeout, ENV) {
+  constructor($mdDialog, $mdToast, $scope, $state, $stateParams, $http, $timeout, ENV) {
     'ngInject';
 
     Object.assign(this, {
       $stateParams,
       $timeout,
+      $state,
       $scope,
       $http,
+      $mdDialog,
+      $mdToast,
       ENV
     });
 
@@ -17,34 +20,58 @@ export class GroupEditorController {
   $onInit() {
     this.group = {};
     this.group.meetings = [];
+    this.isEdit = this.$state.current.name === 'groupEditor' ? true : false;
 
     this.$http.get(this.ENV.API_BASE_URL + '/api/days')
       .then(res => this.days = res.data)
-      .then(() => this.$http.get(this.ENV.API_BASE_URL + '/api/formats')
-        .then(res => this.formats = res.data))
+      .then(() => this.$http.get(this.ENV.API_BASE_URL + '/api/formats'))
+      .then(res => this.formats = res.data)
       .then(() => {
+
+        if (!this.isEdit) {
+          return;
+        }
+
         const todayFormatted = moment().format('YYYY-MM-DD');
 
-        this.$http.get(this.ENV.API_BASE_URL + '/api/groups/' + (this.$stateParams.id || ''))
+        this.$http.get(this.ENV.API_BASE_URL + '/api/groups/' + this.$stateParams.id)
           .then((res) => {
-            
-            if (this.$stateParams.id){
-              this.group = res.data[0];
-            }
 
+            this.group = res.data[0];
             this.group.meetings = this.group.Meetings && this.group.Meetings.map(meeting => Object.assign({}, meeting, {
               time: moment(`${todayFormatted} ${meeting.start}`).toDate(),
               notes: meeting.notes && meeting.notes.replace(/\[|\]/ig, ''),
               format: meeting.format.split(',')
             })) || [];
 
-            console.log('this.group.meetings', this.group.meetings);
-
           });
 
       });
 
     this.initAutocomplete();
+  }
+
+  delete(ev) {
+
+    // Appending dialog to document.body to cover sidenav in docs app
+    var confirm = this.$mdDialog.confirm()
+      .title('Would you like to delete this meeting?')
+      .textContent('This cannot be undone.')
+      .ariaLabel('Delete this meeting forever')
+      .targetEvent(ev)
+      .ok('YES, DELETE')
+      .cancel('CANCEL');
+
+    this.$mdDialog.show(confirm).then(() => {
+      console.log('hi')
+      this.$http.delete(this.ENV.API_BASE_URL + '/api/groups/' + this.$stateParams.id)
+        .then(res => {
+          console.log(res);
+          this.$mdToast.showSimple('Meeting deleted.');
+          this.$state.go('meetingList');
+        })
+        .catch(res => console.log(res));
+    });
   }
 
   addMeeting() {
@@ -60,30 +87,35 @@ export class GroupEditorController {
   }
 
   save() {
-    if (this.$stateParams.id) {
+
+    if (this.isEdit) {
+
       this.$http.put(this.ENV.API_BASE_URL + '/api/groups/' + this.$stateParams.id, Object.assign({}, this.group, {
           meetings: this.group.meetings.map(m => Object.assign({}, m, {
             start: moment(m.start).format('HH:mm:ss'),
             format: m.format.join(','),
           }))
         }))
-        .then(() => {
+        .then(() => this.$state.go('groupDetails', {
+          id: this.group.id
+        }));
 
-          this.$onInit();
+      return;
 
-        })
-    } else {
-      this.$http.post(this.ENV.API_BASE_URL + '/api/groups', Object.assign({}, this.group, {
-          meetings: this.group.meetings.map(m => Object.assign({}, m, {
-            start: moment(m.start).format('HH:mm:ss'),
-            format: m.format.join(','),
-          }))
-        }))
-        .then(res => {
-          this.group = {};
-          this.group.meetings = [];
-        });
     }
+
+    this.$http.post(this.ENV.API_BASE_URL + '/api/groups', Object.assign({}, this.group, {
+        meetings: this.group.meetings.map(m => Object.assign({}, m, {
+          start: moment(m.start).format('HH:mm:ss'),
+          format: m.format.join(','),
+        }))
+      }))
+      .then(res => {
+        console.log(res);
+        this.group = {};
+        this.group.meetings = [];
+      });
+
   }
 
   initAutocomplete() {
@@ -119,7 +151,7 @@ export class GroupEditorController {
           lng: place.geometry.location.lng(),
         });
 
-        this.$scope.$apply();
+        this.this.$apply();
       }
     });
 

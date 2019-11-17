@@ -123,6 +123,7 @@
                 <md-button class="md-secondary" ng-click="$ctrl.addMeeting()">Add Meeting</md-button>
             </fieldset>
             <md-button class="md-primary" ng-click="$ctrl.save()">Save</md-button>
+            <md-button ng-if="$ctrl.isEdit" class="md-primary" ng-click="$ctrl.delete()">DELETE MEETING</md-button>
         </form>
     </md-card-content>
 </md-card>
