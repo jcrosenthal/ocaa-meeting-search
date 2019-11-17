@@ -20,8 +20,16 @@ class Config {
                 url: '/',
                 component: 'meetingList',
             })
+            .state('groupList', {
+                url: '/groups',
+                component: 'groupList',
+            })
             .state('groupEditor', {
                 url: '/group/edit/:id',
+                component: 'groupEditor',
+            })
+            .state('groupCreator', {
+                url: '/group/new',
                 component: 'groupEditor',
             })
             .state('groupDetails', {

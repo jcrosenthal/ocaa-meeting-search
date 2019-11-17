@@ -1,0 +1,58 @@
+<md-card>
+    <md-card-content layout-xs="column" layout="row" layout-align="space-between">
+        <div flex-xs="100" flex="35" role="presentation">
+            <md-input-container flex="100" style="width: 100%; margin-bottom: 0">
+                <label for="searchText">Search</label>
+                <input name="searchText" placeholder="" type="search"
+                    ng-model="$ctrl.filterBy.searchText" aria-label="search">
+            </md-input-container>
+        </div>
+        <div flex-xs="100" flex="65" role="presentation">
+            <md-button ui-sref="groupCreator">New Group</md-button>
+        </div>
+    </md-card-content>
+</md-card>
+
+<md-card role="status" ng-if="$ctrl.isLoading" class="text-center">
+    <md-content>
+        <p>
+            <small>Loading...</small>
+        </p>
+        <md-progress-linear class="md-warn" md-mode="buffer" value="{{$ctrl.determinateValue}}"
+            md-buffer-value="{{$ctrl.determinateValue2}}" ng-disabled="!$ctrl.showList[0]"></md-progress-linear>
+    </md-content>
+</md-card>
+
+<md-card ng-if="!$ctrl.isLoading && !$ctrl.isMobile">
+    <md-card-content>
+        <md-table-container>
+            <table md-table>
+                <thead md-head md-order="$ctrl.query.order">
+                    <tr md-row>
+                        <th md-column md-order-by="name">Name</th>
+                        <th md-column md-order-by="town">Location</th>
+                    </tr>
+                </thead>
+                <tbody md-body>
+                    <tr md-row
+                    ng-repeat="group in $ctrl.sortedFilteredGroups() | limitTo: $ctrl.myLimit: ($ctrl.myPage - 1) * $ctrl.myLimit"
+                    ui-sref="groupEditor({id: group.id})">
+                        <td md-cell>
+                            <a class="capitalize" title="View group details"
+                                ui-sref="groupDetails({id: group.Group.id})">{{group.name | capitalize}}</a>
+                        </td>
+                        <td md-cell>
+                            <a ng-href="{{group.directionsUrl}}" title="Directions to {{group.name}}"
+                                target="_blank">
+                                <strong>{{group.Group.location}}</strong>
+                                <br ng-if="group.Group.location">{{group.location}}</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </md-table-container>
+        <md-table-pagination md-limit="$ctrl.myLimit" md-limit-options="$ctrl.limitOptions" md-page="$ctrl.myPage"
+            md-total="{{$ctrl.sortedFilteredMeetings().length}}" md-on-paginate="$ctrl.getMeetings()" md-page-select>
+        </md-table-pagination>
+    </md-card-content>
+</md-card>

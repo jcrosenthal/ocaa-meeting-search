@@ -15,7 +15,9 @@ import {
   app,
   AppCtrl
 } from './app';
+
 import MeetingListComponent from './components/meetingList';
+import GroupListComponent from './components/groupList';
 import GroupDetailsComponent from './components/groupDetails';
 import GroupEditorComponent from './components/groupEditor';
 import ErrorComponent from './components/error';
@@ -34,6 +36,7 @@ window.app = ocaaApp;
 ocaaApp.directive('app', app)
 ocaaApp.controller('AppCtrl', AppCtrl);
 ocaaApp.component('meetingList', MeetingListComponent);
+ocaaApp.component('groupList', GroupListComponent);
 ocaaApp.component('groupDetails', GroupDetailsComponent);
 ocaaApp.component('groupEditor', GroupEditorComponent);
 ocaaApp.component('error', ErrorComponent);
