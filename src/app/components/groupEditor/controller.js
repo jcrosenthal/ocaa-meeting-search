@@ -63,11 +63,9 @@ export class GroupEditorController {
       .cancel('CANCEL');
 
     this.$mdDialog.show(confirm).then(() => {
-      console.log('hi')
       this.$http.delete(this.ENV.API_BASE_URL + '/api/groups/' + this.$stateParams.id)
         .then(res => {
-          console.log(res);
-          this.$mdToast.showSimple('Meeting deleted.');
+          this.$mdToast.showSimple(res.data.message);
           this.$state.go('meetingList');
         })
         .catch(res => console.log(res));
@@ -111,7 +109,6 @@ export class GroupEditorController {
         }))
       }))
       .then(res => {
-        console.log(res);
         this.group = {};
         this.group.meetings = [];
       });

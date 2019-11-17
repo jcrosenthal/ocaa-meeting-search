@@ -160,8 +160,6 @@ export class MeetingListController {
       lng: Number(lng)
     };
 
-    console.log('why');
-
     var lat1 = groupPosition.lat;
     var lon1 = groupPosition.lng;
     var lat2 = this.position.coords.latitude;
