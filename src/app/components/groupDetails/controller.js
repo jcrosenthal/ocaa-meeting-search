@@ -15,14 +15,14 @@ export class GroupDetailsController {
 
   $onInit() {
 
-    this.$http.get(this.ENV.API_BASE_URL + '/api/days')
+    this.$http.get(this.ENV.API_BASE_URL + '/days')
       .then(res => this.days = res.data)
-      .then(() => this.$http.get(this.ENV.API_BASE_URL + '/api/formats')
+      .then(() => this.$http.get(this.ENV.API_BASE_URL + '/formats')
         .then(res => this.formats = res.data))
       .then(() => {
         const todayFormatted = moment().format('YYYY-MM-DD');
         
-        this.$http.get(this.ENV.API_BASE_URL + '/api/groups/' + this.$stateParams.id)
+        this.$http.get(this.ENV.API_BASE_URL + '/groups/' + this.$stateParams.id)
           .then((res) => {
             this.group = res.data[0];
             this.directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${this.group.lat},${this.group.lng}`;

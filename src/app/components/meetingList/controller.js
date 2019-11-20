@@ -52,13 +52,13 @@ export class MeetingListController {
       }
     }];
 
-    this.$http.get(this.ENV.API_BASE_URL + '/api/days')
+    this.$http.get(this.ENV.API_BASE_URL + '/days')
       .then(res => this.days = res.data)
-      .then(() => this.$http.get(this.ENV.API_BASE_URL + '/api/formats')
+      .then(() => this.$http.get(this.ENV.API_BASE_URL + '/formats')
         .then(res => this.formats = res.data))
       .then(() => {
 
-        this.$http.get(this.ENV.API_BASE_URL + '/api/meetings')
+        this.$http.get(this.ENV.API_BASE_URL + '/meetings')
           .then(res => {
 
             this.meetingsMaster = res.data;

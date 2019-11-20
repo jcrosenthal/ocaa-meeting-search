@@ -44,7 +44,7 @@ export class GroupListController {
       }
     }];
 
-    this.$http.get(this.ENV.API_BASE_URL + '/api/groups')
+    this.$http.get(this.ENV.API_BASE_URL + '/groups')
       .then(res => this.groups = res.data)
       .finally(() => this.isLoading = false);
 

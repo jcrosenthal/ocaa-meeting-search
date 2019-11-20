@@ -22,9 +22,9 @@ export class GroupEditorController {
     this.group.meetings = [];
     this.isEdit = this.$state.current.name === 'groupEditor' ? true : false;
 
-    this.$http.get(this.ENV.API_BASE_URL + '/api/days')
+    this.$http.get(this.ENV.API_BASE_URL + '/days')
       .then(res => this.days = res.data)
-      .then(() => this.$http.get(this.ENV.API_BASE_URL + '/api/formats'))
+      .then(() => this.$http.get(this.ENV.API_BASE_URL + '/formats'))
       .then(res => this.formats = res.data)
       .then(() => {
 
@@ -34,7 +34,7 @@ export class GroupEditorController {
 
         const todayFormatted = moment().format('YYYY-MM-DD');
 
-        this.$http.get(this.ENV.API_BASE_URL + '/api/groups/' + this.$stateParams.id)
+        this.$http.get(this.ENV.API_BASE_URL + '/groups/' + this.$stateParams.id)
           .then((res) => {
 
             this.group = res.data[0];
@@ -63,7 +63,7 @@ export class GroupEditorController {
       .cancel('CANCEL');
 
     this.$mdDialog.show(confirm).then(() => {
-      this.$http.delete(this.ENV.API_BASE_URL + '/api/groups/' + this.$stateParams.id)
+      this.$http.delete(this.ENV.API_BASE_URL + '/groups/' + this.$stateParams.id)
         .then(res => {
           this.$mdToast.showSimple(res.data.message);
           this.$state.go('meetingList');
@@ -88,7 +88,7 @@ export class GroupEditorController {
 
     if (this.isEdit) {
 
-      this.$http.put(this.ENV.API_BASE_URL + '/api/groups/' + this.$stateParams.id, Object.assign({}, this.group, {
+      this.$http.put(this.ENV.API_BASE_URL + '/groups/' + this.$stateParams.id, Object.assign({}, this.group, {
           meetings: this.group.meetings.map(m => Object.assign({}, m, {
             start: moment(m.start).format('HH:mm:ss'),
             format: m.format.join(','),
@@ -102,7 +102,7 @@ export class GroupEditorController {
 
     }
 
-    this.$http.post(this.ENV.API_BASE_URL + '/api/groups', Object.assign({}, this.group, {
+    this.$http.post(this.ENV.API_BASE_URL + '/groups', Object.assign({}, this.group, {
         meetings: this.group.meetings.map(m => Object.assign({}, m, {
           start: moment(m.start).format('HH:mm:ss'),
           format: m.format.join(','),
