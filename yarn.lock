@@ -978,10 +978,10 @@ angular-utf8-base64@^0.0.5:
   resolved "https://registry.yarnpkg.com/angular-utf8-base64/-/angular-utf8-base64-0.0.5.tgz#95158d6809dbae1eb9fa03af45d67187b0788cf6"
   integrity sha1-lRWNaAnbrh65+gOvRdZxh7B4jPY=
 
-angular@^1.7.0, angular@^1.7.5:
-  version "1.7.8"
-  resolved "https://registry.yarnpkg.com/angular/-/angular-1.7.8.tgz#b77ede272ce1b261e3be30c1451a0b346905a3c9"
-  integrity sha512-wtef/y4COxM7ZVhddd7JtAAhyYObq9YXKar9tsW7558BImeVYteJiTxCKeJOL45lJ/+7B4wrAC49j8gTFYEthg==
+angular@^1.7.5, angular@^1.7.9:
+  version "1.7.9"
+  resolved "https://registry.yarnpkg.com/angular/-/angular-1.7.9.tgz#e52616e8701c17724c3c238cfe4f9446fd570bc4"
+  integrity sha512-5se7ZpcOtu0MBFlzGv5dsM1quQDoDeUTwZrWjGtTNA7O88cD8TEk5IEKCTDa3uECV9XnvKREVUr7du1ACiWGFQ==
 
 angularjs-template-loader@^0.1.1:
   version "0.1.1"
