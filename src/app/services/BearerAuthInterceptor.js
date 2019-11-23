@@ -1,4 +1,4 @@
-function BearerAuthInterceptor($window, $q) {
+function BearerAuthInterceptor($state, $window, $q) {
     return {
         request: function (config) {
             config.headers = config.headers || {};
@@ -9,8 +9,11 @@ function BearerAuthInterceptor($window, $q) {
             return config || $q.when(config);
         },
         response: function (response) {
+            console.log(response.status);
             if (response.status === 401) {
                 //  Redirect user to login page / signup Page.
+                // $state.go('logIn');
+                return $q.reject(response);
             }
             return response || $q.when(response);
         }

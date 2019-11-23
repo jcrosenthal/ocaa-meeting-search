@@ -1,18 +1,25 @@
 <md-card>
     <md-toolbar layout="row" class="md-hue-2">
-        <div class="md-toolbar-tools">
-            <md-button ui-sref="meetingList">
-                <md-icon>arrow_back</md-icon> Back
-            </md-button>
-            <h2 class="capitalize">{{$ctrl.group.name | capitalize}}
-                <md-icon ng-if="$ctrl.group.isWheelchairAccessible">accessible_forward</md-icon>
-            </h2>
-            <md-button ui-sref="groupEditor({id: $ctrl.group.id})" ng-if="$ctrl.currentUser">
-                Edit
-            </md-button>
+        <div class="md-toolbar-tools" flex layout-align="space-between">
+            <div flex="33" layout="row" layout-align="start center">
+                <md-button ui-sref="meetingList">
+                    <md-icon>arrow_back</md-icon> Back
+                </md-button>
+            </div>
+            <div flex="33" layout="row" layout-align="center center">
+                <h1 class="capitalize">
+                    {{$ctrl.group.name | capitalize}}
+                    <md-icon ng-if="$ctrl.group.is_wheelchair_accessible">accessible_forward</md-icon>
+                </h1>
+            </div>
+            <div flex="33" layout="row" layout-align="end center">
+                <md-button ui-sref="groupEditor({id: $ctrl.group.id})" ng-if="$ctrl.currentUser">
+                    Edit
+                </md-button>
+            </div>
         </div>
     </md-toolbar>
-    <md-card-content layout="row">
+    <md-card-content layout="row" layout-align="space-around">
         <div flex="80" flex-xs="100">
             <p class="address">
                 <strong ng-if="$ctrl.group.location">{{$ctrl.group.location}}</strong>
@@ -35,7 +42,7 @@
 <md-card>
     <md-toolbar layout="row" class="md-hue-3">
         <div class="md-toolbar-tools">
-            <span>Meetings</span>
+            <h2>Meetings</h2>
         </div>
     </md-toolbar>
     <md-list flex>
@@ -63,7 +70,7 @@
                     </div>
                 </div>
             </div>
-            <md-divider></md-divider>
+            <md-divider ng-if="$index !== $ctrl.group.Meetings.length - 1"></md-divider>
         </md-list-item>
 
     </md-list>

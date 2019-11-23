@@ -69,7 +69,7 @@ export class MeetingListController {
 
             this.query.limit = this.sortedFilteredMeetings().length || this.meetingsMaster.length;
 
-            this.filterResults();
+            this.filterResults(this.filterBy);
             
           });
 
@@ -223,7 +223,7 @@ export class MeetingListController {
         formatDisplay: formatDisplay,
         location: location,
         distance,
-        isWheelchairAccessible: group.isWheelchairAccessible ? 1 : 0,
+        isWheelchairAccessible: group.is_wheelchair_accessible ? 1 : 0,
         notes: meeting.notes && meeting.notes.replace(/\[|\]/ig, ''),
         directionsUrl: `https://www.google.com/maps/dir/?api=1&destination=${meeting.Group.lat},${meeting.Group.lng}`
       });
