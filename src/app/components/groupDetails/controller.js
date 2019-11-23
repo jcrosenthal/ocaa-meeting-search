@@ -16,8 +16,7 @@ export class GroupDetailsController {
   $onInit() {
 
     this.$http.get(`${this.ENV.API_BASE_URL}/users/current`)
-      .then(res => this.currentUser = res.data)
-      .catch(res => console.log(res));
+      .then(res => this.currentUser = res.data);
 
     this.$http.get(this.ENV.API_BASE_URL + '/days')
       .then(res => this.days = res.data)

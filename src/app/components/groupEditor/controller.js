@@ -65,10 +65,13 @@ export class GroupEditorController {
     this.$mdDialog.show(confirm).then(() => {
       this.$http.delete(this.ENV.API_BASE_URL + '/groups/' + this.$stateParams.id)
         .then(res => {
-          this.$mdToast.showSimple(res.data.message);
+          console.warn(res.data.message);
           this.$state.go('meetingList');
         })
-        .catch(res => console.log(res));
+        .catch(res => {
+          // console.log('catch', res.data);
+          this.$mdToast.showSimple(res.data);
+        });
     });
   }
 
@@ -84,23 +87,7 @@ export class GroupEditorController {
     this.group.meetings = this.group.meetings.filter((meeting, i) => i !== index);
   }
 
-  save() {
-
-    if (this.isEdit) {
-
-      this.$http.put(this.ENV.API_BASE_URL + '/groups/' + this.$stateParams.id, Object.assign({}, this.group, {
-          meetings: this.group.meetings.map(m => Object.assign({}, m, {
-            start: moment(m.start).format('HH:mm:ss'),
-            format: m.format.join(','),
-          }))
-        }))
-        .then(() => this.$state.go('groupDetails', {
-          id: this.group.id
-        }));
-
-      return;
-
-    }
+  createGroup() {
 
     this.$http.post(this.ENV.API_BASE_URL + '/groups', Object.assign({}, this.group, {
         meetings: this.group.meetings.map(m => Object.assign({}, m, {
@@ -111,8 +98,34 @@ export class GroupEditorController {
       .then(res => {
         this.group = {};
         this.group.meetings = [];
+      })
+      .catch(res => {
+        // console.log('catch', res.data);
+        this.$mdToast.showSimple(res.data);
       });
 
+  }
+
+  editGroup() {
+
+    this.$http.put(this.ENV.API_BASE_URL + '/groups/' + this.$stateParams.id, Object.assign({}, this.group, {
+        meetings: this.group.meetings.map(m => Object.assign({}, m, {
+          start: moment(m.start).format('HH:mm:ss'),
+          format: m.format.join(','),
+        }))
+      }))
+      .then(() => this.$state.go('groupDetails', {
+        id: this.group.id
+      }))
+      .catch(res => {
+        // console.log('catch', res.data);
+        this.$mdToast.showSimple(res.data);
+      });
+
+  }
+
+  save() {
+    return this.isEdit ? this.editGroup() : this.createGroup();
   }
 
   initAutocomplete() {

@@ -1,14 +1,17 @@
 <md-card>
     <md-toolbar layout="row" class="md-hue-2">
         <div role="heading" class="md-toolbar-tools">
-            <span role="heading">Group Editor</span>
+            <span role="heading">Group {{$ctrl.isEdit ? 'Editor' : 'Creator'}}</span>
+        </div>
+        <div>
+            <md-button ng-if="$ctrl.isEdit" class="md-secondary" ng-click="$ctrl.delete()">DELETE MEETING
         </div>
     </md-toolbar>
     <md-card-content>
         <form novalidate aria-label="" name="$ctrl.groupEditor"
             on-submit="$ctrl.groupEditor.$valid && $ctrl.saveGroup()">
-            <fieldset>
-                <legend>Group</legend>
+            <md-card class="md-padding">
+                <h3>Group</h3>
                 <md-input-container>
                     <label for="name">Name</label>
                     <input aria-label="name" name="name" ng-model="$ctrl.group.name" type="text">
@@ -19,18 +22,18 @@
                     Is Wheelchair Accessible
                 </md-checkbox>
 
-            </fieldset>
+            </md-card>
             <br>
-            <fieldset>
-                <legend>Address Search</legend>
+            <md-card class="md-padding">
+                <h3>Address Search</h3>
                 <md-input-container md-no-float>
                     <label for="pac-input">Address Search</label>
                     <input id="pac-input" type="search">
                 </md-input-container>
-            </fieldset>
+            </md-card>
             <br>
-            <fieldset>
-                <legend>Address</legend>
+            <md-card class="md-padding">
+                <h3>Address</h3>
                 <div role="row" layout="row" layout-align="space-between">
                     <div role="row" layout="column">
                         <md-input-container>
@@ -85,12 +88,12 @@
                     <label for="notes">Address Notes (Building name, etc.)</label>
                     <input aria-label="notes" name="notes" type="text" ng-model="$ctrl.group.location" type="text">
                 </md-input-container>
-            </fieldset>
+            </md-card>
             <br>
-            <fieldset>
-                <legend>Meetings</legend>
-                <fieldset ng-repeat="meeting in $ctrl.group.meetings">
-                    <legend>{{meeting.day}}</legend>
+            <md-card class="md-padding">
+                <h3>Meetings</h3>
+                <md-card class="md-padding" ng-repeat="meeting in $ctrl.group.meetings">
+                    <h3>{{meeting.day | capitalize}}</h3>
                     <div role="row" layout="column" layout-align="space-between">
                         <md-input-container>
                             <label for="day">Day</label>
@@ -118,12 +121,20 @@
                             </md-chip-template>
                         </md-chips>
                     </div>
-                    <md-button class="md-secondary" ng-click="$ctrl.removeMeeting($index)">Remove Meeting</md-button>
-                </fieldset>
-                <md-button class="md-secondary" ng-click="$ctrl.addMeeting()">Add Meeting</md-button>
-            </fieldset>
-            <md-button class="md-primary" ng-click="$ctrl.save()">Save</md-button>
-            <md-button ng-if="$ctrl.isEdit" class="md-primary" ng-click="$ctrl.delete()">DELETE MEETING</md-button>
+                    <div>
+                        <md-button class="md-secondary md-raised" ng-click="$ctrl.removeMeeting($index)">Remove Meeting
+                        </md-button>
+                    </div>
+                </md-card>
+                <div>
+                    <md-button class="md-secondary md-raised" ng-click="$ctrl.addMeeting()">Add Meeting</md-button>
+                </div>
+            </md-card>
+            <div layout-align="end center" layout="row">
+                <md-button class="md-primary md-raised" ng-click="$ctrl.save()">Save</md-button>
+                <md-button class="md-secondary md-raised" ui-sref="meetingList">Cancel</md-button>
+                </md-button>
+            </div>
         </form>
     </md-card-content>
 </md-card>

@@ -9,13 +9,14 @@ function BearerAuthInterceptor($state, $window, $q) {
             return config || $q.when(config);
         },
         response: function (response) {
-            console.log(response.status);
-            if (response.status === 401) {
-                //  Redirect user to login page / signup Page.
-                // $state.go('logIn');
-                return $q.reject(response);
-            }
             return response || $q.when(response);
+        },
+        responseError: function (response) {
+            if (response.status === 401) {
+                // Redirect user to login page / signup Page.
+                $state.go('logIn');
+            }
+            return $q.reject(response);
         }
     };
 };
