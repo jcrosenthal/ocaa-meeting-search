@@ -7,9 +7,11 @@
             <h2 class="capitalize">{{$ctrl.group.name | capitalize}}
                 <md-icon ng-if="$ctrl.group.isWheelchairAccessible">accessible_forward</md-icon>
             </h2>
+            <md-button ui-sref="groupEditor({id: $ctrl.group.id})" ng-if="$ctrl.currentUser">
+                Edit
+            </md-button>
         </div>
     </md-toolbar>
-    <!-- <div id="map"></div> -->
     <md-card-content layout="row">
         <div flex="80" flex-xs="100">
             <p class="address">

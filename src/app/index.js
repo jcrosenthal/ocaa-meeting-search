@@ -20,7 +20,10 @@ import MeetingListComponent from './components/meetingList';
 import GroupListComponent from './components/groupList';
 import GroupDetailsComponent from './components/groupDetails';
 import GroupEditorComponent from './components/groupEditor';
+import LogInComponent from './components/logIn';
 import ErrorComponent from './components/error';
+
+import BearerAuthInterceptor from './services/BearerAuthInterceptor';
 
 const MODULE_NAME = 'app';
 const ocaaApp = angular.module(MODULE_NAME, [
@@ -33,13 +36,18 @@ const ocaaApp = angular.module(MODULE_NAME, [
 
 window.app = ocaaApp;
 
-ocaaApp.directive('app', app)
+ocaaApp.directive('app', app);
+
 ocaaApp.controller('AppCtrl', AppCtrl);
+
 ocaaApp.component('meetingList', MeetingListComponent);
+ocaaApp.component('logIn', LogInComponent);
 ocaaApp.component('groupList', GroupListComponent);
 ocaaApp.component('groupDetails', GroupDetailsComponent);
 ocaaApp.component('groupEditor', GroupEditorComponent);
 ocaaApp.component('error', ErrorComponent);
+
+ocaaApp.factory('BearerAuthInterceptor', BearerAuthInterceptor);
 
 ocaaApp.constant('ENV', {  
   API_BASE_URL: process.env.NODE_ENV !== 'development' ? 'https://api.orangenyaa.org' : 'http://localhost:5000'
