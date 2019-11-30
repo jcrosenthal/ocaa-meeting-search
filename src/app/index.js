@@ -50,7 +50,7 @@ ocaaApp.component('error', ErrorComponent);
 ocaaApp.factory('BearerAuthInterceptor', BearerAuthInterceptor);
 
 ocaaApp.constant('ENV', {  
-  API_BASE_URL: process.env.NODE_ENV !== 'development' ? 'https://api.orangenyaa.org' : 'http://localhost:5000'
+  API_BASE_URL: NODE_ENV === 'development' ? 'http://localhost:5000' : 'https://api.orangenyaa.org'
 });
 
 ocaaApp.filter('trusted', ['$sce', function ($sce) {
