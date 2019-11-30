@@ -1,4 +1,5 @@
 function BearerAuthInterceptor($state, $window, $q) {
+    'ngInject';
     return {
         request: function (config) {
             config.headers = config.headers || {};
