@@ -19,13 +19,13 @@ export class MeetingListController {
   toggleCovidFilters(code, on) {
 
     if (on) {
-    
+
       this.filterBy.formats.push(code);
-    
+
     } else {
 
-      this.filterBy.formats = this.filterBy.formats.filter(c => c !== code); 
-    
+      this.filterBy.formats = this.filterBy.formats.filter(c => c !== code);
+
     }
 
     this.filterResults(this.filterBy);
@@ -36,7 +36,6 @@ export class MeetingListController {
 
     const _this = this;
 
-    this.getLocation();
 
     this.setLoading();
 
@@ -60,7 +59,7 @@ export class MeetingListController {
         day: 'all',
         timeRange: 'any',
         openClosed: 'any',
-        formats: []
+        formats: ['ip', 'on']
       },
     });
 
@@ -73,23 +72,24 @@ export class MeetingListController {
 
     this.$http.get(this.ENV.API_BASE_URL + '/days')
       .then(res => this.days = res.data)
-      .then(() => this.$http.get(this.ENV.API_BASE_URL + '/formats')
-        .then(res => this.formats = res.data))
-      .then(() => {
+      .then(() => this.$http.get(this.ENV.API_BASE_URL + '/formats'))
+      .then(res => this.formats = res.data)
+      .then(() => this.$http.get(this.ENV.API_BASE_URL + '/meetings'))
+      .then(res => {
 
-        this.$http.get(this.ENV.API_BASE_URL + '/meetings')
-          .then(res => {
+        this.meetingsMaster = res.data;
 
-            this.meetingsMaster = res.data;
+        this.isLoading = false;
 
-            this.isLoading = false;
+        this.getLocation()
+          .then(() => {
 
             this.meetings = this.setMeetings();
 
             this.query.limit = this.sortedFilteredMeetings().length || this.meetingsMaster.length;
 
             this.filterResults(this.filterBy);
-            
+
           });
 
       });
@@ -97,17 +97,24 @@ export class MeetingListController {
   }
 
   getLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        this.position = position;
-        this.isDistanceActive = true;
-        if (this.meetings.length > 1 && this.meetingsMaster.length > 1 && !this.meetingsMaster[0].distance) {
-          this.filterResults();
-        }
-      });
-    } else {
-      this.locationDisplay = "Geolocation is not supported by this browser.";
-    }
+
+    const locationPromise = new Promise((resolve, reject) => {
+      if (navigator.geolocation) {
+        return navigator.geolocation.getCurrentPosition((position) => {
+          this.position = position;
+          this.isDistanceActive = true;
+          resolve();
+        }, () => {
+          resolve()
+        });
+      } else {
+        console.log("Geolocation is not supported by this browser.");
+        resolve();
+      }
+    });
+
+    return locationPromise;
+
   }
 
   setLoading() {
@@ -211,6 +218,10 @@ export class MeetingListController {
 
   setMeetings() {
     // Assign all meetings to their matching groups
+    if (!this.meetingsMaster) {
+      return [];
+    }
+
     return this.meetingsMaster.map(meeting => {
 
       let group = meeting.Group;
@@ -259,6 +270,8 @@ export class MeetingListController {
 
   resetResults() {
     this.filterBy = {};
+    this.is_in_person = false;
+    this.is_online = false;
     this.meetings = [];
     this.$onInit();
   }
