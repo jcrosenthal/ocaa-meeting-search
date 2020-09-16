@@ -12,15 +12,15 @@
                 <div layout="row" role="presentation">
                     <md-input-container flex="50">
                         <label for="">Day</label>
-                        <md-select ng-model="$ctrl.filterBy.day" placeholder="All Days">
-                            <md-option value="">Any Day</md-option>
+                        <md-select ng-change="$ctrl.filterResults($ctrl.filterBy)" ng-model="$ctrl.filterBy.day" placeholder="All Days">
+                            <md-option value="all">All Days</md-option>
                             <md-option ng-repeat="day in $ctrl.days" ng-value="day.code">{{day.display}}</md-option>
                         </md-select>
                     </md-input-container>
 
                     <md-input-container flex="50">
                         <label for="">Time</label>
-                        <md-select ng-model="$ctrl.filterBy.timeRange" placeholder="Any Time">
+                        <md-select ng-change="$ctrl.filterResults($ctrl.filterBy)" ng-model="$ctrl.filterBy.timeRange" placeholder="Any Time">
                             <md-option value="any">Any Time</md-option>
                             <md-option value="morning">Morning (5 AM - 11:30 AM)</md-option>
                             <md-option value="afternoon">Afternoon (Noon - 4:30 PM)</md-option>
@@ -32,8 +32,8 @@
                 <div layout="row" role="presentation">
                     <md-input-container flex="50">
                         <label for="">Open/Closed</label>
-                        <md-select ng-model="$ctrl.filterBy.openClosed" placeholder="Open or Closed">
-                            <md-option value="openClosed">Open/Closed</md-option>
+                        <md-select ng-change="$ctrl.filterResults($ctrl.filterBy)" ng-model="$ctrl.filterBy.openClosed" placeholder="Open or Closed">
+                            <md-option value="any">Open and Closed</md-option>
                             <md-option value="open">Open</md-option>
                             <md-option value="closed">Closed</md-option>
                         </md-select>
@@ -41,7 +41,7 @@
 
                     <md-input-container flex="50">
                         <label for="">Type</label>
-                        <md-select multiple ng-model="$ctrl.filterBy.formats" placeholder="Meeting Type">
+                        <md-select ng-change="$ctrl.filterResults($ctrl.filterBy)" multiple ng-model="$ctrl.filterBy.formats" placeholder="Meeting Type">
                             <md-option ng-repeat="format in $ctrl.formats" ng-value="format.code">{{format.display}}
                             </md-option>
                         </md-select>
@@ -49,8 +49,17 @@
                 </div>
             </div>
 
-            <md-button class="md-raised md-primary" aria-label="Apply filters"
-                ng-click="$ctrl.filterResults($ctrl.filterBy)">Apply Filters</md-button>
+            <div>
+                <md-checkbox ng-change="$ctrl.toggleCovidFilters('ip', $ctrl.is_in_person)" aria-label="ipm" name="ipm" ng-model="$ctrl.is_in_person"
+                type="checkbox">
+                    In Person Meeting
+                </md-checkbox>
+
+                <md-checkbox ng-change="$ctrl.toggleCovidFilters('on', $ctrl.is_online)" aria-label="ion" name="ion" ng-model="$ctrl.is_online"
+                type="checkbox">
+                    Online
+                </md-checkbox>
+            </div>
             <md-button class="md-secondary" aria-label="Clear filters" ng-click="$ctrl.resetResults()">Clear Filters
             </md-button>
         </div>
@@ -83,10 +92,14 @@
                 </thead>
                 <tbody md-body>
                     <tr md-row
-                        ng-repeat="meeting in $ctrl.sortedFilteredMeetings() | limitTo: $ctrl.myLimit: ($ctrl.myPage - 1) * $ctrl.myLimit">
+                        ng-repeat="meeting in $ctrl.sortedFilteredMeetings() | limitTo: $ctrl.myLimit: ($ctrl.myPage - 1) * $ctrl.myLimit"
+                        ng-class="{'temporarily-closed' : meeting.temporarily_closed}">
                         <td md-cell>
                             <a class="capitalize" title="View group details"
                                 ui-sref="groupDetails({id: meeting.Group.id})">{{meeting.name | capitalize}}</a>
+                                <strong class="green" ng-if="meeting.in_person">/ In Person Meeting</strong>
+                                <strong class="blue" ng-if="meeting.online_only">/ Online</strong>
+                                <strong class="gray" ng-if="meeting.temporarily_closed">/ Temporary Closure</strong>
                         </td>
                         <td md-cell>{{$ctrl.findDayDisplay(meeting.day)}}</td>
                         <td md-cell width="80">{{meeting.fullTime}}</td>

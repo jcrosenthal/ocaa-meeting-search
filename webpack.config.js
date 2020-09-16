@@ -245,8 +245,8 @@ module.exports = function makeWebpackConfig() {
     contentBase: './src/public',
     stats: 'minimal',
     host: '0.0.0.0',
-    http2: true,
-    https: true
+    // http2: true,
+    // https: true
   };
 
   return config;

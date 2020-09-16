@@ -24,6 +24,18 @@
   color: #666;
 }
 
+.green {
+  color: green;
+}
+
+.blue {
+  color: blue;
+}
+
+.gray {
+  color: gray;
+}
+
 .text-center {
   text-align: center;
 }

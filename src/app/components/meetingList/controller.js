@@ -16,6 +16,22 @@ export class MeetingListController {
     console.log('changes', changes);
   }
 
+  toggleCovidFilters(code, on) {
+
+    if (on) {
+    
+      this.filterBy.formats.push(code);
+    
+    } else {
+
+      this.filterBy.formats = this.filterBy.formats.filter(c => c !== code); 
+    
+    }
+
+    this.filterResults(this.filterBy);
+
+  }
+
   $onInit() {
 
     const _this = this;
@@ -41,7 +57,10 @@ export class MeetingListController {
       },
       selected: [],
       filterBy: {
-        day: moment().format('ddd').toLowerCase()
+        day: 'all',
+        timeRange: 'any',
+        openClosed: 'any',
+        formats: []
       },
     });
 
@@ -217,6 +236,9 @@ export class MeetingListController {
 
       const updatedMeeting = Object.assign({}, meeting, {
         name: group.name,
+        in_person: meeting.format.includes('ip'),
+        online_only: meeting.format.includes('on'),
+        temporarily_closed: !meeting.format.includes('ip') && !meeting.format.includes('on'),
         time: meeting.start.replace(/:/gi, ''),
         fullTime: moment(todayMomentFormatted + ' ' + meeting.start).format('h:mm A'),
         town: group.locality,
@@ -254,7 +276,7 @@ export class MeetingListController {
   }
 
   filterByDay(meetings, filterBy) {
-    if (!filterBy || !filterBy.day || !filterBy.day.length) {
+    if (!filterBy || !filterBy.day || filterBy.day === 'all' || !filterBy.day.length) {
       return meetings;
     }
 
@@ -265,7 +287,7 @@ export class MeetingListController {
   }
 
   filterByTime(meetings, filterBy) {
-    if (!filterBy || !filterBy.timeRange || filterBy.openClosed === 'any') {
+    if (!filterBy || !filterBy.timeRange || filterBy.timeRange === 'any') {
       return meetings;
     }
 
@@ -297,7 +319,7 @@ export class MeetingListController {
   }
 
   filterByOpenClosed(meetings, filterBy) {
-    if (!filterBy || !filterBy.openClosed || filterBy.openClosed === 'openClosed') {
+    if (!filterBy || !filterBy.openClosed || filterBy.openClosed === 'any') {
       return meetings;
     }
 
