@@ -48,18 +48,6 @@
                     </md-input-container>
                 </div>
             </div>
-
-            <div>
-                <md-checkbox ng-change="$ctrl.toggleCovidFilters('ip', $ctrl.is_in_person)" aria-label="ipm" name="ipm" ng-model="$ctrl.is_in_person"
-                type="checkbox">
-                    In Person Meeting
-                </md-checkbox>
-
-                <md-checkbox ng-change="$ctrl.toggleCovidFilters('on', $ctrl.is_online)" aria-label="ion" name="ion" ng-model="$ctrl.is_online"
-                type="checkbox">
-                    Online
-                </md-checkbox>
-            </div>
             <md-button class="md-secondary" aria-label="Clear filters" ng-click="$ctrl.resetResults()">Clear Filters
             </md-button>
         </div>
